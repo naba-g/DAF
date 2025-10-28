@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-6 text-right">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createAnneeModal">
-                                    <i class="feather icon-plus"></i> Nouvelle Année Scolaire
+                                    <i class="feather icon-plus"></i> Créer Année Scolaire
                                 </button>
                             </div>
                         </div>
