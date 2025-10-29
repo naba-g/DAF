@@ -32,8 +32,9 @@
             <!-- <p > BIENVENUE SUR DISMAS </p> -->
 
             <p class="btn btn-primary">BIENVENUE SUR DISMAS ----- liste des commandes</p>
-
-
+          
+           
+           <p>Boqnjours famille DEv travail en groupe laravel ce jour PROF : Jesus</p>
 
             <!-- table card-1 start -->
             <div class="col-md-12 col-xl-4">
