@@ -35,7 +35,7 @@
                             </div>
                             <div class="col-md-6 text-right">
                                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createAnneeModal">
-                                    <i class="feather icon-plus"></i> Créer Année Scolaire
+                                    <i class="feather icon-plus"></i> Ajouter Année Scolaire
                                 </button>
                             </div>
                         </div>
@@ -55,7 +55,8 @@
                                 <div class="form-group">
                                     <label for="filterStatut">Statut :</label>
                                     <select class="form-control" id="filterStatut">
-                                        <option value="">Tous les statuts</option>
+
+                                        <option value="" >Tous les statuts</option>
                                         <option value="active">Active</option>
                                         <option value="inactive">Inactive</option>
                                         <option value="archive">Archivée</option>
@@ -70,6 +71,7 @@
                                         <option value="2023-2024">2023-2024</option>
                                         <option value="2024-2025">2024-2025</option>
                                         <option value="2025-2026">2025-2026</option>
+                                        <option value="2026-2027">2026-2027</option>
                                     </select>
                                 </div>
                             </div>
