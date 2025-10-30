@@ -86,12 +86,7 @@ Route::get('/besoin_epp', function () {
 
 });
 
-//iepp 
-Route::get('/iepp', function () {
-   // return view('welcome');
-       return view('espace.espace_super.iepp.liste');
 
-});
 
 //livraison epp 
 Route::get('/livraison_epp', function () {
@@ -176,3 +171,34 @@ Route::get('/compte_utilisateur', function () {
 Route::get('/accueil', function () {
     return view('welcome');
 });
+
+
+
+//----------debut travail  de degry
+
+
+
+
+//creation des iepp
+
+
+//iepp afficher la liste
+Route::get('/iepp', function () {
+   // return view('welcome');
+       return view('espace.espace_super.iepp.liste');
+
+});
+
+// afficher le formulaire d'ajout
+Route::get('/ajoutiepp','App\Http\Controllers\parametre\IeppController@add');
+
+// afficher la page details
+Route::get('detailiepp/{id}','App\Http\Controllers\parametre\IeppController@detail');
+
+Route::get('modificationiepp/{id}','App\Http\Controllers\parametre\IeppController@edit');
+
+
+
+
+
+//--------Fin
