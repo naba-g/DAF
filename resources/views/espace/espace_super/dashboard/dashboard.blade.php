@@ -14,7 +14,7 @@
                         <div class="page-header-title">
                             <h5 class="m-b-10">
                                 <i class="feather icon-bar-chart-2 text-primary"></i>
-                                Tableau de Bord SIDMAS DAF
+                                Tableau de Bord SIDMAS DAF daf
                             </h5>
                             <p class="m-b-0">Vue d'ensemble des statistiques et indicateurs de performance</p>
                         </div>
