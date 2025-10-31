@@ -12,12 +12,12 @@
             <div class="page-block">
                 <div class="row align-items-center">
                     <div class="col-md-12">
-                        <!-- <div class="page-header-title">
-                            <h5 class="m-b-10">Dashboard Analytics-------------------</h5>
-                        </div> -->
+                        <div class="page-header-title">
+                            <h5 class="m-b-10">Gestion des roles</h5>
+                        </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">GESTION DES ROLES </a></li>
+                            <li class="breadcrumb-item"><a href="#!">Administration</a></li>
                             <li class="breadcrumb-item"><a href="#!">liste des roles</a></li>
 
                         </ul>
@@ -31,120 +31,139 @@
 <!-- ---------------------------------------------- -->
 
 
-<div style="padding:50px;" class="container bg-light">
-    <?php
-    //print_r($data3)
-    ?>
-<p style="margin-top:10px;" class="text-danger text-uppercase"> Nombre de roles :  <b style="color:blue;"> {{ 4 }} </b></p>
-<style>
+
    
-  
-#exTab1 .tab-content {
-  color : navy;
-  background-color:gray;
-  padding : 40px;
-}
-
-#exTab2 h3 {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
-}
-
-/* remove border radius for the tab*/
-
-#exTab1 .nav-pills > li > a {
-  border-radius: 0;
-}
-
-/* change border radius for the tab , apply corners on top*/
-
-#exTab3 .nav-pills > li > a {
-  border-radius: 4px 4px 0 0 ;
-}
-
-#exTab3 .tab-content {
-  color : white;
-  background-color: #428bca;
-  padding : 5px 15px;
-}
-
-thead{
-    font-size:12px;
-    color:navy;
-}
+        <!-- Filters and Actions -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Filtres et Actions</h5>
+                    </div>
+                    <div class="card-body">
 
 
+                        <div class="row align-items-center">
 
-tbody{
-    font-size:12px;
-    color:gray;
-}
+                            <div class="col-md-3">
 
-.recher{
-  background-color:#ffe;
-}
+                                <div class="form-group">
+
+                            <label for="filterStatut">Code role</label>
+                            <input type="text" class="form-control" id="code_role">
+
+                                                                         </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">libellé role </label>
+                                    <input type="text" class="form-control" id="nom_role">
+
+                                                                       </div>
+                            </div>
+
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Action </label>
+
+                                  <select class="form-control" id="epp">
+                                             <option>Ajouter </option>
+                                            <option> Modifier</option>
+                                            <option> lister</option>
+                                            <option> bloquer</option>
+                                            <option> supprimer</option>
+                                        </select>         
+                                   </div>
+                      </div>
+
+                         <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-outline-primary">
+                                            <i class="feather icon-search"></i> Rechercher
+                                        </button>
+                                      
+                                    </div>
+                                </div>
+                            </div>
 
 
+             </div>
 
-</style>
-       <div class="row">
-        <div class="col-md-12">
-        <h5 style="padding:20px; background-color:#131111;" class="text-white text-center"> LISTE DES ROLES  </h5>
+
+                     <div class="row">
+                         
+
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <a href="/ajoutrole" class="btn btn-primary">
+                                            <i class="feather icon-plus"></i> Nouveau role
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-    </div> <br> <br>
-
-
-    <form action="{{url('/searchrole')}}" type="GET" >
+        <p style="margin-top:10px;" class="text-danger text-uppercase"> Nombre de roles:  <b style="color:blue;"> {{ 3 }} </b></p> 
 
 
 
-   <div class="row">
-  <div class="col-md-3">
-  <label for="">Code role</label>
-    <input class= "form-control recher" type="text" name="query1" id="">
-  </div>
-  <div class="col-md-3">
-  <label for="">libelle role </label>
-
-  <input class= "form-control recher" type="text" name="query2" id="">
-    </div>
-
-</div>
 
 
-<br>
-<button class="btn btn-info" type="submit">rechercher</button>
-<a class="btn btn-primary text-light float-right" href="/ajoutrole">ajouter role</a>
+  <!-- Data Table -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        
+                        <h5>Liste des roles</h5>
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="feather icon-more-horizontal"></i>
+                                </button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Plein écran</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Réduire</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><span><i class="feather icon-refresh-cw"></i> Actualiser</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>Ordre</th>
+                                  <th>code role</th>
+                                  <th>libelle role </th>
+                                  <th>Ajouter </th>
+                                  <th>Lister</th>
+                                  <th>Modifier</th>
+                                  <th>Bloquer</th>
+                                  <th>Supprimer</th>
+                                  <th>action1</th>
+                                  <th>action2</th>
+                                  <th>action3</th>
+
+                              </tr>
+                              </thead>
 
 
-<hr>
-
-</form>
-
-
-    <div class="row ">
-
-                <table class="table table-hover table-straped">
-                        <thead>
-                        <tr>
-                            <th>Ordre</th>
-                            <th>Code </th>
-                            <th>Libelle </th>
-                            <th>Ajouter </th>
-                            <th>Modifier </th>
-                            <th>Supprimer </th>
-                            <th>Lister</th>
-                            <th>Bloquer </th>
-                            <!-- <th>Detail </th> -->
-                            <!-- <th>Action1 </th> -->
-                            <th>action2</th>
-                            <th>action3</th>
-
-                        </tr>
-                        </thead>
-                        <tbody>  
+                                <tbody>  
                         <?php
                             $i=0;
                            ?>
@@ -154,126 +173,126 @@ tbody{
                             
                             <tr class="table-con">
                                 <td>{{$i}}</td>
-                                <td>code 1</td>
-                                <td>Cabinet</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <!-- <td>
-                                 <a style="padding:1px;"  class=" btn-primary" href="detailrole/1">DETAIL</a>
-                                </td>  -->
+                                 <td>code1</td>
+                                 <td>cabinet</td>
+                                 <td>oui</td> 
+                                 <td>oui</td>
+                                 <td>non</td>
+ ²                               <td>oui</td>
+                                 <td>non</td>
 
+                                  <td>
+                               <a  href="detailrole/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
                                 <td>
-                                <a style="padding:1px;"  class=" btn-info" href="modificationrole/1">MODIFIER</a>
-    
+                               <a  href="modificationrole/1" class="btn btn-outline-warning" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>    
                                 </td>
                                 <td>
 
-                                <a  style="padding:1px;"  href="" class="addAttr btn-danger" data-toggle="modal" 
-                                data-id='1 | kouassi' data-target="#deleteModal"  >SUPPRIMER</a>
-                                 
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+                                data-id='1 | guide' data-target="#deleteModal" >
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
                               </td>
 
                             </tr>
 
-                                <tr class="table-con">
+                             <tr class="table-con">
+                                 <td>{{$i}}</td>
+                                 <td>code2</td>
+                                 <td>daf</td>
+                                 <td>oui</td> 
+                                 <td>oui</td>
+                                 <td>non</td>
+ ²                               <td>oui</td>
+                                 <td>non</td>
+
+                                  <td>
+                               <a  href="detailrole/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
+                                <td>
+                               <a  href="modificationrole/1" class="btn btn-outline-warning" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>    
+                                </td>
+                                <td>
+
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+                                data-id='1 | guide' data-target="#deleteModal" >
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                              </td>
+
+                            </tr>
+
+                             <tr class="table-con">
                                 <td>{{$i}}</td>
-                                <td>code 2</td>
-                                <td>DAF</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <td>non</td>
-                                <td>non</td>
-                                 <!-- <td>
-                                 <a style="padding:1px;"  class=" btn-primary" href="detailrole/1">DETAIL</a>
-                                </td>  -->
+                                 <td>code3</td>
+                                 <td>drena</td>
+                                 <td>oui</td> 
+                                 <td>oui</td>
+                                 <td>non</td>
+ ²                               <td>oui</td>
+                                 <td>non</td>
 
+                                  <td>
+                               <a  href="detailrole/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
                                 <td>
-                                <a style="padding:1px;"  class=" btn-info" href="modificationrole/2">MODIFIER</a>
-    
+                               <a  href="modificationrole/1" class="btn btn-outline-warning" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>    
                                 </td>
                                 <td>
 
-                                <a  style="padding:1px;"  href="" class="addAttr btn-danger" data-toggle="modal" 
-                                data-id='1 | kouassi' data-target="#deleteModal"  >SUPPRIMER</a>
-                                 
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+                                data-id='1 | guide' data-target="#deleteModal" >
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
                               </td>
 
                             </tr>
-                                <tr class="table-con">
-                                <td>{{$i}}</td>
-                                <td>code 3</td>
-                                <td>IEPP</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <td>non</td>
-                                <td>oui</td>
-                                <td>non</td>
-                                <!-- <td>
-                                 <a style="padding:1px;"  class=" btn-primary" href="detailrole/1">DETAIL</a>
-                                </td>  -->
-
-                                <td>
-                                <a style="padding:1px;"  class=" btn-info" href="modificationrole/3">MODIFIER</a>
-    
-                                </td>
-                                <td>
-
-                                <a  style="padding:1px;"  href="" class="addAttr btn-danger" data-toggle="modal" 
-                                data-id='1 | kouassi' data-target="#deleteModal"  >SUPPRIMER</a>
-                                 
-                              </td>
-
-                            </tr>
-
-                             </tr>
-                                <tr class="table-con">
-                                <td>{{$i}}</td>
-                                <td>code 4</td>
-                                <td>EPP</td>
-                                <td>oui</td>
-                                <td>oui</td>
-                                <td>non</td>
-                                <td>oui</td>
-                                <td>non</td>
-                                <!-- <td>
-                                 <a style="padding:1px;"  class=" btn-primary" href="detailrole/1">DETAIL</a>
-                                </td>  -->
-
-                                <td>
-                                <a style="padding:1px;"  class=" btn-info" href="modificationrole/3">MODIFIER</a>
-    
-                                </td>
-                                <td>
-
-                                <a  style="padding:1px;"  href="" class="addAttr btn-danger" data-toggle="modal" 
-                                data-id='1 | kouassi' data-target="#deleteModal"  >SUPPRIMER</a>
-                                 
-                              </td>
-
-                            </tr>
-
-
-
-
-
                             
+                              
                             </tbody>
+                            </table>
+                        </div>
 
-                         
-                    </table> <hr>
-
-
-
-        <a href="/" class="btn btn-light" >Precedent</a> &nbsp;&nbsp;
-
-<a  href="/add-les-comptes-users" class="btn btn-light" >suivant</a>
-
-  </div>
-
+                        <!-- Pagination statique -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <nav aria-label="Pagination">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <p class="text-center text-muted">Affichage de 1 à 5 sur 5 entrées</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <hr></hr>
 
@@ -320,6 +339,9 @@ tbody{
 </div>
 
 
+
+
+
 <!-- ----------------------------------------------------- -->
 
             </div> <!--end pcoded content -->
@@ -353,3 +375,54 @@ tbody{
 
 
 <!-- </body></html> -->
+
+
+<style>
+.order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg, #4099ff, #73b4ff);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg, #FFB64D, #ffcb80);
+}
+
+.bg-c-red {
+    background: linear-gradient(45deg, #FF5370, #ff869a);
+}
+
+.badge-light-success {
+    color: #2ed8b6;
+    background-color: rgba(46, 216, 182, 0.1);
+}
+
+.badge-light-info {
+    color: #4099ff;
+    background-color: rgba(64, 153, 255, 0.1);
+}
+
+.badge-light-secondary {
+    color: #6c757d;
+    background-color: rgba(108, 117, 125, 0.1);
+}
+
+.badge-light-primary {
+    color: #4680ff;
+    background-color: rgba(70, 128, 255, 0.1);
+}
+
+.btn-group .btn {
+    margin-right: 2px;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f5f5f5;
+}
+</style>
