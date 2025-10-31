@@ -1,6 +1,6 @@
 
         @extends('layouts.layouts_super.master')
-        @section('title', 'ajout de role ')
+        @section('title', 'detail de role ')
         @section('content')
 
 <!-- [ Main Content ] start -->
@@ -34,7 +34,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>FORMULAIRE AJOUT ROLE </h5>
+                        <h5>DETAIL ROLE </h5>
                     </div>
                     <div class="card-body">
                         <form>
@@ -138,25 +138,6 @@
                     </div>
                 </div>
             <!-- [ form-element ] start -->
-
-
-
-
-
-
-            
-
-
-
-
-
-            
-
-
-
-
-
-
 
 
 

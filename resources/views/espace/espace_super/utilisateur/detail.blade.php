@@ -1,6 +1,6 @@
 
         @extends('layouts.layouts_super.master')
-        @section('title', 'ajout utilisateur')
+        @section('title', 'details utilisateur')
         @section('content')
 
 <!-- [ Main Content ] start -->
@@ -17,7 +17,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/compte_utilisateur"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#!">GESTION DES UTILISATEURS</a></li>
-                            <li class="breadcrumb-item"><a href="#!">Création des utilisateurs</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Détails des utilisateurs</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>FORMULAIRE AJOUT UTILISATEUR </h5>
+                        <h5>DETAIL DE L'UTILISATEUR </h5>
                     </div>
                     <div class="card-body">
                         <form>
@@ -43,38 +43,25 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="floating-label" for="drena"> DRENA </label>
+                                        <input type="text" value="DRENA1" class="form-control" id="drena" placeholder="">
 
-                                         <select class="form-control" id="drena">
-                                            <option>DRENA 1</option>
-                                            <option>DRENA 2</option>
-                                            <option>DRENA 3</option>
-                                            <option>DRENA 4</option>
-                                            <option>DRENA 5</option>
-                                        </select>                                    </div>
+                                                                    </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="floating-label" for="iepp">IEPP</label>
-                                     <select class="form-control" id="iepp">
-                                            <option> IEPP 1</option>
-                                            <option> IEPP 2</option>
-                                            <option> IEPP 3</option>
-                                            <option> IEPP 4</option>
-                                            <option> IEPP 5</option>
-                                        </select>                                    </div>
+                                       <input type="text" value="IEPP" class="form-control" id="iepp" placeholder="">
+
+                                                                  </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="floating-label" for="epp">EPP</label>
-                                         <select class="form-control" id="epp">
-                                             <option>EPP 1</option>
-                                            <option> EPP 2</option>
-                                            <option> EPP 3</option>
-                                            <option> EPP 4</option>
-                                            <option> EPP 5</option>
-                                        </select>                                    </div>
+                                        <input type="text" value="EPP" class="form-control" id="epp" placeholder="">
+
+                                        </div>
                                 </div>
                             </div>
 
@@ -83,31 +70,24 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="floating-label" for="role"> Role </label>
-                                          <select class="form-control" id="drena">
-                                            <option> cabinet </option>
-                                            <option> daf </option>
-                                            <option> drena </option>
-                                            <option> ipee </option>
-                                            <option> epp </option>
-                                        </select>  
+                                       
                                     </div>
                                 </div>
 
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="floating-label" for="nom">nom et prénoms  </label>
-                                        <input type="text" class="form-control" id="nom" placeholder="saisir le nom et prenoms ">
+                                        <input type="text" class="form-control" id="nom" >
 
                                     </div>
                                 </div>
                                 
 
-
                                 <div class="col-sm-4">
                                     <div class="form-group">
 
                                         <label class="floating-label" for="nom_user">Nom utilisateur</label>
-                                        <input type="text" class="form-control" id="nom_user" placeholder="saisir nom utilisateur">
+                                        <input type="text" class="form-control" id="nom_user" >
                                     
                                     </div>
                                 </div>
@@ -124,30 +104,7 @@
 
 
 
-
-
-            
-
-
-
-
-
-            
-
-
-
-
-
-
-
-
-
            </div>
-
-
-
-
-
 
 
             </div> <!--end pcoded content -->
