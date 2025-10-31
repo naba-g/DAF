@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\parametre\UtilisateurController;
+use App\Http\Controllers\parametre\TypeManuelController;
+use App\Http\Controllers\parametre\RoleController;
+use App\Http\Controllers\parametre\NiveauController;
+
 
 //le tableau de bord
 Route::get('/', function () {
@@ -261,46 +266,82 @@ Route::get('/manuel_scolaire', function () {
     return view('espace.espace_super.manuels.liste');
 });
 
-//niveau
-Route::get('/niveau', function () {
-    return view('espace.espace_super.niveau.liste');
-});
+//---------------------------------------------------------------------------------
 
-//regulation drena
-Route::get('/regulation_drena', function () {
-    return view('espace.espace_super.regulationdrena.liste');
-});
 
-//regulation epp
-Route::get('/regulation_epp', function () {
-    return view('espace.espace_super.regulationepp.liste');
-});
+//---------------------- bloc jesus debut -------------------------------------
 
-//regulation iepp
-Route::get('/regulation_iepp', function () {
-    return view('espace.espace_super.regulationiepp.liste');
-});
-
-//retour manuels
-Route::get('/retour_manuels', function () {
-    return view('espace.espace_super.retourmanuels.liste');
-});
-
-//role
-Route::get('/role', function () {
-    return view('espace.espace_super.role.liste');
-});
-
-// type manuel
-Route::get('/type_manuel', function () {
-    return view('espace.espace_super.type_manuel.liste');
-});
-
-// utilisateur
+//creation de compte utilisateur 
 Route::get('/compte_utilisateur', function () {
-    return view('espace.espace_super.utilisateur.liste');
+   // return view('welcome');
+       return view('espace.espace_super.utilisateur.liste');
+
 });
 
+Route::get('/ajoututilisateur','App\Http\Controllers\parametre\UtilisateurController@add');
+Route::get('detailutilisateur/{id}','App\Http\Controllers\parametre\UtilisateurController@detail');
+Route::get('modificationutilisateur/{id}','App\Http\Controllers\parametre\UtilisateurController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\UtilisateurController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\UtilisateurController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\UtilisateurController@sup');
+
+
+//-----------------------
+//creation de type de manuels
+Route::get('/type_manuel', function () {
+   // return view('welcome');
+       return view('espace.espace_super.type_manuel.liste');
+
+});
+
+Route::get('/ajouttype','App\Http\Controllers\parametre\TypeManuelController@add');
+Route::get('modificationtype/{id}','App\Http\Controllers\parametre\TypeManuelController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\TypeManuelController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\TypeManuelController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\TypeManuelController@sup');
+
+//creation de role 
+Route::get('/role', function () {
+   // return view('welcome');
+       return view('espace.espace_super.role.liste');
+
+});
+
+
+Route::get('/ajoutrole','App\Http\Controllers\parametre\RoleController@add');
+Route::get('detailrole/{id}','App\Http\Controllers\parametre\RoleController@detail');
+Route::get('modificationrole/{id}','App\Http\Controllers\parametre\RoleController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\RoleController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\RoleController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\RoleController@sup');
+
+
+//creation des niveaux
+
+Route::get('/niveau', function () {
+   // return view('welcome');
+       return view('espace.espace_super.niveau.liste');
+
+});
+
+
+Route::get('/ajoutniveau','App\Http\Controllers\parametre\NiveauController@add');
+Route::get('detailniveau/{id}','App\Http\Controllers\parametre\NiveauController@detail');
+Route::get('modificationniveau/{id}','App\Http\Controllers\parametre\NiveauController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\NiveauController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\NiveauController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\NiveauController@sup');
+
+
+
+//---------------------------bloc jesus fin --------------------------------------------
+
+
+//------------------------------------------------------------------------------
 Route::get('/accueil', function () {
     return view('welcome');
 });
