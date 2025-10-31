@@ -1,6 +1,6 @@
 
         @extends('layouts.layouts_super.master')
-        @section('title', 'Liste des niveaux')
+        @section('title', 'Liste des retours')
         @section('content')
 
 <!-- [ Main Content ] start -->
@@ -13,12 +13,12 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Gestion des niveaux</h5>
+                            <h5 class="m-b-10">Gestion des retours</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#!">Administration</a></li>
-                            <li class="breadcrumb-item"><a href="#!">liste des niveaux</a></li>
+                            <li class="breadcrumb-item"><a href="#!">liste des retours de manuels </a></li>
 
                         </ul>
                     </div>
@@ -41,47 +41,109 @@
                         <h5>Filtres et Actions</h5>
                     </div>
                     <div class="card-body">
+
+
                         <div class="row align-items-center">
+
                             <div class="col-md-3">
+
                                 <div class="form-group">
-                                    <label for="filterStatut">Code niveau</label>
-                                    <input class= "form-control recher" type="text" name="query1" id="">
-                                </div>
+
+                                    <label for="filterStatut">Etat de retour </label>
+
+                                         <select class="form-control" id="etat">
+                                            <option>BON</option>
+                                            <option>MAUVAIS</option>
+                                            <option>PERDU</option>
+                                           
+                                        </select>                                     </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="filterAnnee">Libellé niveau</label>
-                                       <input class= "form-control recher" type="text" name="query2" id="">
-                                </div>
+                                    <label for="filterAnnee">Titre de manuels</label>
+                                         <select class="form-control" id="titre">
+                                            <option>MATH</option>
+                                            <option>PHYSIQUE</option>
+                                            <option>EDHC</option>
+                                            <option>SCIENCE ET TECHNOLOGIE</option>
+                                            <option>FRANCAIS</option>
+                                            <option>HISTOIRE - GEOGRAPHIE </option>
+
+                                        </select>                                     </div>
                             </div>
+
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Type de manuels </label>
+
+                                  <select class="form-control" id="type">
+                                             <option>LIVRE</option>
+                                             <option>GUIDE MAITRE </option>
+                                        </select>         
+                                   </div>
+                          </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Niveau / classe </label>
+
+                                  <select class="form-control" id="niveau">
+                                             <option>CP1</option>
+                                             <option>CP2</option>
+                                             <option>CE1</option>
+                                        </select>         
+                                   </div>
+                          </div>
+
+
+
+
+             </div>
+
+
+
+                        <div class="row">
+
+                            
+
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
                                     <div class="d-block">
-                                        <button type="button" class="btn btn-outline-primary" onclick="applyFilters()">
+                                        <button type="button" class="btn btn-outline-primary">
                                             <i class="feather icon-search"></i> Rechercher
                                         </button>
                                       
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
                                     <div class="d-block">
-                                        <a href="/ajoutniveau" class="btn btn-primary">
-                                            <i class="feather icon-plus"></i> Nouveau niveau
+                                        <a href="/ajoutretour" class="btn btn-primary">
+                                            <i class="feather icon-plus"></i> Nouveau retour
                                         </a>
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
                     </div>
                 </div>
+
+
             </div>
+
+
+
         </div>
 
-        <p style="margin-top:10px;" class="text-danger text-uppercase"> Nombre de niveaux :  <b style="color:blue;"> {{ 3 }} </b></p> 
+        <p style="margin-top:10px;" class="text-danger text-uppercase"> Nombre de livres retournés :  <b style="color:blue;"> {{ 3 }} </b></p> 
 
 
 
@@ -93,7 +155,7 @@
                 <div class="card">
                     <div class="card-header">
                         
-                        <h5>Liste des Années Scolaires</h5>
+                        <h5>Liste des retours de livres </h5>
                         <div class="card-header-right">
                             <div class="btn-group card-option">
                                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -113,10 +175,14 @@
                               <thead>
                               <tr>
                                   <th>Ordre</th>
-                                  <th>Code</th>
-                                  <th>Libelle </th>
-                                  <th>Modifier </th>
-                                  <th>Supprimer</th>
+                                  <th>Etat de retour </th>
+                                  <th>Titre de manuels  </th>
+                                  <th>Niveau scolaire </th>
+                                  <th>quantité </th>
+                                  <th>détail</th>
+                                  <th>modifier</th>
+                                  <th>supprimer</th>
+
                               </tr>
                               </thead>
 
@@ -132,11 +198,49 @@
                             <tr class="table-con">
                                 <td>{{$i}}</td>
 
-                                <td>code1</td>
-                                <td>cp1</td>
-                
+                                 <td>BON</td>
+                                 <td>français</td>
+                                                                   <td>CP1</td>
+
+                                 <td>50</td> 
+                              
+
+                                  <td>
+                               <a  href="detailretour/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
                                 <td>
-                               <a  href="modificationniveau/1" class="btn btn-outline-warning" title="Modifier">
+                               <a  href="modificationretour/1" class="btn btn-outline-warning" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>    
+                                </td>
+                                <td>
+
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+                                data-id='1 | guide' data-target="#deleteModal" >
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                              </td>
+
+                            </tr>
+
+                             <tr class="table-con">
+                                 <td>{{$i}}</td>
+
+                                 <td>BON</td>
+                                 <td>Mathématique</td>
+                                                                   <td>CP2 </td>
+
+                                 <td>80</td> 
+
+                                  <td>
+                               <a  href="detailretour/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
+                                <td>
+                               <a  href="modificationretour/1" class="btn btn-outline-warning" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>    
                                 </td>
@@ -153,12 +257,21 @@
                              <tr class="table-con">
                                 <td>{{$i}}</td>
 
-                                <td>code2</td>
-                                <td>cp2</td>
-                
-                                <td> <a  href="modificationniveau/1" class="btn btn-outline-warning" title="Modifier">
+                                 <td>mauvais</td>
+                                 <td>Edhc</td>
+                                                                   <td> CE1</td>
+
+                                 <td>3</td> 
+                                
+                                  <td>
+                               <a  href="detailretour/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
+                                <td>
+                               <a  href="modificationretour/1" class="btn btn-outline-warning" title="Modifier">
                                                     <i class="feather icon-edit"></i>
-                                                </a>
+                                                </a>    
                                 </td>
                                 <td>
 
@@ -166,7 +279,146 @@
                                 data-id='1 | guide' data-target="#deleteModal" >
                                                     <i class="feather icon-trash-2"></i>
                                                 </button>
-                                 
+                              </td>
+
+                            </tr>
+                            
+                              
+                            </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Pagination statique -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <nav aria-label="Pagination">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <p class="text-center text-muted">Affichage de 1 à 5 sur 5 entrées</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- </div> -->
+
+<!-- ----------------------------------------- -->
+
+
+        <p style="margin-top:10px;" class="text-danger text-uppercase"> Nombre de guides maitres retournés :  <b style="color:blue;"> {{ 3 }} </b></p> 
+
+  <!-- Data Table -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        
+                        <h5>Liste des guides maitre </h5>
+                        <div class="card-header-right">
+                            <div class="btn-group card-option">
+                                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="feather icon-more-horizontal"></i>
+                                </button>
+                                <ul class="list-unstyled card-option dropdown-menu dropdown-menu-right">
+                                    <li class="dropdown-item full-card"><a href="#!"><span><i class="feather icon-maximize"></i> Plein écran</span></a></li>
+                                    <li class="dropdown-item minimize-card"><a href="#!"><span><i class="feather icon-minus"></i> Réduire</span></a></li>
+                                    <li class="dropdown-item reload-card"><a href="#!"><span><i class="feather icon-refresh-cw"></i> Actualiser</span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                              <thead>
+                              <tr>
+                                  <th>Ordre</th>
+                                  <th>Etat de retour </th>
+                                  <th>Titre de manuels  </th>
+                                   <th> Niveau scolaire</th>
+                                  <th>quantité </th>
+                                  <th>détail</th>
+                                  <th>modifier</th>
+                                  <th>supprimer</th>
+
+                              </tr>
+                              </thead>
+
+
+                                <tbody>  
+                        <?php
+                            $i=0;
+                           ?>
+                            <?php
+                            $i++
+                           ?>
+                            
+                            <tr class="table-con">
+                                <td>{{$i}}</td>
+
+                                 <td>BON</td>
+                                 <td>français</td>
+                                  <td> CE1</td>
+                                 <td>50</td> 
+                              
+
+                                  <td>
+                               <a  href="detailretour/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
+                                <td>
+                               <a  href="modificationretour/1" class="btn btn-outline-warning" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>    
+                                </td>
+                                <td>
+
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+                                data-id='1 | guide' data-target="#deleteModal" >
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                              </td>
+
+                            </tr>
+
+                             <tr class="table-con">
+                                 <td>{{$i}}</td>
+
+                                 <td>BON</td>
+                                 <td>Mathématique</td>
+                                  <td> CP1</td>
+                                 <td>80</td> 
+
+                                  <td>
+                               <a  href="detailretour/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
+                                <td>
+                               <a  href="modificationretour/1" class="btn btn-outline-warning" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>    
+                                </td>
+                                <td>
+
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+                                data-id='1 | guide' data-target="#deleteModal" >
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
                               </td>
 
                             </tr>
@@ -174,16 +426,24 @@
                              <tr class="table-con">
                                 <td>{{$i}}</td>
 
-                                <td>code2</td>
-                                <td>ce1</td>
-                
+                                 <td>mauvais</td>
+                                 <td>Edhc</td>
+                                  <td> CP2</td>
+                                 <td>3</td> 
+                                
+                                  <td>
+                               <a  href="detailretour/1" class="btn btn-outline-info" title="detail">
+                                                    <i class="feather icon-eye"></i>
+                                                </a>    
+                                </td>
                                 <td>
-                              <a  href="modificationniveau/1" class="btn btn-outline-warning" title="Modifier">
+                               <a  href="modificationretour/1" class="btn btn-outline-warning" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>    
                                 </td>
                                 <td>
-                                <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
                                 data-id='1 | guide' data-target="#deleteModal" >
                                                     <i class="feather icon-trash-2"></i>
                                                 </button>
@@ -222,9 +482,12 @@
             </div>
         </div>
     </div>
+
+<!-- ------------------------------------------- -->
+
 </div>
 
-<hr></hr>
+<!-- <hr></hr> -->
 
 
 
