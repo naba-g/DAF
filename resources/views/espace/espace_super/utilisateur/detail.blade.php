@@ -70,7 +70,8 @@
                                 <div class="col-sm-4">
                                     <div class="form-group">
                                         <label class="floating-label" for="role"> Role </label>
-                                       
+                                        <input type="text" class="form-control" id="role" >
+
                                     </div>
                                 </div>
 

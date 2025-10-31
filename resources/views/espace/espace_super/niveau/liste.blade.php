@@ -17,7 +17,7 @@
                         </div> -->
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item"><a href="#!">GESTION DES NIVEAUX</a></li>
+                            <li class="breadcrumb-item"><a href="#!">GESTION DES NIVEAUX </a></li>
                             <li class="breadcrumb-item"><a href="#!">liste des niveaux</a></li>
 
                         </ul>
@@ -118,7 +118,7 @@ tbody{
 <button class="btn btn-info" type="submit">rechercher</button>
 <a class="btn btn-primary text-light float-right" href="/ajoutniveau">ajouter niveau</a>
 
-<hr>
+<hr>  
 
 </form>
 

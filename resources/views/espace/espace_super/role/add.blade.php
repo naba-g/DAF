@@ -43,7 +43,7 @@
                              <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <label class="floating-label" for="code_role">Code role  </label>
+                                        <label class="floating-label" for="code_role">Code Role  </label>
                                         <input type="text" class="form-control" id="code_role" placeholder="saisir le code role ">
 
                                     </div>
@@ -52,7 +52,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
 
-                                        <label class="floating-label" for="libelle_role">Nom utilisateur</label>
+                                        <label class="floating-label" for="libelle_role">Nom Role</label>
                                         <input type="text" class="form-control" id="libelle_role" placeholder="saisir libelle role ">
                                     
                                     </div>
