@@ -1,6 +1,6 @@
 
         @extends('layouts.layouts_super.master')
-        @section('title', 'Liste des niveaux')
+        @section('title', 'Liste des regulations iepp')
         @section('content')
 
 <!-- [ Main Content ] start -->
@@ -13,12 +13,12 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Gestion des niveaux</h5>
+                            <h5 class="m-b-10">Gestion des regulation</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="index.html"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#!">Administration</a></li>
-                            <li class="breadcrumb-item"><a href="#!">liste des niveaux</a></li>
+                            <li class="breadcrumb-item"><a href="#!">liste des regulations iepp </a></li>
 
                         </ul>
                     </div>
@@ -41,47 +41,120 @@
                         <h5>Filtres et Actions</h5>
                     </div>
                     <div class="card-body">
+
+
                         <div class="row align-items-center">
+
                             <div class="col-md-3">
+
                                 <div class="form-group">
-                                    <label for="filterStatut">Code niveau</label>
-                                    <input class= "form-control recher" type="text" name="query1" id="">
-                                </div>
+
+                                    <label for="filterStatut">Iepp donateur </label>
+
+                                         <select class="form-control" id="epp1">
+                                            <option>IEPP 1</option>
+                                            <option>IEPP 2</option>
+                                            <option>IEPP 3</option>
+                                            <option>IEPP 4</option>
+                                            <option>IEPP 5</option>
+                                        </select>                                     </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label for="filterAnnee">Libellé niveau</label>
-                                       <input class= "form-control recher" type="text" name="query2" id="">
-                                </div>
+                                    <label for="filterAnnee">Iepp beneficiaire</label>
+
+                                         <select class="form-control" id="epp2">
+                                            <option>IEPP 1</option>
+                                            <option>IEPP 2</option>
+                                            <option>IEPP 3</option>
+                                            <option>IEPP 4</option>
+                                            <option>IEPP 5</option>
+                                        </select>                                     </div>
                             </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Type de manuel</label>
+
+                                  <select class="form-control" id="type">
+                                             <option>LIVRE</option>
+                                             <option> GUIDE MAITRE </option>
+                                             <option> CAHIER D'EXERCICE </option>
+
+                                        </select>         
+                                   </div>
+                          </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">titre de manuel</label>
+
+                                  <select class="form-control" id="titre">
+                                             <option>MATH</option>
+                                             <option>FRANCAIS</option>
+                                             <option>EDHC</option>
+                                             <option>HISTOIRE - GEOGRAPHIE </option>
+                                             <option>SCIENCE - TECHNOLOGIE </option>
+                                             <option>PHYSIQUE</option>
+
+
+                                        </select>         
+                                   </div>
+                          </div>
+
+
+             </div>
+
+
+
+             <div class="row">
+
+                             <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">niveau scolaire</label>
+
+                                  <select class="form-control" id="niveau">
+                                             <option>CP1</option>
+                                             <option>CP2</option>
+                                             <option>CE1</option>
+                                            
+                                        </select>         
+                                   </div>
+                          </div>
+
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
                                     <div class="d-block">
-                                        <button type="button" class="btn btn-outline-primary" onclick="applyFilters()">
+                                        <button type="button" class="btn btn-outline-primary">
                                             <i class="feather icon-search"></i> Rechercher
                                         </button>
                                       
                                     </div>
                                 </div>
                             </div>
+
+
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>&nbsp;</label>
                                     <div class="d-block">
-                                        <a href="/ajoutniveau" class="btn btn-primary">
-                                            <i class="feather icon-plus"></i> Nouveau niveau
+                                        <a href="/ajoutregulationiepp" class="btn btn-primary">
+                                            <i class="feather icon-plus"></i> Nouvelle regulation iepp
                                         </a>
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <p style="margin-top:10px;" class="text-danger text-uppercase"> Nombre de niveaux :  <b style="color:blue;"> {{ 3 }} </b></p> 
+        <p style="margin-top:10px;" class="text-danger text-uppercase"> Nombre de regulation iepp :  <b style="color:blue;"> {{ 3 }} </b></p> 
 
 
 
@@ -93,7 +166,7 @@
                 <div class="card">
                     <div class="card-header">
                         
-                        <h5>Liste des Années Scolaires</h5>
+                        <h5>Liste des Regulations </h5>
                         <div class="card-header-right">
                             <div class="btn-group card-option">
                                 <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -113,10 +186,16 @@
                               <thead>
                               <tr>
                                   <th>Ordre</th>
-                                  <th>Code</th>
-                                  <th>Libelle </th>
-                                  <th>Modifier </th>
-                                  <th>Supprimer</th>
+                                  <th>DRENA</th>
+                                  <th>IEPP donateur </th>
+                                  <th>IEPP beneficiaire </th>
+                                  <th>Type de manuel </th>
+                                  <th>Titre de manuel </th>
+                                  <th>Niveau </th>
+                                  <th>Quantité </th>
+                                  <th>modifier</th>
+                                  <th>supprimer</th>
+
                               </tr>
                               </thead>
 
@@ -131,12 +210,17 @@
                             
                             <tr class="table-con">
                                 <td>{{$i}}</td>
+                                 <td>DRENA1</td>
+                                 <td>IEPP1</td>
+                                 <td>IEPP2</td> 
+                                 <td>LIVRE</td>
+                                 <td>MATH</td>
+                                 <td>CP1</td>
+                                 <td>20</td>
 
-                                <td>code1</td>
-                                <td>cp1</td>
-                
+                                
                                 <td>
-                               <a  href="modificationniveau/1" class="btn btn-outline-warning" title="Modifier">
+                               <a  href="modificationregulationiepp/1" class="btn btn-outline-warning" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>    
                                 </td>
@@ -151,14 +235,20 @@
                             </tr>
 
                              <tr class="table-con">
-                                <td>{{$i}}</td>
-
-                                <td>code2</td>
-                                <td>cp2</td>
-                
-                                <td> <a  href="modificationniveau/1" class="btn btn-outline-warning" title="Modifier">
+                               <td>{{$i}}</td>
+                                 <td>DRENA1</td>
+                                 <td>IEPP1</td>
+                                 <td>IEPP3</td> 
+                                 <td>LIVRE</td>
+                                 <td>PHYSIQUE</td>
+                                 <td>CP2</td>
+                                 <td>30</td>
+                                
+                            
+                                <td>
+                               <a  href="modificationregulationiepp/1" class="btn btn-outline-warning" title="Modifier">
                                                     <i class="feather icon-edit"></i>
-                                                </a>
+                                                </a>    
                                 </td>
                                 <td>
 
@@ -166,24 +256,29 @@
                                 data-id='1 | guide' data-target="#deleteModal" >
                                                     <i class="feather icon-trash-2"></i>
                                                 </button>
-                                 
                               </td>
 
                             </tr>
 
                              <tr class="table-con">
-                                <td>{{$i}}</td>
 
-                                <td>code2</td>
-                                <td>ce1</td>
-                
+                                <td>{{$i}}</td>
+                                 <td>DRENA1</td>
+                                 <td>IEPP2</td>
+                                 <td>IEPP3</td> 
+                                 <td>LIVRE</td>
+                                 <td>EDHC</td>
+                                 <td>CP1</td>
+                                 <td>20</td>
+
                                 <td>
-                              <a  href="modificationniveau/1" class="btn btn-outline-warning" title="Modifier">
+                               <a  href="modificationregulationiepp/1" class="btn btn-outline-warning" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>    
                                 </td>
                                 <td>
-                                <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
+
+                                 <button type="button" class="btn btn-outline-danger" title="Supprimer" data-toggle="modal" 
                                 data-id='1 | guide' data-target="#deleteModal" >
                                                     <i class="feather icon-trash-2"></i>
                                                 </button>

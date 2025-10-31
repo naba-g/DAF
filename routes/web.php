@@ -5,6 +5,7 @@ use App\Http\Controllers\parametre\UtilisateurController;
 use App\Http\Controllers\parametre\TypeManuelController;
 use App\Http\Controllers\parametre\RoleController;
 use App\Http\Controllers\parametre\NiveauController;
+use App\Http\Controllers\gestion\RetourController;
 
 
 //le tableau de bord
@@ -15,7 +16,7 @@ Route::get('/', function () {
 // ===== ROUTES CRUD POUR LES 8 PREMIERS MENUS =====
 
 // 1. ANNÉE SCOLAIRE - Routes CRUD statiques
-Route::prefix('annee_scolaire')->name('annee_scolaire.')->group(function () {
+Route::prefix('annee_scolaire')->name('annee_scolaire.')->group (function () {
     Route::get('/', function () {
         return view('espace.espace_super.annee_scolaire.liste');
     })->name('index');
@@ -336,6 +337,76 @@ Route::get('modificationniveau/{id}','App\Http\Controllers\parametre\NiveauContr
 // Route::get('click_supus/{id}','App\Http\Controllers\param\NiveauController@delete');
 // Route::post('/deleteus','App\Http\Controllers\param\NiveauController@sup');
 
+
+
+//creation de retour 
+Route::get('/retour_manuels', function () {
+   // return view('welcome');
+       return view('espace.espace_super.retourmanuels.liste');
+
+});
+
+Route::get('/ajoutretour','App\Http\Controllers\gestion\RetourController@add');
+Route::get('detailretour/{id}','App\Http\Controllers\gestion\RetourController@detail');
+Route::get('modificationretour/{id}','App\Http\Controllers\gestion\RetourController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RetourController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RetourController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RetourController@sup');
+
+//creation de regulation epp
+
+//creation de retour 
+Route::get('/regulation_epp', function () {
+   // return view('welcome');
+       return view('espace.espace_super.regulationepp.liste');
+
+});
+
+Route::get('/ajoutregulationepp','App\Http\Controllers\gestion\RegulationEppController@add');
+
+Route::get('detailregulationepp/{id}','App\Http\Controllers\gestion\RegulationEppController@detail');
+
+Route::get('modificationregulationepp/{id}','App\Http\Controllers\gestion\RegulationEppController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationEppController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationEppController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationEppController@sup');
+
+
+//creation de regulation iepp
+Route::get('/regulation_iepp', function () {
+   // return view('welcome');
+       return view('espace.espace_super.regulationiepp.liste');
+
+});
+
+Route::get('/ajoutregulationiepp','App\Http\Controllers\gestion\RegulationIeppController@add');
+
+Route::get('detailregulationiepp/{id}','App\Http\Controllers\gestion\RegulationIeppController@detail');
+
+Route::get('modificationregulationiepp/{id}','App\Http\Controllers\gestion\RegulationIeppController@edit');
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationIeppController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationIeppController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationIeppController@sup');
+
+
+//creation de regulation drena 
+Route::get('/regulation_drena', function () {
+   // return view('welcome');
+       return view('espace.espace_super.regulationdrena.liste');
+
+});
+
+Route::get('/ajoutregulationdrena','App\Http\Controllers\gestion\RegulationDrenaController@add');
+
+Route::get('detailregulationdrena/{id}','App\Http\Controllers\gestion\RegulationDrenaController@detail');
+
+Route::get('modificationregulationdrena/{id}','App\Http\Controllers\gestion\RegulationDrenaController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationDrenaController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationDrenaController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationDrenaController@sup');
 
 
 //---------------------------bloc jesus fin --------------------------------------------
