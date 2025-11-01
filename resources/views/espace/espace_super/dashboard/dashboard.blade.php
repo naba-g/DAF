@@ -101,7 +101,8 @@
                         </div>
                     </div>
                     <div class="card-footer bg-info border-0 p-2">
-                        <span class="text-white f-12">Budget: 2.8M FCFA</span>
+                        <span class="text-white f-12">commandes en cours</span>
+
                     </div>
                 </div>
             </div>
@@ -143,7 +144,7 @@
                                         <div class="row">
                                             <div class="col-8">
                                                 <h6 class="text-info mb-1">Module Commande DAF</h6>
-                                                <p class="mb-1">89 commandes | <strong>2.8M FCFA</strong></p>
+                                                <p class="mb-1">89 commandes | <strong> </strong></p>
                                                 <small class="text-muted">12 en préparation</small>
                                             </div>
                                             <div class="col-4 text-right">
@@ -181,7 +182,7 @@
                                         <div class="row">
                                             <div class="col-8">
                                                 <h6 class="text-success mb-1">Distribution EPP</h6>
-                                                <p class="mb-1">156 distributions | <strong>4.2M FCFA</strong></p>
+                                                <p class="mb-1">156 distributions | <strong></strong></p>
                                                 <small class="text-muted">23 en cours de livraison</small>
                                             </div>
                                             <div class="col-4 text-right">
@@ -200,7 +201,7 @@
                                         <div class="row">
                                             <div class="col-8">
                                                 <h6 class="text-secondary mb-1">Distribution IEPP</h6>
-                                                <p class="mb-1">73 distributions | <strong>1.9M FCFA</strong></p>
+                                                <p class="mb-1">73 distributions | <strong> </strong></p>
                                                 <small class="text-muted">8 planifiées cette semaine</small>
                                             </div>
                                             <div class="col-4 text-right">
@@ -316,7 +317,7 @@
                                         <th>Code</th>
                                         <th>Type</th>
                                         <th>DREN</th>
-                                        <th>Montant</th>
+                                        
                                         <th>Statut</th>
                                     </tr>
                                 </thead>
@@ -325,35 +326,35 @@
                                         <td><strong>CMD-2024-127</strong></td>
                                         <td>Manuel scolaire</td>
                                         <td>DREN-ABJ</td>
-                                        <td>45,000 F</td>
+                                        
                                         <td><span class="badge badge-warning">En cours</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>CMD-2024-126</strong></td>
                                         <td>Guide pédagogique</td>
                                         <td>DREN-BKE</td>
-                                        <td>62,500 F</td>
+                                        
                                         <td><span class="badge badge-success">Livrée</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>CMD-2024-125</strong></td>
                                         <td>Livre de lecture</td>
                                         <td>DREN-YAM</td>
-                                        <td>38,000 F</td>
+                                        
                                         <td><span class="badge badge-primary">Préparation</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>CMD-2024-124</strong></td>
                                         <td>Manuel Math</td>
                                         <td>DREN-KOR</td>
-                                        <td>54,000 F</td>
+                                        
                                         <td><span class="badge badge-success">Livrée</span></td>
                                     </tr>
                                     <tr>
                                         <td><strong>CMD-2024-123</strong></td>
                                         <td>Cahier d'activités</td>
                                         <td>DREN-SAN</td>
-                                        <td>29,500 F</td>
+                                        
                                         <td><span class="badge badge-warning">En cours</span></td>
                                     </tr>
                                 </tbody>

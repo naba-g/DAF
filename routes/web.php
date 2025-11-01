@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\parametre\UtilisateurController;
+use App\Http\Controllers\parametre\TypeManuelController;
+use App\Http\Controllers\parametre\RoleController;
+use App\Http\Controllers\parametre\NiveauController;
+use App\Http\Controllers\gestion\RetourController;
+
 
 //le tableau de bord
 Route::get('/', function () {
@@ -10,7 +16,7 @@ Route::get('/', function () {
 // ===== ROUTES CRUD POUR LES 8 PREMIERS MENUS =====
 
 // 1. ANNÉE SCOLAIRE - Routes CRUD statiques
-Route::prefix('annee_scolaire')->name('annee_scolaire.')->group(function () {
+Route::prefix('annee_scolaire')->name('annee_scolaire.')->group (function () {
     Route::get('/', function () {
         return view('espace.espace_super.annee_scolaire.liste');
     })->name('index');
@@ -261,46 +267,152 @@ Route::get('/manuel_scolaire', function () {
     return view('espace.espace_super.manuels.liste');
 });
 
-//niveau
-Route::get('/niveau', function () {
-    return view('espace.espace_super.niveau.liste');
-});
+//---------------------------------------------------------------------------------
 
-//regulation drena
-Route::get('/regulation_drena', function () {
-    return view('espace.espace_super.regulationdrena.liste');
-});
 
-//regulation epp
-Route::get('/regulation_epp', function () {
-    return view('espace.espace_super.regulationepp.liste');
-});
+//---------------------- bloc jesus debut -------------------------------------
 
-//regulation iepp
-Route::get('/regulation_iepp', function () {
-    return view('espace.espace_super.regulationiepp.liste');
-});
-
-//retour manuels
-Route::get('/retour_manuels', function () {
-    return view('espace.espace_super.retourmanuels.liste');
-});
-
-//role
-Route::get('/role', function () {
-    return view('espace.espace_super.role.liste');
-});
-
-// type manuel
-Route::get('/type_manuel', function () {
-    return view('espace.espace_super.type_manuel.liste');
-});
-
-// utilisateur
+//creation de compte utilisateur 
 Route::get('/compte_utilisateur', function () {
-    return view('espace.espace_super.utilisateur.liste');
+   // return view('welcome');
+       return view('espace.espace_super.utilisateur.liste');
+
 });
 
+Route::get('/ajoututilisateur','App\Http\Controllers\parametre\UtilisateurController@add');
+Route::get('detailutilisateur/{id}','App\Http\Controllers\parametre\UtilisateurController@detail');
+Route::get('modificationutilisateur/{id}','App\Http\Controllers\parametre\UtilisateurController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\UtilisateurController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\UtilisateurController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\UtilisateurController@sup');
+
+
+//-----------------------
+//creation de type de manuels
+Route::get('/type_manuel', function () {
+   // return view('welcome');
+       return view('espace.espace_super.type_manuel.liste');
+
+});
+
+Route::get('/ajouttype','App\Http\Controllers\parametre\TypeManuelController@add');
+Route::get('modificationtype/{id}','App\Http\Controllers\parametre\TypeManuelController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\TypeManuelController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\TypeManuelController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\TypeManuelController@sup');
+
+//creation de role 
+Route::get('/role', function () {
+   // return view('welcome');
+       return view('espace.espace_super.role.liste');
+
+});
+
+
+Route::get('/ajoutrole','App\Http\Controllers\parametre\RoleController@add');
+Route::get('detailrole/{id}','App\Http\Controllers\parametre\RoleController@detail');
+Route::get('modificationrole/{id}','App\Http\Controllers\parametre\RoleController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\RoleController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\RoleController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\RoleController@sup');
+
+
+//creation des niveaux
+
+Route::get('/niveau', function () {
+   // return view('welcome');
+       return view('espace.espace_super.niveau.liste');
+
+});
+
+
+Route::get('/ajoutniveau','App\Http\Controllers\parametre\NiveauController@add');
+Route::get('detailniveau/{id}','App\Http\Controllers\parametre\NiveauController@detail');
+Route::get('modificationniveau/{id}','App\Http\Controllers\parametre\NiveauController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\NiveauController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\NiveauController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\NiveauController@sup');
+
+
+
+//creation de retour 
+Route::get('/retour_manuels', function () {
+   // return view('welcome');
+       return view('espace.espace_super.retourmanuels.liste');
+
+});
+
+Route::get('/ajoutretour','App\Http\Controllers\gestion\RetourController@add');
+Route::get('detailretour/{id}','App\Http\Controllers\gestion\RetourController@detail');
+Route::get('modificationretour/{id}','App\Http\Controllers\gestion\RetourController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RetourController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RetourController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RetourController@sup');
+
+//creation de regulation epp
+
+//creation de retour 
+Route::get('/regulation_epp', function () {
+   // return view('welcome');
+       return view('espace.espace_super.regulationepp.liste');
+
+});
+
+Route::get('/ajoutregulationepp','App\Http\Controllers\gestion\RegulationEppController@add');
+
+Route::get('detailregulationepp/{id}','App\Http\Controllers\gestion\RegulationEppController@detail');
+
+Route::get('modificationregulationepp/{id}','App\Http\Controllers\gestion\RegulationEppController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationEppController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationEppController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationEppController@sup');
+
+
+//creation de regulation iepp
+Route::get('/regulation_iepp', function () {
+   // return view('welcome');
+       return view('espace.espace_super.regulationiepp.liste');
+
+});
+
+Route::get('/ajoutregulationiepp','App\Http\Controllers\gestion\RegulationIeppController@add');
+
+Route::get('detailregulationiepp/{id}','App\Http\Controllers\gestion\RegulationIeppController@detail');
+
+Route::get('modificationregulationiepp/{id}','App\Http\Controllers\gestion\RegulationIeppController@edit');
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationIeppController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationIeppController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationIeppController@sup');
+
+
+//creation de regulation drena 
+Route::get('/regulation_drena', function () {
+   // return view('welcome');
+       return view('espace.espace_super.regulationdrena.liste');
+
+});
+
+Route::get('/ajoutregulationdrena','App\Http\Controllers\gestion\RegulationDrenaController@add');
+
+Route::get('detailregulationdrena/{id}','App\Http\Controllers\gestion\RegulationDrenaController@detail');
+
+Route::get('modificationregulationdrena/{id}','App\Http\Controllers\gestion\RegulationDrenaController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationDrenaController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationDrenaController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationDrenaController@sup');
+
+
+//---------------------------bloc jesus fin --------------------------------------------
+
+
+//------------------------------------------------------------------------------
 Route::get('/accueil', function () {
     return view('welcome');
 });

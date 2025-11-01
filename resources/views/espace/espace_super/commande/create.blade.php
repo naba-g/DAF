@@ -149,10 +149,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="budget_estime">Budget estimé (FCFA)</label>
-                            <input type="number" class="form-control" id="budget_estime" name="budget_estime"
-                                   min="0" placeholder="Montant en FCFA">
-                            <small class="form-text text-muted">Budget prévisionnel pour la commande</small>
+                            <label for="quantite_recue">Quantité reçue</label>
+                            <input type="number" class="form-control" id="quantite_recue" name="quantite_recue"
+                                   min="0" placeholder="Nombre d'exemplaires">
+                            <small class="form-text text-muted">Quantité réellement reçue</small>
                         </div>
                     </div>
                 </div>

@@ -1,6 +1,6 @@
 
         @extends('layouts.layouts_super.master')
-        @section('title', 'modification de role ')
+        @section('title', 'detail de role ')
         @section('content')
 
 <!-- [ Main Content ] start -->
@@ -17,7 +17,7 @@
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="/role"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="#!">GESTION DES ROLES</a></li>
-                            <li class="breadcrumb-item"><a href="#!">Modification des rôles</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Création des rôles</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
-                        <h5>FORMULAIRE MODIFICATION ROLE </h5>
+                        <h5>DETAIL ROLE </h5>
                     </div>
                     <div class="card-body">
                         <form>
@@ -44,7 +44,7 @@
                                 <div class="col-sm-6">
                                     <div class="form-group">
                                         <label class="floating-label" for="code_role">Code role  </label>
-                                        <input value="code 1" type="text" class="form-control" id="code_role">
+                                        <input type="text" class="form-control" id="code_role" placeholder="saisir le code role ">
 
                                     </div>
                                 </div>
@@ -53,7 +53,7 @@
                                     <div class="form-group">
 
                                         <label class="floating-label" for="libelle_role">Nom utilisateur</label>
-                                        <input value="Cabinet" type="text" class="form-control" id="libelle_role">
+                                        <input type="text" class="form-control" id="libelle_role" placeholder="saisir libelle role ">
                                     
                                     </div>
                                 </div>
@@ -65,7 +65,7 @@
                                         <label class="floating-label" for="drena"> ajouter </label>
 
                                          <select class="form-control" id="drena">
-                                            <option selected >oui</option>
+                                            <option>oui</option>
                                             <option>non</option>
                                            
                                         </select>                                    </div>
@@ -75,7 +75,7 @@
                                         <label class="floating-label" for="drena"> modifier </label>
 
                                          <select class="form-control" id="drena">
-                                            <option selected>oui</option>
+                                            <option>oui</option>
                                             <option>non</option>
                                            
                                         </select>                                    </div>
@@ -85,7 +85,7 @@
                                         <label class="floating-label" for="drena"> lister </label>
 
                                          <select class="form-control" id="drena">
-                                            <option selected>oui</option>
+                                            <option>oui</option>
                                             <option>non</option>
                                            
                                         </select>                                    </div>
@@ -96,7 +96,7 @@
                                         <label class="floating-label" for="drena"> detail </label>
 
                                          <select class="form-control" id="drena">
-                                            <option selected>oui</option>
+                                            <option>oui</option>
                                             <option>non</option>
                                            
                                         </select>                                    </div>
@@ -107,7 +107,7 @@
                                         <label class="floating-label" for="drena"> supprimer </label>
 
                                          <select class="form-control" id="drena">
-                                            <option selected>oui</option>
+                                            <option>oui</option>
                                             <option>non</option>
                                            
                                         </select>                                    </div>
@@ -118,7 +118,7 @@
                                         <label class="floating-label" for="drena"> bloquer </label>
 
                                          <select class="form-control" id="drena">
-                                            <option selected>oui</option>
+                                            <option>oui</option>
                                             <option>non</option>
                                            
                                         </select>                                    </div>
@@ -138,25 +138,6 @@
                     </div>
                 </div>
             <!-- [ form-element ] start -->
-
-
-
-
-
-
-            
-
-
-
-
-
-            
-
-
-
-
-
-
 
 
 
