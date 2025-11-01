@@ -26,7 +26,7 @@
         <!-- Actions rapides -->
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card custom-card-accent">
                     <div class="card-body">
                         <div class="row align-items-center">
                             <div class="col-md-8">
@@ -98,7 +98,7 @@
         <div class="row">
             <!-- Informations générales -->
             <div class="col-md-6">
-                <div class="card">
+                <div class="card custom-card-accent">
                     <div class="card-header">
                         <h5><i class="feather icon-info mr-2"></i>Informations Générales</h5>
                     </div>
@@ -176,7 +176,7 @@
 
             <!-- Informations de base -->
             <div class="col-md-6">
-                <div class="card">
+                <div class="card custom-card-accent">
                     <div class="card-header">
                         <h5><i class="feather icon-info mr-2"></i>Informations de Base</h5>
                     </div>
@@ -203,7 +203,7 @@
         <!-- Détails système -->
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card custom-card-accent">
                     <div class="card-header">
                         <h5><i class="feather icon-settings mr-2"></i>Informations Système</h5>
                     </div>
@@ -407,6 +407,15 @@ function genererRapports() {
 .timeline-content p {
     margin-bottom: 5px;
     font-size: 14px;
+}
+
+.custom-card-accent {
+    border-top: 4px solid #4680ff !important; /* Trait bleu en haut */
+}
+
+.custom-card-accent .card-header {
+    background-color: rgba(70, 128, 255, 0.05);
+    border-bottom: 1px solid rgba(70, 128, 255, 0.1);
 }
 
 .card {

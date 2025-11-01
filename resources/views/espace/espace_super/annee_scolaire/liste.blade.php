@@ -439,7 +439,7 @@ setInterval(function() {
 }, 30000);
 </script>
 
-<style>
+<!-- <style>
 .order-card {
     color: #fff;
 }
@@ -487,6 +487,6 @@ setInterval(function() {
 .table-hover tbody tr:hover {
     background-color: #f5f5f5;
 }
-</style>
+</style> -->
 
 @endsection
