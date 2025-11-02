@@ -43,35 +43,34 @@
 
                         <!-- Informations de base -->
                         <div class="card">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                    <i class="fas fa-info-circle"></i> Informations de base de la DRENA
-                </h6>
-            </div>
-            <div class="card-body">
+                            <div class="card-header">
+                                <h5><i class="feather icon-edit"></i> Informations de base de la DRENA</h5>
+                            </div>
+                            <div class="card-block">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="nom_drena" class="form-label required">Nom de la DRENA</label>
+                            <label for="nom_drena" class="form-label required">Nom de la DREN</label>
                             <input type="text"
                                    class="form-control"
                                    id="nom_drena"
                                    name="nom_drena"
-                                   value="DRENA Lagunes"
+                                   value="DREN Lagunes"
                                    required>
-                            <small class="form-text text-muted">Nom officiel de la Direction Régionale</small>
+                            <small class="form-text text-muted">Dénomination officielle selon SIDMAS</small>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="code_drena" class="form-label required">Code DRENA</label>
+                            <label for="code_drena" class="form-label required">Code DREN</label>
                             <input type="text"
                                    class="form-control"
                                    id="code_drena"
                                    name="code_drena"
-                                   value="DRENA-LAG-001"
+                                   value="DREN-LAG1"
+                                   pattern="DREN-[A-Z0-9]+"
                                    required>
-                            <small class="form-text text-muted">Code unique d'identification</small>
+                            <small class="form-text text-muted">Format: DREN-{CODE} selon structure SIDMAS</small>
                         </div>
                     </div>
                 </div>
@@ -79,43 +78,59 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="region" class="form-label required">Région</label>
+                            <label for="region" class="form-label required">Région administrative</label>
                             <select class="form-control" id="region" name="region" required>
                                 <option value="">Sélectionner une région</option>
-                                <option value="lagunes" selected>Lagunes</option>
-                                <option value="vallée_du_bandama">Vallée du Bandama</option>
-                                <option value="lacs">Lacs</option>
-                                <option value="savanes">Savanes</option>
-                                <option value="montagnes">Montagnes</option>
-                                <option value="bas_sassandra">Bas Sassandra</option>
-                                <option value="comoe">Comoé</option>
-                                <option value="denguele">Denguélé</option>
-                                <option value="goh_djiboua">Gôh-Djiboua</option>
-                                <option value="marahoue">Marahoué</option>
+                                <!-- Régions de la structure SIDMAS -->
+                                <option value="autonome_abidjan">Autonome d'Abidjan</option>
+                                <option value="haut_sassandra">Haut-Sassandra</option>
                                 <option value="poro">Poro</option>
+                                <option value="gbeke">Gbêkê</option>
+                                <option value="indenie_djuablin">Indénié-Djuablin</option>
+                                <option value="tonkpi">Tonkpi</option>
+                                <option value="lacs">Lacs</option>
+                                <option value="lagunes" selected>Lagunes</option>
+                                <option value="goh_djiboua">Gôh-Djiboua</option>
                                 <option value="tchologo">Tchologo</option>
+                                <option value="san_pedro">San-Pédro</option>
+                                <option value="kabadougou">Kabadougou</option>
+                                <option value="nawa">Nawa</option>
+                                <option value="marahoue">Marahoué</option>
+                                <option value="sud_comoe">Sud-Comoé</option>
+                                <option value="worodougou">Worodougou</option>
+                                <option value="loh_djiboua">Lôh-Djiboua</option>
+                                <option value="agneby_tiassa">Agnéby-Tiassa</option>
+                                <option value="gontougo">Gontougo</option>
+                                <option value="grands_ponts">Grands-Ponts</option>
+                                <option value="cavally">Cavally</option>
+                                <option value="bafing">Bafing</option>
                                 <option value="bagoue">Bagoué</option>
                                 <option value="belier">Bélier</option>
-                                <option value="haut_sassandra">Haut Sassandra</option>
-                                <option value="iffou">Iffou</option>
-                                <option value="la_me">La Mé</option>
-                                <option value="nawa">Nawa</option>
-                                <option value="san_pedro">San Pedro</option>
-                                <option value="tonkpi">Tonkpi</option>
-                                <option value="worodougou">Worodougou</option>
-                                <option value="cavally">Cavally</option>
-                                <option value="gbeke">Gbêkê</option>
+                                <option value="bounkani">Bounkani</option>
+                                <option value="folon">Folon</option>
                                 <option value="gbokle">Gbôklé</option>
-                                <option value="gontougo">Gontougo</option>
-                                <option value="grand_pont">Grand Pont</option>
                                 <option value="guemon">Guémon</option>
                                 <option value="hambol">Hambol</option>
-                                <option value="indenie_djuablin">Indénié-Djuablin</option>
-                                <option value="kabadougou">Kabadougou</option>
-                                <option value="loh_djiboua">Lôh-Djiboua</option>
+                                <option value="iffou">Iffou</option>
+                                <option value="la_me">La Mé</option>
                                 <option value="moronou">Moronou</option>
-                                <option value="sud_comoe">Sud Comoé</option>
                             </select>
+                            <small class="form-text text-muted">Région administrative selon le découpage SIDMAS</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="zone_geographique" class="form-label required">Zone géographique</label>
+                            <select class="form-control" id="zone_geographique" name="zone_geographique" required>
+                                <option value="">Sélectionner une zone</option>
+                                <option value="Zone Abidjan" selected>Zone Abidjan</option>
+                                <option value="Zone Centre">Zone Centre</option>
+                                <option value="Zone Nord">Zone Nord</option>
+                                <option value="Zone Ouest">Zone Ouest</option>
+                                <option value="Zone Est">Zone Est</option>
+                                <option value="Zone Sud">Zone Sud</option>
+                            </select>
+                            <small class="form-text text-muted">Classification géographique SIDMAS</small>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -146,13 +161,11 @@
         </div>
 
         <!-- Direction et Personnel -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                    <i class="fas fa-users"></i> Direction et Personnel
-                </h6>
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="feather icon-users"></i> Direction et Personnel</h5>
             </div>
-            <div class="card-body">
+            <div class="card-block">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -226,13 +239,49 @@
         </div>
 
         <!-- Organisation et Statut -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                    <i class="fas fa-cogs"></i> Organisation et Statut
-                </h6>
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="feather icon-settings"></i> Organisation et Statut</h5>
             </div>
-            <div class="card-body">
+            <div class="card-block">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nombre_iepp" class="form-label">Nombre d'IEPP supervisées</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="nombre_iepp"
+                                   name="nombre_iepp"
+                                   min="0"
+                                   value="15">
+                            <small class="form-text text-muted">Inspections Enseignement Primaire Préscolaire</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nombre_epp" class="form-label">Nombre d'EPP</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="nombre_epp"
+                                   name="nombre_epp"
+                                   min="0"
+                                   value="1250">
+                            <small class="form-text text-muted">Écoles Primaires Publiques</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="zone_intervention" class="form-label">Zone d'intervention</label>
+                            <select class="form-control" id="zone_intervention" name="zone_intervention">
+                                <option value="">Sélectionner une zone</option>
+                                <option value="urbaine">Urbaine</option>
+                                <option value="rurale">Rurale</option>
+                                <option value="mixte" selected>Mixte</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
@@ -258,41 +307,26 @@
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="nombre_etablissements" class="form-label">Nombre d'établissements</label>
-                            <input type="number"
+                            <label for="annee_scolaire" class="form-label">Année scolaire de création</label>
+                            <input type="text"
                                    class="form-control"
-                                   id="nombre_etablissements"
-                                   name="nombre_etablissements"
-                                   min="0"
-                                   value="1250">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="zone_intervention" class="form-label">Zone d'intervention</label>
-                            <select class="form-control" id="zone_intervention" name="zone_intervention">
-                                <option value="">Sélectionner une zone</option>
-                                <option value="urbaine">Urbaine</option>
-                                <option value="rurale">Rurale</option>
-                                <option value="mixte" selected>Mixte</option>
-                            </select>
+                                   id="annee_scolaire"
+                                   name="annee_scolaire"
+                                   pattern="[0-9]{4}-[0-9]{4}"
+                                   value="2019-2020">
+                            <small class="form-text text-muted">Format: AAAA-AAAA</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Observations et Documents -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                    <i class="fas fa-sticky-note"></i> Observations et Documents
-                </h6>
+        <!-- Observations -->
+        <div class="card">
+            <div class="card-header">
+                <h5><i class="feather icon-file-text"></i> Observations et Documents</h5>
             </div>
-            <div class="card-body">
+            <div class="card-block">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -300,7 +334,7 @@
                             <textarea class="form-control"
                                       id="observations"
                                       name="observations"
-                                      rows="4">La DRENA Lagunes couvre la région économique la plus importante du pays avec Abidjan comme chef-lieu. Elle supervise un nombre important d'établissements scolaires allant du primaire au secondaire. La direction régionale joue un rôle clé dans la coordination des politiques éducatives dans cette zone stratégique.</textarea>
+                                      rows="4">La DREN Lagunes couvre la région économique la plus importante du pays avec Abidjan comme chef-lieu. Elle supervise un nombre important d'établissements scolaires allant du primaire au secondaire. La direction régionale joue un rôle clé dans la coordination des politiques éducatives dans cette zone stratégique.</textarea>
                         </div>
                     </div>
                 </div>
@@ -309,16 +343,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="document_creation" class="form-label">Document de création</label>
-                            <div class="custom-file">
-                                <input type="file"
-                                       class="custom-file-input"
-                                       id="document_creation"
-                                       name="document_creation"
-                                       accept=".pdf,.doc,.docx">
-                                <label class="custom-file-label" for="document_creation">Choisir un fichier</label>
-                            </div>
+                            <input type="file"
+                                   class="form-control-file"
+                                   id="document_creation"
+                                   name="document_creation"
+                                   accept=".pdf,.doc,.docx">
                             <small class="form-text text-muted">
-                                Formats acceptés: PDF, DOC, DOCX.
+                                Formats acceptés: PDF, DOC, DOCX<br>
                                 <a href="#" class="text-info">Fichier actuel: document_creation_drena_lagunes.pdf</a>
                             </small>
                         </div>
@@ -326,16 +357,13 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label for="logo_drena" class="form-label">Logo DRENA</label>
-                            <div class="custom-file">
-                                <input type="file"
-                                       class="custom-file-input"
-                                       id="logo_drena"
-                                       name="logo_drena"
-                                       accept=".jpg,.jpeg,.png,.gif">
-                                <label class="custom-file-label" for="logo_drena">Choisir un fichier</label>
-                            </div>
+                            <input type="file"
+                                   class="form-control-file"
+                                   id="logo_drena"
+                                   name="logo_drena"
+                                   accept=".jpg,.jpeg,.png,.gif">
                             <small class="form-text text-muted">
-                                Formats acceptés: JPG, PNG, GIF.
+                                Formats acceptés: JPG, PNG, GIF<br>
                                 <a href="#" class="text-info">Image actuelle: logo_drena_lagunes.png</a>
                             </small>
                         </div>
@@ -344,40 +372,21 @@
             </div>
         </div>
 
-        <!-- Journalisation -->
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">
-                    <i class="fas fa-history"></i> Informations de suivi
-                </h6>
+        <!-- Historique des Modifications -->
+        <div class="card bg-light">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-secondary">Historique des Modifications</h6>
             </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="info-group">
-                            <label class="info-label">Créé le</label>
-                            <div class="info-value">15 janvier 2020</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="info-group">
-                            <label class="info-label">Créé par</label>
-                            <div class="info-value">Admin Système</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="info-group">
-                            <label class="info-label">Dernière modification</label>
-                            <div class="info-value">{{ date('d M Y') }}</div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="info-group">
-                            <label class="info-label">Modifié par</label>
-                            <div class="info-value">{{ Auth::user()->name ?? 'Utilisateur actuel' }}</div>
-                        </div>
-                    </div>
+            <div class="card-block">
+                <div class="form-group">
+                    <label for="raison_modification">Raison de la Modification <span class="text-danger">*</span></label>
+                    <textarea class="form-control" id="raison_modification" name="raison_modification" rows="2"
+                              placeholder="Veuillez indiquer la raison de cette modification..." required></textarea>
                 </div>
+                <small class="text-muted">
+                    <i class="feather icon-info"></i>
+                    Dernière modification le 15/01/2020 par Admin Système
+                </small>
             </div>
         </div>
 
@@ -406,22 +415,115 @@
     </div>
 </div>
 
-<!-- Script pour la validation et l'interactivité -->
+@section('scripts')
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('editDrenaForm');
+    const regionSelect = document.getElementById('region');
+    const zoneSelect = document.getElementById('zone_geographique');
+    const villeInput = document.getElementById('ville_siege');
+    const codeInput = document.getElementById('code_drena');
+    const nomInput = document.getElementById('nom_drena');
 
-    // Mise à jour des labels des fichiers
-    const fileInputs = document.querySelectorAll('.custom-file-input');
-    fileInputs.forEach(input => {
-        input.addEventListener('change', function() {
-            const fileName = this.files[0] ? this.files[0].name : 'Choisir un fichier';
-            const label = this.nextElementSibling;
-            label.textContent = fileName;
-        });
+    // Correspondances région-zone selon SIDMAS
+    const regionZoneMap = {
+        'autonome_abidjan': 'Zone Abidjan',
+        'lagunes': 'Zone Abidjan',
+        'la_me': 'Zone Abidjan',
+        'agneby_tiassa': 'Zone Abidjan',
+        'grands_ponts': 'Zone Abidjan',
+        'lacs': 'Zone Centre',
+        'gbeke': 'Zone Centre',
+        'belier': 'Zone Centre',
+        'iffou': 'Zone Centre',
+        'marahoue': 'Zone Centre',
+        'poro': 'Zone Nord',
+        'tchologo': 'Zone Nord',
+        'bagoue': 'Zone Nord',
+        'kabadougou': 'Zone Nord',
+        'hambol': 'Zone Nord',
+        'bounkani': 'Zone Nord',
+        'folon': 'Zone Nord',
+        'bafing': 'Zone Nord',
+        'tonkpi': 'Zone Ouest',
+        'cavally': 'Zone Ouest',
+        'guemon': 'Zone Ouest',
+        'haut_sassandra': 'Zone Ouest',
+        'gbokle': 'Zone Ouest',
+        'nawa': 'Zone Ouest',
+        'san_pedro': 'Zone Ouest',
+        'indenie_djuablin': 'Zone Est',
+        'gontougo': 'Zone Est',
+        'moronou': 'Zone Est',
+        'sud_comoe': 'Zone Sud',
+        'goh_djiboua': 'Zone Sud',
+        'loh_djiboua': 'Zone Sud',
+        'worodougou': 'Zone Centre'
+    };
+
+    // Auto-sélection de zone selon région
+    regionSelect.addEventListener('change', function() {
+        const selectedRegion = this.value;
+        if (regionZoneMap[selectedRegion]) {
+            zoneSelect.value = regionZoneMap[selectedRegion];
+        }
+        generateCode();
     });
 
-    // Validation du formulaire
+    // Auto-génération du code DREN basé sur SIDMAS
+    function generateCode() {
+        const region = regionSelect.value;
+        const nom = nomInput.value;
+
+        if (region && nom) {
+            let regionCode = '';
+            switch(region) {
+                case 'autonome_abidjan': regionCode = 'ABJ'; break;
+                case 'lagunes': regionCode = 'LAG'; break;
+                case 'lacs': regionCode = 'LAC'; break;
+                case 'gbeke': regionCode = 'GBK'; break;
+                case 'poro': regionCode = 'POR'; break;
+                case 'tonkpi': regionCode = 'TON'; break;
+                case 'haut_sassandra': regionCode = 'HSS'; break;
+                case 'indenie_djuablin': regionCode = 'IDJ'; break;
+                case 'tchologo': regionCode = 'TCH'; break;
+                case 'san_pedro': regionCode = 'SPD'; break;
+                case 'kabadougou': regionCode = 'KAB'; break;
+                case 'nawa': regionCode = 'NAW'; break;
+                case 'marahoue': regionCode = 'MAR'; break;
+                case 'sud_comoe': regionCode = 'SCO'; break;
+                case 'worodougou': regionCode = 'WOR'; break;
+                case 'loh_djiboua': regionCode = 'LOH'; break;
+                case 'agneby_tiassa': regionCode = 'AGT'; break;
+                case 'gontougo': regionCode = 'GON'; break;
+                case 'grands_ponts': regionCode = 'GPT'; break;
+                case 'cavally': regionCode = 'CAV'; break;
+                case 'bafing': regionCode = 'BAF'; break;
+                case 'bagoue': regionCode = 'BAG'; break;
+                case 'belier': regionCode = 'BEL'; break;
+                case 'bounkani': regionCode = 'BOU'; break;
+                case 'folon': regionCode = 'FOL'; break;
+                case 'gbokle': regionCode = 'GBO'; break;
+                case 'guemon': regionCode = 'GUE'; break;
+                case 'hambol': regionCode = 'HAM'; break;
+                case 'iffou': regionCode = 'IFF'; break;
+                case 'la_me': regionCode = 'LME'; break;
+                case 'moronou': regionCode = 'MOR'; break;
+                case 'goh_djiboua': regionCode = 'GOH'; break;
+                default: regionCode = 'XXX'; break;
+            }
+
+            // Extraction du numéro si présent dans le nom
+            const numeroMatch = nom.match(/(\d+)$/);
+            const numero = numeroMatch ? numeroMatch[1] : '1';
+
+            codeInput.value = `DREN-${regionCode}${numero}`;
+        }
+    }
+
+    nomInput.addEventListener('input', generateCode);
+
+    // Validation avec PNotify
     form.addEventListener('submit', function(e) {
         const requiredFields = form.querySelectorAll('[required]');
         let isValid = true;
@@ -437,49 +539,81 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!isValid) {
             e.preventDefault();
-            alert('Veuillez remplir tous les champs obligatoires.');
+            new PNotify({
+                title: 'Erreur de validation',
+                text: 'Veuillez remplir tous les champs obligatoires marqués d\'un astérisque.',
+                type: 'error',
+                delay: 4000
+            });
             return false;
         }
 
         // Confirmation avant soumission
-        if (!confirm('Êtes-vous sûr de vouloir enregistrer ces modifications ?')) {
-            e.preventDefault();
-            return false;
-        }
+        e.preventDefault();
+        new PNotify({
+            title: 'Confirmation',
+            text: 'Êtes-vous sûr de vouloir enregistrer ces modifications ?',
+            type: 'question',
+            confirm: {
+                confirm: true
+            },
+            buttons: {
+                closer: false,
+                sticker: false
+            },
+            history: {
+                history: false
+            }
+        }).get().on('pnotify.confirm', function() {
+            new PNotify({
+                title: 'Modifications enregistrées',
+                text: 'DREN mise à jour avec succès',
+                type: 'success',
+                delay: 4000
+            });
+            setTimeout(() => {
+                form.submit();
+            }, 1000);
+        });
     });
 
-    // Validation temps réel
-    const inputs = form.querySelectorAll('input, select, textarea');
+    // Validation temps réel avec PNotify
+    const inputs = form.querySelectorAll('input[required], select[required]');
     inputs.forEach(input => {
         input.addEventListener('blur', function() {
             if (this.hasAttribute('required') && !this.value.trim()) {
                 this.classList.add('is-invalid');
+                new PNotify({
+                    title: 'Champ requis',
+                    text: `Le champ "${this.previousElementSibling.textContent.replace('*', '').trim()}" est obligatoire.`,
+                    type: 'notice',
+                    delay: 2000
+                });
             } else {
                 this.classList.remove('is-invalid');
             }
         });
-
-        // Supprimer la classe d'erreur lors de la saisie
-        input.addEventListener('input', function() {
-            this.classList.remove('is-invalid');
-        });
     });
 
-    // Format automatique des numéros de téléphone
-    const phoneInputs = document.querySelectorAll('input[type="tel"]');
-    phoneInputs.forEach(input => {
-        input.addEventListener('input', function() {
-            let value = this.value.replace(/\D/g, '');
-            if (value.startsWith('225')) {
-                value = '+' + value;
-            } else if (value.startsWith('0')) {
-                value = '+225 ' + value;
-            }
-            this.value = value;
-        });
+    // Validation du format d'année scolaire
+    const anneeScolaireInput = document.getElementById('annee_scolaire');
+    anneeScolaireInput.addEventListener('blur', function() {
+        const pattern = /^[0-9]{4}-[0-9]{4}$/;
+        if (this.value && !pattern.test(this.value)) {
+            this.classList.add('is-invalid');
+            new PNotify({
+                title: 'Format incorrect',
+                text: 'L\'année scolaire doit être au format AAAA-AAAA (ex: 2024-2025).',
+                type: 'error',
+                delay: 3000
+            });
+        } else {
+            this.classList.remove('is-invalid');
+        }
     });
 });
 </script>
+@endsection
 
 <style>
 .required::after {
@@ -490,23 +624,6 @@ document.addEventListener('DOMContentLoaded', function() {
 .form-label {
     font-weight: 600;
     color: #5a5c69;
-}
-
-.info-label {
-    font-weight: 600;
-    color: #5a5c69;
-    font-size: 0.85rem;
-    display: block;
-    margin-bottom: 0.25rem;
-}
-
-.info-value {
-    color: #6e707e;
-    font-size: 0.9rem;
-}
-
-.info-group {
-    margin-bottom: 1rem;
 }
 
 .is-invalid {
@@ -523,7 +640,7 @@ document.addEventListener('DOMContentLoaded', function() {
     font-size: 1.1rem;
 }
 
-.form-control:focus, .custom-file-input:focus ~ .custom-file-label {
+.form-control:focus {
     border-color: #4e73df;
     box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
 }
@@ -536,14 +653,16 @@ document.addEventListener('DOMContentLoaded', function() {
     font-size: 0.85rem;
 }
 
-.custom-file-label {
-    color: #6e707e;
+.bg-light {
+    background-color: #f8f9fa !important;
 }
 
-.custom-file-label::after {
-    background-color: #f8f9fc;
-    border-color: #d1d3e2;
-    color: #5a5c69;
+.text-danger {
+    color: #dc3545 !important;
+}
+
+.font-weight-bold {
+    font-weight: 600;
 }
 </style>
 

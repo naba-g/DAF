@@ -78,9 +78,9 @@
             <div class="col-md-6 col-xl-6">
                 <div class="card bg-c-blue order-card">
                     <div class="card-body">
-                        <h6 class="text-white">Élèves Inscrits</h6>
-                        <h2 class="text-white"><i class="feather icon-users mr-2"></i><span>1,248</span></h2>
-                        <p class="text-white m-b-0">Total des inscriptions</p>
+                        <h6 class="text-white">Manuels Distribués</h6>
+                        <h2 class="text-white"><i class="feather icon-book mr-2"></i><span>1,248</span></h2>
+                        <p class="text-white m-b-0">Total des distributions</p>
                     </div>
                 </div>
             </div>
@@ -241,110 +241,7 @@
     </div>
 </div>
 
-<script>
-function activateYear(id) {
-    (new PNotify({
-        title: 'Activation de l\'année',
-        text: 'Voulez-vous définir cette année comme année active ? Cela désactivera l\'année actuellement active.',
-        icon: 'feather icon-check-circle',
-        hide: false,
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    })).get().on('pnotify.confirm', function() {
-        // Ici, vous implémenteriez l'appel AJAX pour activer l'année
-        window.location.href = '{{ route("annee_scolaire.activate", ":id") }}'.replace(':id', id);
-    });
-}
 
-function deleteYear(id) {
-    (new PNotify({
-        title: 'Suppression définitive',
-        text: 'Êtes-vous sûr de vouloir supprimer cette année scolaire ? Cette action est irréversible.',
-        icon: 'feather icon-trash-2',
-        hide: false,
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        },
-        addClass: 'notice-remove'
-    })).get().on('pnotify.confirm', function() {
-        // Créer un formulaire pour la suppression
-        const form = document.createElement('form');
-        form.method = 'POST';
-        form.action = '{{ route("annee_scolaire.destroy", ":id") }}'.replace(':id', id);
-
-        const token = document.createElement('input');
-        token.type = 'hidden';
-        token.name = '_token';
-        token.value = '{{ csrf_token() }}';
-        form.appendChild(token);
-
-        const method = document.createElement('input');
-        method.type = 'hidden';
-        method.name = '_method';
-        method.value = 'DELETE';
-        form.appendChild(method);
-
-        document.body.appendChild(form);
-        form.submit();
-    });
-}
-
-function duplicateYear(id) {
-    (new PNotify({
-        title: 'Duplication d\'année',
-        text: 'Voulez-vous créer une nouvelle année basée sur celle-ci ?',
-        icon: 'feather icon-copy',
-        hide: false,
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    })).get().on('pnotify.confirm', function() {
-        window.location.href = '{{ route("annee_scolaire.duplicate", ":id") }}'.replace(':id', id);
-    });
-}
-
-function exportData(id) {
-    window.location.href = '{{ route("annee_scolaire.export", ":id") }}'.replace(':id', id);
-}
-
-function gererInscriptions() {
-    window.location.href = '{{ route("inscriptions.index") }}?annee_id={{ $anneeScolaire->id ?? 1 }}';
-}
-
-function gererClasses() {
-    window.location.href = '{{ route("classes.index") }}?annee_id={{ $anneeScolaire->id ?? 1 }}';
-}
-
-function voirCalendrier() {
-    window.location.href = '{{ route("calendrier.index") }}?annee_id={{ $anneeScolaire->id ?? 1 }}';
-}
-
-function genererRapports() {
-    window.location.href = '{{ route("rapports.financiers") }}?annee_id={{ $anneeScolaire->id ?? 1 }}';
-}
-</script>
 
 <style>
 .order-card {

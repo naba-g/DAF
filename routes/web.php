@@ -23,12 +23,15 @@ Route::prefix('annee_scolaire')->name('annee_scolaire.')->group (function () {
     Route::get('/create', function () {
         return view('espace.espace_super.annee_scolaire.create');
     })->name('create');
+
     Route::get('/show/{id}', function ($id) {
         return view('espace.espace_super.annee_scolaire.show', compact('id'));
     })->name('show');
+
     Route::get('/edit/{id}', function ($id) {
         return view('espace.espace_super.annee_scolaire.edit', compact('id'));
     })->name('edit');
+
     // Routes statiques - pas de vraies actions
     Route::any('/store', function () {
         return view('espace.espace_super.annee_scolaire.liste');
@@ -50,30 +53,7 @@ Route::prefix('annee_scolaire')->name('annee_scolaire.')->group (function () {
     })->name('export');
 });
 
-// Routes statiques pour les modules liés aux années scolaires
-Route::prefix('inscriptions')->name('inscriptions.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('index');
-});
 
-Route::prefix('classes')->name('classes.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('index');
-});
-
-Route::prefix('calendrier')->name('calendrier.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('index');
-});
-
-Route::prefix('rapports')->name('rapports.')->group(function () {
-    Route::get('/financiers', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('financiers');
-});
 
 // 2. COMMANDE DAF - Routes CRUD complètes
 Route::prefix('commande_daf')->name('commande_daf.')->group(function () {
@@ -225,6 +205,37 @@ Route::prefix('epp')->name('epp.')->group(function () {
     })->name('destroy');
 });
 
+// 8. IEPP - Routes CRUD complètes
+Route::prefix('iepp')->name('iepp.')->group(function () {
+    Route::get('/', function () {
+        return view('espace.espace_super.iepp.liste');
+    })->name('index');
+
+    Route::get('/create', function () {
+        return view('espace.espace_super.iepp.create');
+    })->name('create');
+
+    Route::any('/store', function () {
+        return view('espace.espace_super.iepp.liste');
+    })->name('store');
+
+    Route::get('/show/{id}', function ($id) {
+        return view('espace.espace_super.iepp.show', compact('id'));
+    })->name('show');
+
+    Route::get('/edit/{id}', function ($id) {
+        return view('espace.espace_super.iepp.edit', compact('id'));
+    })->name('edit');
+
+    Route::any('/update/{id}', function ($id) {
+        return view('espace.espace_super.iepp.show', compact('id'));
+    })->name('update');
+
+    Route::any('/destroy/{id}', function ($id) {
+        return view('espace.espace_super.iepp.liste');
+    })->name('destroy');
+});
+
 // ===== ROUTES EXISTANTES (INCHANGÉES) =====
 
 //exprssion besion iepp
@@ -245,11 +256,6 @@ Route::get('/besoin_drena', function () {
 //expression besoin epp
 Route::get('/besoin_epp', function () {
     return view('espace.espace_super.expression_besoin_epp.liste');
-});
-
-//iepp
-Route::get('/iepp', function () {
-    return view('espace.espace_super.iepp.liste');
 });
 
 //livraison epp

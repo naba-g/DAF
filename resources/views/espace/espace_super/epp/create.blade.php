@@ -11,7 +11,7 @@
                     <div class="col-md-8">
                         <div class="page-header-title">
                             <h5 class="m-b-10"><i class="feather icon-plus"></i> Créer une nouvelle EPP</h5>
-                            <p class="m-b-0">Créer une nouvelle école primaire publique</p>
+                            <p class="m-b-0">Créer une nouvelle école primaire publique selon SIDMAS</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -51,6 +51,7 @@
                                                    class="form-control"
                                                    id="nom_ecole"
                                                    name="nom_ecole"
+                                                   value="{{ old('nom_ecole') }}"
                                                    placeholder="Ex: EPP Plateau 1"
                                                    required>
                                             @error('nom_ecole')
@@ -66,9 +67,10 @@
                                                    class="form-control"
                                                    id="code_epp"
                                                    name="code_epp"
-                                                   placeholder="Ex: EPP-ABJ-001"
+                                                   value="{{ old('code_epp') }}"
                                                    pattern="EPP-[A-Z0-9]+-[A-Z0-9]+-[0-9]+"
-                                                   required>
+                                                   placeholder="Auto-généré selon DREN-IEPP"
+                                                   readonly>
                                             @error('code_epp')
                                                 <div class="form-control-feedback text-danger">{{ $message }}</div>
                                             @enderror
@@ -147,7 +149,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="iepp_id" class="form-label required">Inspection (IEPP)</label>
-                            <select class="form-control" id="iepp_id" name="iepp_id" required disabled>
+                            <select class="form-control" id="iepp_id" name="iepp_id" required>
                                 <option value="">-- Sélectionner d'abord une DREN --</option>
                             </select>
                             <small class="form-text text-muted">295 inspections disponibles selon la DREN</small>
@@ -178,6 +180,7 @@
                                    class="form-control"
                                    id="commune"
                                    name="commune"
+                                   value="{{ old('commune') }}"
                                    placeholder="Ex: Plateau"
                                    required>
                             <small class="form-text text-muted">Localité administrative</small>
@@ -190,6 +193,7 @@
                                    class="form-control"
                                    id="quartier"
                                    name="quartier"
+                                   value="{{ old('quartier') }}"
                                    placeholder="Ex: Plateau Nord">
                             <small class="form-text text-muted">Précision géographique</small>
                         </div>
@@ -204,7 +208,7 @@
                                       id="adresse_complete"
                                       name="adresse_complete"
                                       rows="3"
-                                      placeholder="Adresse complète de l'école"></textarea>
+                                      placeholder="Adresse complète de l'école">{{ old('adresse_complete') }}</textarea>
                         </div>
                     </div>
                 </div>
@@ -263,7 +267,8 @@
                             <input type="date"
                                    class="form-control"
                                    id="date_creation"
-                                   name="date_creation">
+                                   name="date_creation"
+                                   value="{{ old('date_creation') }}">
                         </div>
                     </div>
                 </div>
@@ -288,7 +293,8 @@
                                    id="capacite_accueil"
                                    name="capacite_accueil"
                                    min="0"
-                                   placeholder="0">
+                                   value="{{ old('capacite_accueil') }}"
+                                   placeholder="Ex: 500">
                             <small class="form-text text-muted">Nombre maximum d'élèves selon SIDMAS</small>
                         </div>
                     </div>
@@ -300,7 +306,8 @@
                                    id="effectif_actuel"
                                    name="effectif_actuel"
                                    min="0"
-                                   placeholder="0">
+                                   value="{{ old('effectif_actuel') }}"
+                                   placeholder="Ex: 450">
                             <small class="form-text text-muted">Élèves actuellement inscrits</small>
                         </div>
                     </div>
@@ -365,7 +372,8 @@
                                    id="annee_scolaire"
                                    name="annee_scolaire"
                                    pattern="[0-9]{4}-[0-9]{4}"
-                                   placeholder="2024-2025">
+                                   value="{{ old('annee_scolaire') }}"
+                                   placeholder="Ex: 2024-2025">
                             <small class="form-text text-muted">Format: AAAA-AAAA</small>
                         </div>
                     </div>
@@ -377,7 +385,8 @@
                                    id="nombre_classes"
                                    name="nombre_classes"
                                    min="0"
-                                   placeholder="0">
+                                   value="{{ old('nombre_classes') }}"
+                                   placeholder="Ex: 8">
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -387,7 +396,7 @@
                                    class="form-control bg-light"
                                    id="code_epp_auto"
                                    name="code_epp_auto"
-                                   placeholder="Code généré automatiquement"
+                                   placeholder="Sera généré automatiquement"
                                    readonly>
                             <small class="form-text text-muted">Généré selon DREN-IEPP-Séquence</small>
                         </div>
@@ -410,8 +419,10 @@
                                    class="form-control"
                                    id="directeur"
                                    name="directeur"
-                                   placeholder="Nom complet du directeur"
+                                   value="{{ old('directeur') }}"
+                                   placeholder="Ex: M. KOUAME Yves"
                                    required>
+                            <small class="form-text text-muted">Directeur en poste selon SIDMAS</small>
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -421,22 +432,14 @@
                                    class="form-control"
                                    id="contact_directeur"
                                    name="contact_directeur"
-                                   placeholder="Ex: +225 07 XX XX XX XX">
+                                   value="{{ old('contact_directeur') }}"
+                                   placeholder="Ex: +225 07 45 67 89 12">
+                            <small class="form-text text-muted">Numéro de téléphone officiel</small>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="directeur_adjoint" class="form-label">Directeur Adjoint</label>
-                            <input type="text"
-                                   class="form-control"
-                                   id="directeur_adjoint"
-                                   name="directeur_adjoint"
-                                   placeholder="Nom complet du directeur adjoint">
-                        </div>
-                    </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="nombre_enseignants" class="form-label">Nombre d'enseignants</label>
@@ -445,18 +448,35 @@
                                    id="nombre_enseignants"
                                    name="nombre_enseignants"
                                    min="0"
-                                   placeholder="0">
+                                   value="{{ old('nombre_enseignants') }}"
+                                   placeholder="Ex: 12">
+                            <small class="form-text text-muted">Total enseignants toutes catégories</small>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="personnel_administratif" class="form-label">Personnel administratif</label>
+                            <label for="nombre_fonctionnaires" class="form-label">Enseignants Fonctionnaires</label>
                             <input type="number"
                                    class="form-control"
-                                   id="personnel_administratif"
-                                   name="personnel_administratif"
+                                   id="nombre_fonctionnaires"
+                                   name="nombre_fonctionnaires"
                                    min="0"
-                                   placeholder="0">
+                                   value="{{ old('nombre_fonctionnaires') }}"
+                                   placeholder="Ex: 8">
+                            <small class="form-text text-muted">Fonctionnaires de l'État</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nombre_volontaires" class="form-label">Enseignants Volontaires</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="nombre_volontaires"
+                                   name="nombre_volontaires"
+                                   min="0"
+                                   value="{{ old('nombre_volontaires') }}"
+                                   placeholder="Ex: 4">
+                            <small class="form-text text-muted">Volontaires de l'enseignement</small>
                         </div>
                     </div>
                 </div>
@@ -464,25 +484,33 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="email_ecole" class="form-label">Email de l'École</label>
-                            <input type="email"
+                            <label for="nombre_eleves_filles" class="form-label">Nombre d'Élèves Filles</label>
+                            <input type="number"
                                    class="form-control"
-                                   id="email_ecole"
-                                   name="email_ecole"
-                                   placeholder="ecole@education.gouv.ci">
+                                   id="nombre_eleves_filles"
+                                   name="nombre_eleves_filles"
+                                   min="0"
+                                   value="{{ old('nombre_eleves_filles') }}"
+                                   placeholder="Ex: 220">
+                            <small class="form-text text-muted">Effectif féminin selon SIDMAS</small>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="telephone_ecole" class="form-label">Téléphone de l'École</label>
-                            <input type="tel"
+                            <label for="nombre_eleves_garcons" class="form-label">Nombre d'Élèves Garçons</label>
+                            <input type="number"
                                    class="form-control"
-                                   id="telephone_ecole"
-                                   name="telephone_ecole"
-                                   placeholder="Ex: +225 27 XX XX XX XX">
+                                   id="nombre_eleves_garcons"
+                                   name="nombre_eleves_garcons"
+                                   min="0"
+                                   value="{{ old('nombre_eleves_garcons') }}"
+                                   placeholder="Ex: 230">
+                            <small class="form-text text-muted">Effectif masculin selon SIDMAS</small>
                         </div>
                     </div>
                 </div>
+
+                
             </div>
         </div>
 
@@ -492,6 +520,48 @@
                 <h5><i class="feather icon-settings"></i> Infrastructure et Équipements</h5>
             </div>
             <div class="card-block">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nombre_salles_classe" class="form-label">Salles de classe</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="nombre_salles_classe"
+                                   name="nombre_salles_classe"
+                                   min="0"
+                                   value="{{ old('nombre_salles_classe') }}"
+                                   placeholder="Ex: 8">
+                            <small class="form-text text-muted">Nombre total de salles</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nombre_bureaux" class="form-label">Bureaux administratifs</label>
+                            <input type="number"
+                                   class="form-control"
+                                   id="nombre_bureaux"
+                                   name="nombre_bureaux"
+                                   min="0"
+                                   value="{{ old('nombre_bureaux') }}"
+                                   placeholder="Ex: 2">
+                            <small class="form-text text-muted">Direction et secrétariat</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="etat_infrastructure" class="form-label">État des infrastructures</label>
+                            <select class="form-control" id="etat_infrastructure" name="etat_infrastructure">
+                                <option value="">Sélectionner un état</option>
+                                <option value="bon">Bon état</option>
+                                <option value="moyen">État moyen</option>
+                                <option value="mauvais">Mauvais état</option>
+                                <option value="renovation">En rénovation</option>
+                            </select>
+                            <small class="form-text text-muted">Évaluation globale</small>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -537,69 +607,184 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="acces_internet" class="form-label">Accès Internet</label>
+                            <select class="form-control" id="acces_internet" name="acces_internet">
+                                <option value="">Sélectionner un type d'accès</option>
+                                <option value="aucun">Aucun accès</option>
+                                <option value="wifi">WiFi disponible</option>
+                                <option value="fibre">Fibre optique</option>
+                                <option value="mobile">Réseau mobile</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="source_eau" class="form-label">Source d'eau</label>
+                            <select class="form-control" id="source_eau" name="source_eau">
+                                <option value="">Sélectionner une source</option>
+                                <option value="reseau">Réseau public</option>
+                                <option value="forage">Forage</option>
+                                <option value="puits">Puits</option>
+                                <option value="aucune">Aucune</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="systeme_eclairage" class="form-label">Système d'éclairage</label>
+                            <select class="form-control" id="systeme_eclairage" name="systeme_eclairage">
+                                <option value="">Sélectionner un système</option>
+                                <option value="reseau">Réseau électrique</option>
+                                <option value="solaire">Panneaux solaires</option>
+                                <option value="groupe">Groupe électrogène</option>
+                                <option value="aucun">Aucun</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Observations et Documents -->
+        
+
+        <!-- Effectifs détaillés par niveau -->
         <div class="card">
             <div class="card-header">
-                <h5><i class="feather icon-file-text"></i> Observations et Documents</h5>
+                <h5><i class="feather icon-bar-chart"></i> Effectifs détaillés par niveau</h5>
             </div>
             <div class="card-block">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="observations" class="form-label">Observations</label>
-                            <textarea class="form-control"
-                                      id="observations"
-                                      name="observations"
-                                      rows="4"
-                                      placeholder="Observations, notes particulières ou commentaires..."></textarea>
+                            <label for="effectif_cp1" class="form-label">Effectif CP1</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="effectif_cp1" 
+                                   name="effectif_cp1" 
+                                   min="0" 
+                                   value="{{ old('effectif_cp1') }}"
+                                   placeholder="Ex: 75">
+                            <small class="form-text text-muted">Nombre d'élèves en CP1</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="effectif_cp2" class="form-label">Effectif CP2</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="effectif_cp2" 
+                                   name="effectif_cp2" 
+                                   min="0" 
+                                   value="{{ old('effectif_cp2') }}"
+                                   placeholder="Ex: 80">
+                            <small class="form-text text-muted">Nombre d'élèves en CP2</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="effectif_ce1" class="form-label">Effectif CE1</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="effectif_ce1" 
+                                   name="effectif_ce1" 
+                                   min="0" 
+                                   value="{{ old('effectif_ce1') }}"
+                                   placeholder="Ex: 78">
+                            <small class="form-text text-muted">Nombre d'élèves en CE1</small>
                         </div>
                     </div>
                 </div>
-
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="effectif_ce2" class="form-label">Effectif CE2</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="effectif_ce2" 
+                                   name="effectif_ce2" 
+                                   min="0" 
+                                   value="{{ old('effectif_ce2') }}"
+                                   placeholder="Ex: 72">
+                            <small class="form-text text-muted">Nombre d'élèves en CE2</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="effectif_cm1" class="form-label">Effectif CM1</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="effectif_cm1" 
+                                   name="effectif_cm1" 
+                                   min="0" 
+                                   value="{{ old('effectif_cm1') }}"
+                                   placeholder="Ex: 70">
+                            <small class="form-text text-muted">Nombre d'élèves en CM1</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="effectif_cm2" class="form-label">Effectif CM2</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="effectif_cm2" 
+                                   name="effectif_cm2" 
+                                   min="0" 
+                                   value="{{ old('effectif_cm2') }}"
+                                   placeholder="Ex: 75">
+                            <small class="form-text text-muted">Nombre d'élèves en CM2</small>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="document_creation" class="form-label">Document de création</label>
-                            <input type="file"
-                                   class="form-control-file"
-                                   id="document_creation"
-                                   name="document_creation"
-                                   accept=".pdf,.doc,.docx">
-                            <small class="form-text text-muted">Formats acceptés: PDF, DOC, DOCX</small>
+                            <label for="effectif_prescolaire" class="form-label">Effectif Préscolaire total</label>
+                            <input type="number" 
+                                   class="form-control" 
+                                   id="effectif_prescolaire" 
+                                   name="effectif_prescolaire" 
+                                   min="0" 
+                                   value="{{ old('effectif_prescolaire') }}"
+                                   placeholder="Ex: 45">
+                            <small class="form-text text-muted">Total PS + MS + GS</small>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="photo_ecole" class="form-label">Photo de l'École</label>
-                            <input type="file"
-                                   class="form-control-file"
-                                   id="photo_ecole"
-                                   name="photo_ecole"
-                                   accept=".jpg,.jpeg,.png,.gif">
-                            <small class="form-text text-muted">Formats acceptés: JPG, PNG, GIF</small>
+                            <label for="total_effectif_calcule" class="form-label">Total calculé</label>
+                            <input type="number" 
+                                   class="form-control bg-light" 
+                                   id="total_effectif_calcule" 
+                                   name="total_effectif_calcule" 
+                                   readonly
+                                   placeholder="Calculé automatiquement">
+                            <small class="form-text text-muted">Somme automatique de tous les niveaux</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-                        <!-- Boutons d'action -->
-                        <div class="card">
-                            <div class="card-block text-center">
-                                <button type="submit" class="btn btn-success btn-lg">
-                                    <i class="feather icon-save"></i> Enregistrer l'EPP
-                                </button>
-                                <button type="reset" class="btn btn-warning btn-lg">
-                                    <i class="feather icon-refresh-cw"></i> Réinitialiser
-                                </button>
-                                <a href="{{ route('epp.index') }}" class="btn btn-inverse btn-lg">
-                                    <i class="feather icon-arrow-left"></i> Retour à la liste
-                                </a>
-                            </div>
-                        </div>
+        <!-- Boutons d'action -->
+        <div class="card">
+            <div class="card-block text-center">
+                <button type="submit" class="btn btn-success btn-lg waves-effect waves-light">
+                    <i class="feather icon-save"></i> Créer l'EPP
+                </button>
+                <button type="reset" class="btn btn-warning btn-lg waves-effect">
+                    <i class="feather icon-refresh-cw"></i> Réinitialiser
+                </button>
+                <a href="{{ route('epp.index') }}" class="btn btn-inverse btn-lg waves-effect">
+                    <i class="feather icon-arrow-left"></i> Retour à la liste
+                </a>
+            </div>
+        </div>
                     </form>
                 </div>
             </div>
@@ -608,288 +793,179 @@
     </div>
 </div>
 
-@section('scripts')
+<!-- Script pour la validation et l'interactivité -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('createEppForm');
     const drenSelect = document.getElementById('dren_id');
+    const ieppSelect = document.getElementById('iepp_id');
     const zoneSelect = document.getElementById('zone_geographique');
-    const codeInput = document.getElementById('code_epp');
-    const nomInput = document.getElementById('nom_ecole');
-    const typeSelect = document.getElementById('type_ecole');
-    const cycleSelect = document.getElementById('cycle_disponible');
+    const codeEppInput = document.getElementById('code_epp');
+    const codeAutoInput = document.getElementById('code_epp_auto');
 
-    // Correspondances DREN-Zone selon SIDMAS (amélioration du design DRENA)
-    const drenZoneMap = {
-        // Zone Abidjan
-        '1': 'Zone Abidjan', '2': 'Zone Abidjan', '3': 'Zone Abidjan',
-        '4': 'Zone Abidjan', '5': 'Zone Abidjan', '6': 'Zone Abidjan',
-        // Zone Centre
-        '7': 'Zone Centre', '8': 'Zone Centre', '9': 'Zone Centre',
-        '10': 'Zone Centre', '11': 'Zone Centre', '12': 'Zone Centre',
-        '13': 'Zone Centre', '14': 'Zone Centre',
-        // Zone Nord
-        '15': 'Zone Nord', '16': 'Zone Nord', '17': 'Zone Nord',
-        '18': 'Zone Nord', '19': 'Zone Nord', '20': 'Zone Nord',
-        '21': 'Zone Nord', '22': 'Zone Nord', '23': 'Zone Nord',
-        // Zone Ouest
-        '24': 'Zone Ouest', '25': 'Zone Ouest', '26': 'Zone Ouest',
-        '27': 'Zone Ouest', '28': 'Zone Ouest', '29': 'Zone Ouest',
-        '30': 'Zone Ouest', '31': 'Zone Ouest', '32': 'Zone Ouest',
-        // Zone Est
-        '33': 'Zone Est', '34': 'Zone Est', '35': 'Zone Est',
-        '36': 'Zone Est', '37': 'Zone Est', '38': 'Zone Est',
-        // Zone Sud
-        '39': 'Zone Sud', '40': 'Zone Sud', '41': 'Zone Sud',
-        '42': 'Zone Sud', '43': 'Zone Sud', '44': 'Zone Sud'
-    };
-
-    // Auto-sélection de zone selon DREN (amélioration du design DRENA)
-    drenSelect.addEventListener('change', function() {
-        const selectedDren = this.value;
-        if (drenZoneMap[selectedDren]) {
-            zoneSelect.value = drenZoneMap[selectedDren];
-        }
-        generateCodeEpp();
-    });
-
-    // Auto-génération du code EPP basé sur SIDMAS (amélioration du design DRENA)
-    function generateCodeEpp() {
+    // Fonction pour charger les IEPP selon la DREN sélectionnée
+    function loadIeppByDren() {
         const drenId = drenSelect.value;
-        const ieppId = document.getElementById('iepp_id').value;
-        const nom = nomInput.value;
-
-        if (drenId && nom) {
-            let drenCode = '';
-            const drenText = drenSelect.options[drenSelect.selectedIndex].text;
-
-            // Extraction code DREN selon structure SIDMAS
-            if (drenText.includes('ABIDJAN 1')) drenCode = 'ABJ1';
-            else if (drenText.includes('ABIDJAN 2')) drenCode = 'ABJ2';
-            else if (drenText.includes('ABIDJAN 3')) drenCode = 'ABJ3';
-            else if (drenText.includes('BOUAKE 1')) drenCode = 'BKE1';
-            else if (drenText.includes('BOUAKE 2')) drenCode = 'BKE2';
-            else if (drenText.includes('YAMOUSSOUKRO')) drenCode = 'YAM';
-            else if (drenText.includes('KORHOGO')) drenCode = 'KRG';
-            else if (drenText.includes('SAN PEDRO')) drenCode = 'SPD';
-            else if (drenText.includes('DALOA')) drenCode = 'DAL';
-            else if (drenText.includes('MAN')) drenCode = 'MAN';
-            else if (drenText.includes('GAGNOA')) drenCode = 'GAG';
-            else if (drenText.includes('DIVO')) drenCode = 'DIV';
-            else if (drenText.includes('ABENGOUROU')) drenCode = 'ABG';
-            else if (drenText.includes('BONDOUKOU')) drenCode = 'BDK';
-            else drenCode = 'XXX';
-
-            let ieppCode = 'YYY';
-            if (ieppId) {
-                const ieppText = document.getElementById('iepp_id').options[document.getElementById('iepp_id').selectedIndex].text;
-                ieppCode = ieppText.replace('IEPP ', '').substring(0, 3).toUpperCase();
+        const drenText = drenSelect.options[drenSelect.selectedIndex].text;
+        
+        if (drenId) {
+            // Mise à jour automatique de la zone géographique
+            const optgroup = drenSelect.options[drenSelect.selectedIndex].parentNode.label;
+            if (optgroup) {
+                zoneSelect.value = optgroup;
             }
 
-            const sequence = String(Math.floor(Math.random() * 999) + 1).padStart(3, '0');
-            const codeGenere = `EPP-${drenCode}-${ieppCode}-${sequence}`;
+            // Simulation du chargement des IEPP (à remplacer par un appel AJAX)
+            ieppSelect.innerHTML = '<option value="">-- Chargement... --</option>';
+            
+            // Exemple de données IEPP selon SIDMAS
+            const ieppData = {
+                '1': [
+                    {id: 1, nom: 'IEPP PLATEAU'},
+                    {id: 2, nom: 'IEPP COCODY'},
+                    {id: 3, nom: 'IEPP MARCORY'}
+                ],
+                '2': [
+                    {id: 4, nom: 'IEPP ADJAME'},
+                    {id: 5, nom: 'IEPP YOPOUGON'},
+                    {id: 6, nom: 'IEPP KOUMASSI'}
+                ]
+                // Ajouter plus de données selon les 295 IEPP
+            };
 
-            codeInput.value = codeGenere;
-            document.getElementById('code_epp_auto').value = codeGenere;
+            setTimeout(() => {
+                ieppSelect.innerHTML = '<option value="">-- Sélectionner une IEPP --</option>';
+                const iepp = ieppData[drenId] || [];
+                iepp.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.id;
+                    option.textContent = item.nom;
+                    ieppSelect.appendChild(option);
+                });
+            }, 500);
 
-            new PNotify({
-                title: 'Code généré',
-                text: `Code EPP: ${codeGenere}`,
-                type: 'success',
-                delay: 2000
-            });
+            // Génération automatique du code EPP
+            generateEppCode();
+        } else {
+            ieppSelect.innerHTML = '<option value="">-- Sélectionner d\'abord une DREN --</option>';
+            zoneSelect.value = '';
+            codeEppInput.value = '';
+            codeAutoInput.value = '';
         }
     }
 
-    nomInput.addEventListener('input', generateCodeEpp);
-
-    // Auto-sélection des niveaux selon le cycle (amélioration du design DRENA)
-    function updateNiveaux() {
-        const cycle = cycleSelect.value;
-        const checkboxes = document.querySelectorAll('input[name="niveaux[]"]');
-
-        // Décocher tous les niveaux
-        checkboxes.forEach(cb => cb.checked = false);
-
-        // Cocher selon le cycle sélectionné
-        const niveauxMap = {
-            'prescolaire': ['ps', 'ms', 'gs'],
-            'cp1_cp2': ['cp1', 'cp2'],
-            'ce1_ce2': ['ce1', 'ce2'],
-            'cm1_cm2': ['cm1', 'cm2'],
-            'primaire_complet': ['cp1', 'cp2', 'ce1', 'ce2', 'cm1', 'cm2'],
-            'prescolaire_primaire': ['ps', 'ms', 'gs', 'cp1', 'cp2', 'ce1', 'ce2', 'cm1', 'cm2']
-        };
-
-        if (niveauxMap[cycle]) {
-            niveauxMap[cycle].forEach(niveau => {
-                const cb = document.getElementById(niveau);
-                if (cb) cb.checked = true;
-            });
+    // Fonction pour générer le code EPP automatiquement
+    function generateEppCode() {
+        const drenId = drenSelect.value;
+        const ieppId = ieppSelect.value;
+        
+        if (drenId && ieppId) {
+            // Simulation de génération de code selon format SIDMAS
+            const drenCode = drenSelect.options[drenSelect.selectedIndex].text.split(' ').pop();
+            const ieppCode = ieppSelect.options[ieppSelect.selectedIndex].text.split(' ').pop();
+            const sequence = String(Date.now()).slice(-3); // Simulation séquence
+            
+            const codeEpp = `EPP-${drenCode}-${ieppCode}-${sequence}`;
+            codeEppInput.value = codeEpp;
+            codeAutoInput.value = codeEpp;
         }
     }
 
-    typeSelect.addEventListener('change', updateNiveaux);
-    cycleSelect.addEventListener('change', updateNiveaux);
+    // Événements
+    drenSelect.addEventListener('change', loadIeppByDren);
+    ieppSelect.addEventListener('change', generateEppCode);
 
-    // Validation avec PNotify (amélioration du design DRENA)
+    // Fonction pour calculer automatiquement le total des effectifs
+    function calculateTotalEffectif() {
+        const effectifInputs = [
+            'effectif_cp1', 'effectif_cp2', 'effectif_ce1', 
+            'effectif_ce2', 'effectif_cm1', 'effectif_cm2', 'effectif_prescolaire'
+        ];
+        
+        let total = 0;
+        effectifInputs.forEach(id => {
+            const input = document.getElementById(id);
+            if (input && input.value) {
+                total += parseInt(input.value) || 0;
+            }
+        });
+        
+        const totalInput = document.getElementById('total_effectif_calcule');
+        if (totalInput) {
+            totalInput.value = total;
+        }
+        
+        // Mise à jour de l'effectif actuel si nécessaire
+        const effectifActuelInput = document.getElementById('effectif_actuel');
+        if (effectifActuelInput && !effectifActuelInput.value) {
+            effectifActuelInput.value = total;
+        }
+    }
+
+    // Ajout des événements pour le calcul automatique des effectifs
+    const effectifInputs = [
+        'effectif_cp1', 'effectif_cp2', 'effectif_ce1', 
+        'effectif_ce2', 'effectif_cm1', 'effectif_cm2', 'effectif_prescolaire'
+    ];
+    
+    effectifInputs.forEach(id => {
+        const input = document.getElementById(id);
+        if (input) {
+            input.addEventListener('input', calculateTotalEffectif);
+            input.addEventListener('change', calculateTotalEffectif);
+        }
+    });
+
+    // Validation du formulaire avec PNotify
     form.addEventListener('submit', function(e) {
-        const requiredFields = form.querySelectorAll('[required]');
+        e.preventDefault();
+        
         let isValid = true;
-
+        const requiredFields = form.querySelectorAll('[required]');
+        
         requiredFields.forEach(field => {
             if (!field.value.trim()) {
-                field.classList.add('is-invalid');
                 isValid = false;
+                field.classList.add('is-invalid');
+                
+                // PNotify pour les erreurs
+                new PNotify({
+                    title: 'Champ requis',
+                    text: `Le champ "${field.previousElementSibling.textContent}" est obligatoire.`,
+                    type: 'error',
+                    styling: 'bootstrap4'
+                });
             } else {
                 field.classList.remove('is-invalid');
             }
         });
-
-        if (!isValid) {
-            e.preventDefault();
+        
+        if (isValid) {
+            // Notification de succès
             new PNotify({
-                title: 'Erreur de validation',
-                text: 'Veuillez remplir tous les champs obligatoires marqués d\'un astérisque.',
-                type: 'error',
-                delay: 4000
+                title: 'Validation réussie',
+                text: 'Création de l\'EPP en cours...',
+                type: 'success',
+                styling: 'bootstrap4'
             });
-            return false;
-        }
-
-        // Confirmation avant soumission (amélioration du design DRENA)
-        e.preventDefault();
-        new PNotify({
-            title: 'Confirmation',
-            text: 'Êtes-vous sûr de vouloir créer cette EPP ?',
-            type: 'question',
-            confirm: {
-                confirm: true
-            },
-            buttons: {
-                closer: false,
-                sticker: false
-            },
-            history: {
-                history: false
-            }
-        }).get().on('pnotify.confirm', function() {
-            form.submit();
-        });
-    });
-
-    // Validation temps réel avec PNotify (amélioration du design DRENA)
-    const inputs = form.querySelectorAll('input[required], select[required]');
-    inputs.forEach(input => {
-        input.addEventListener('blur', function() {
-            if (this.hasAttribute('required') && !this.value.trim()) {
-                this.classList.add('is-invalid');
-                new PNotify({
-                    title: 'Champ requis',
-                    text: `Le champ "${this.previousElementSibling.textContent.replace('*', '').trim()}" est obligatoire.`,
-                    type: 'notice',
-                    delay: 2000
-                });
-            } else {
-                this.classList.remove('is-invalid');
-            }
-        });
-    });
-
-    // Validation du format d'année scolaire (amélioration du design DRENA)
-    const anneeScolaireInput = document.getElementById('annee_scolaire');
-    anneeScolaireInput.addEventListener('blur', function() {
-        const pattern = /^[0-9]{4}-[0-9]{4}$/;
-        if (this.value && !pattern.test(this.value)) {
-            this.classList.add('is-invalid');
-            new PNotify({
-                title: 'Format incorrect',
-                text: 'L\'année scolaire doit être au format AAAA-AAAA (ex: 2024-2025).',
-                type: 'error',
-                delay: 3000
-            });
-        } else {
-            this.classList.remove('is-invalid');
+            
+            // Soumission réelle du formulaire
+            setTimeout(() => {
+                form.submit();
+            }, 1000);
         }
     });
+
+    // Exposition de la fonction pour utilisation dans onchange
+    window.loadIeppByDren = loadIeppByDren;
 });
-
-// Fonction pour charger les IEPP selon la DREN sélectionnée (amélioration du design DRENA)
-function loadIeppByDren() {
-    const drenId = document.getElementById('dren_id').value;
-    const ieppSelect = document.getElementById('iepp_id');
-
-    if (!drenId) {
-        ieppSelect.innerHTML = '<option value="">-- Sélectionner d\'abord une DREN --</option>';
-        ieppSelect.disabled = true;
-        return;
-    }
-
-    // Simulation des données IEPP par DREN (basé sur les 295 inspections SIDMAS)
-    const ieppByDren = {
-        '1': [ // DREN ABIDJAN 1
-            {id: 1, nom: 'IEPP PLATEAU'},
-            {id: 2, nom: 'IEPP COCODY'},
-            {id: 3, nom: 'IEPP MARCORY'},
-            {id: 4, nom: 'IEPP TREICHVILLE'}
-        ],
-        '2': [ // DREN ABIDJAN 2
-            {id: 5, nom: 'IEPP ABOBO EST'},
-            {id: 6, nom: 'IEPP ABOBO OUEST'},
-            {id: 7, nom: 'IEPP ADJAME'},
-            {id: 8, nom: 'IEPP YOPOUGON NORD'}
-        ],
-        '3': [ // DREN ABIDJAN 3
-            {id: 9, nom: 'IEPP YOPOUGON SUD'},
-            {id: 10, nom: 'IEPP KOUMASSI'},
-            {id: 11, nom: 'IEPP PORT-BOUET'},
-            {id: 12, nom: 'IEPP VRIDI'}
-        ],
-        '7': [ // DREN BOUAKE 1
-            {id: 13, nom: 'IEPP BOUAKE CENTRE'},
-            {id: 14, nom: 'IEPP BOUAKE NORD'},
-            {id: 15, nom: 'IEPP KATIOLA'},
-            {id: 16, nom: 'IEPP SAKASSOU'}
-        ],
-        '8': [ // DREN BOUAKE 2
-            {id: 17, nom: 'IEPP BOUAKE SUD'},
-            {id: 18, nom: 'IEPP BEOUMED'},
-            {id: 19, nom: 'IEPP BROBO'},
-            {id: 20, nom: 'IEPP DIABO'}
-        ],
-        '9': [ // DREN YAMOUSSOUKRO
-            {id: 21, nom: 'IEPP YAMOUSSOUKRO 1'},
-            {id: 22, nom: 'IEPP YAMOUSSOUKRO 2'},
-            {id: 23, nom: 'IEPP ATTIEGUAKRO'},
-            {id: 24, nom: 'IEPP TIEBISSOU'}
-        ]
-        // Structure complète basée sur les 295 IEPP de la DB SIDMAS
-    };
-
-    const ieppList = ieppByDren[drenId] || [];
-
-    ieppSelect.innerHTML = '<option value="">-- Sélectionner une IEPP --</option>';
-    ieppList.forEach(iepp => {
-        ieppSelect.innerHTML += `<option value="${iepp.id}">${iepp.nom}</option>`;
-    });
-
-    ieppSelect.disabled = false;
-
-    // Notification PNotify (amélioration du design DRENA)
-    new PNotify({
-        title: 'IEPP chargées',
-        text: `${ieppList.length} inspections disponibles pour cette DREN`,
-        type: 'info',
-        delay: 2000
-    });
-}
 </script>
-@endsection
 
 <style>
+/* Styles personnalisés pour le formulaire EPP */
 .required::after {
     content: ' *';
-    color: red;
+    color: #e74a3b;
 }
 
 .form-label {
@@ -911,7 +987,7 @@ function loadIeppByDren() {
     font-size: 1.1rem;
 }
 
-.form-control:focus {
+.form-control:focus, .form-control-file:focus {
     border-color: #4e73df;
     box-shadow: 0 0 0 0.2rem rgba(78, 115, 223, 0.25);
 }
@@ -931,6 +1007,10 @@ function loadIeppByDren() {
 .form-check-label {
     font-size: 0.9rem;
     color: #5a5c69;
+}
+
+.bg-light {
+    background-color: #f8f9fc !important;
 }
 </style>
 

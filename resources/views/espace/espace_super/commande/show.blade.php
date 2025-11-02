@@ -49,8 +49,24 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold">Numéro de Commande:</label>
-                                        <p class="text-gray-800">CMD-2024-{{ str_pad($id, 3, '0', STR_PAD_LEFT) }}</p>
+                                        <label class="font-weight-bold">N° Commande SIDMAS:</label>
+                                        <p class="text-gray-800 h6">CMD-2024-{{ str_pad($id, 3, '0', STR_PAD_LEFT) }}</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Année Scolaire:</label>
+                                        <p class="text-gray-800">2024-2025</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">DREN Destinataire:</label>
+                                        <p class="text-primary font-weight-bold">DREN ABIDJAN 1</p>
+                                        <small class="text-muted">Zone Abidjan</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -61,11 +77,73 @@
                                 </div>
                             </div>
 
-                            <div class="form-group">
-                                <label class="font-weight-bold">Description:</label>
-                                <p class="text-gray-800">Commande de manuels scolaires pour l'année académique 2024-2025.
-                                Cette commande comprend des livres de mathématiques, français, sciences et histoire
-                                pour les niveaux primaire et secondaire.</p>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Type d'Ouvrage:</label>
+                                        <p class="text-gray-800">
+                                            <span class="badge badge-outline-primary">Manuel Scolaire</span>
+                                        </p>
+                                        <small class="text-muted">Classification SIDMAS</small>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Niveau Scolaire:</label>
+                                        <p class="text-gray-800">
+                                            <span class="badge badge-info">CP2 (Cours Préparatoire 2)</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Titre de l'Ouvrage:</label>
+                                        <p class="text-gray-800 font-weight-bold">Mon premier livre de lecture CP2</p>
+                                        <small class="text-muted">Référence SIDMAS</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Quantité Demandée:</label>
+                                        <p class="text-info h5">1,500 exemplaires</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Quantité Reçue:</label>
+                                        <p class="text-success h5">1,200 exemplaires</p>
+                                        <small class="text-warning">
+                                            <i class="feather icon-alert-triangle"></i> Livraison partielle (300 manquants)
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Priorité:</label>
+                                        <p><span class="badge badge-warning">Urgente</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Date Livraison Prévue:</label>
+                                        <p class="text-gray-800">15/12/2024</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Date Livraison Effective:</label>
+                                        <p class="text-gray-800">10/12/2024</p>
+                                        <small class="text-success">
+                                            <i class="feather icon-check"></i> Livrée en avance
+                                        </small>
+                                    </div>
+                                </div>
                             </div>
 
                             <div class="row">
@@ -73,208 +151,211 @@
                                     <div class="form-group">
                                         <label class="font-weight-bold">Fournisseur:</label>
                                         <p class="text-gray-800">Éditions CEDA</p>
+                                        <small class="text-muted">Fournisseur sélectionné</small>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="font-weight-bold">Type de Commande:</label>
-                                        <p class="text-gray-800">Manuels scolaires</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold">Priorité:</label>
-                                        <p><span class="badge badge-warning">Urgente</span></p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold">Date de Livraison Prévue:</label>
-                                        <p class="text-gray-800">{{ date('d/m/Y', strtotime('+30 days')) }}</p>
+                                        <label class="font-weight-bold">Statut Actuel:</label>
+                                        <p><span class="badge badge-success">Livrée Partielle</span></p>
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="font-weight-bold">Observations:</label>
-                                <p class="text-gray-800">Livraison à effectuer dans les entrepôts de la Direction Centrale.
-                                Vérification de qualité requise avant acceptation de la livraison.</p>
+                                <label class="font-weight-bold">Observations et Commentaires:</label>
+                                <p class="text-gray-800">Commande partiellement livrée - En attente du solde de 300 exemplaires. Fournisseur contacté pour délai de livraison.</p>
                             </div>
                         </div>
-            </div>
+                    </div>
 
-            <!-- Historique des Actions -->
-            <div class="card">
-                <div class="card-header">
-                    <h5><i class="feather icon-clock"></i> Historique des Actions</h5>
-                </div>
-                <div class="card-block">
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-marker bg-primary"></div>
-                            <div class="timeline-content">
-                                <h6 class="timeline-title">Commande créée</h6>
-                                <p class="timeline-text">La commande a été créée par Admin</p>
-                                <span class="timeline-time">{{ date('d/m/Y H:i') }}</span>
-                            </div>
+                    <!-- Historique des Actions -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="feather icon-clock"></i> Historique et Suivi SIDMAS</h5>
                         </div>
-                        <div class="timeline-item">
-                            <div class="timeline-marker bg-warning"></div>
-                            <div class="timeline-content">
-                                <h6 class="timeline-title">En attente de validation</h6>
-                                <p class="timeline-text">La commande est en attente de validation par le responsable</p>
-                                <span class="timeline-time">{{ date('d/m/Y H:i') }}</span>
+                        <div class="card-block">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <div class="timeline-marker bg-success"></div>
+                                    <div class="timeline-content">
+                                        <h6 class="timeline-title">Livraison partielle reçue</h6>
+                                        <p class="timeline-text">1,200 exemplaires livrés par Éditions CEDA</p>
+                                        <span class="timeline-time">10/12/2024 14:30</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker bg-info"></div>
+                                    <div class="timeline-content">
+                                        <h6 class="timeline-title">En cours de livraison</h6>
+                                        <p class="timeline-text">Expédition vers DREN ABIDJAN 1 confirmée</p>
+                                        <span class="timeline-time">08/12/2024 09:15</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker bg-primary"></div>
+                                    <div class="timeline-content">
+                                        <h6 class="timeline-title">Commande validée</h6>
+                                        <p class="timeline-text">Validation par le responsable DAF</p>
+                                        <span class="timeline-time">25/11/2024 16:45</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker bg-warning"></div>
+                                    <div class="timeline-content">
+                                        <h6 class="timeline-title">En attente de validation</h6>
+                                        <p class="timeline-text">Commande soumise pour validation</p>
+                                        <span class="timeline-time">20/11/2024 11:20</span>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker bg-secondary"></div>
+                                    <div class="timeline-content">
+                                        <h6 class="timeline-title">Commande créée</h6>
+                                        <p class="timeline-text">Création de la commande SIDMAS CMD-2024-{{ str_pad($id, 3, '0', STR_PAD_LEFT) }}</p>
+                                        <span class="timeline-time">15/11/2024 08:30</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Sidebar -->
-        <div class="col-lg-4">
-            <!-- Statut de la Commande -->
-            <div class="card">
-                <div class="card-header">
-                    <h5><i class="feather icon-info"></i> Statut</h5>
-                </div>
-                <div class="card-block text-center">
-                    <div class="mb-3">
-                        <span class="badge badge-warning badge-lg">En Attente</span>
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Statut de la Commande -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="feather icon-activity"></i> Statut et Progression</h5>
+                        </div>
+                        <div class="card-block text-center">
+                            <div class="mb-3">
+                                <span class="badge badge-success badge-lg">Livrée Partielle</span>
+                            </div>
+                            <div class="progress mb-3" style="height: 8px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="text-muted small">Progression: 1,200 / 1,500 exemplaires (80%)</p>
+                            <p class="text-muted">Dernière mise à jour: {{ date('d/m/Y H:i') }}</p>
+                        </div>
                     </div>
-                    <p class="text-muted">Dernière mise à jour: {{ date('d/m/Y H:i') }}</p>
-                </div>
-            </div>
+
+                    <!-- Métriques de Performance -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="feather icon-trending-up"></i> Métriques</h5>
+                        </div>
+                        <div class="card-block">
+                            <div class="row text-center">
+                                <div class="col-6">
+                                    <h4 class="text-success">5j</h4>
+                                    <small class="text-muted">Avance livraison</small>
+                                </div>
+                                <div class="col-6">
+                                    <h4 class="text-warning">80%</h4>
+                                    <small class="text-muted">Taux livraison</small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row text-center">
+                                <div class="col-12">
+                                    <h5 class="text-info"> </h5>
+                                    <small class="text-muted"> </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Actions Rapides -->
                     <div class="card">
                         <div class="card-header">
-                            <h5><i class="feather icon-settings"></i> Actions Rapides</h5>
+                            <h5><i class="feather icon-settings"></i> Actions Disponibles</h5>
                         </div>
                         <div class="card-block">
                             <a href="{{ route('commande_daf.edit', $id) }}" class="btn btn-warning btn-block waves-effect waves-light mb-2">
-                                <i class="feather icon-edit"></i> Modifier
+                                <i class="feather icon-edit"></i> Modifier la Commande
                             </a>
-                            <button type="button" class="btn btn-success btn-block waves-effect waves-light mb-2" onclick="validerCommande()">
-                                <i class="feather icon-check"></i> Valider
+                            <button type="button" class="btn btn-info btn-block waves-effect waves-light mb-2" onclick="relancerFournisseur()">
+                                <i class="feather icon-phone"></i> Relancer Fournisseur
                             </button>
-                            <button type="button" class="btn btn-danger btn-block waves-effect waves-light mb-2" onclick="annulerCommande()">
-                                <i class="feather icon-x"></i> Annuler
+                            <button type="button" class="btn btn-success btn-block waves-effect waves-light mb-2" onclick="marquerComplete()">
+                                <i class="feather icon-check-circle"></i> Marquer Terminée
                             </button>
+                            <div class="dropdown">
+                                <button class="btn btn-outline-secondary btn-block dropdown-toggle" type="button" data-toggle="dropdown">
+                                    <i class="feather icon-more-horizontal"></i> Plus d'actions
+                                </button>
+                                <div class="dropdown-menu w-100">
+                                    <a class="dropdown-item" href="#" onclick="exportCommande()">
+                                        <i class="feather icon-download"></i> Exporter en PDF
+                                    </a>
+                                    <a class="dropdown-item" href="#" onclick="duplicateCommande()">
+                                        <i class="feather icon-copy"></i> Dupliquer la commande
+                                    </a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item text-danger" href="#" onclick="annulerCommande()">
+                                        <i class="feather icon-x"></i> Annuler la commande
+                                    </a>
+                                </div>
+                            </div>
+                            <hr>
                             <a href="{{ route('commande_daf.index') }}" class="btn btn-inverse btn-block waves-effect waves-light">
                                 <i class="feather icon-arrow-left"></i> Retour à la Liste
                             </a>
                         </div>
                     </div>
 
-            <!-- Informations Supplémentaires -->
+            <!-- Informations de Livraison -->
             <div class="card">
                 <div class="card-header">
-                    <h5><i class="feather icon-user"></i> Informations Supplémentaires</h5>
+                    <h5><i class="feather icon-truck"></i> Détails de Livraison</h5>
                 </div>
                 <div class="card-block">
                     <div class="form-group">
-                        <label class="font-weight-bold">Créé par:</label>
-                        <p class="text-gray-800">Administrateur</p>
+                        <label class="font-weight-bold">Zone de Livraison:</label>
+                        <p class="text-gray-800">Zone Abidjan</p>
                     </div>
                     <div class="form-group">
-                        <label class="font-weight-bold">Date de Création:</label>
-                        <p class="text-gray-800">{{ date('d/m/Y H:i') }}</p>
+                        <label class="font-weight-bold">Point de Livraison:</label>
+                        <p class="text-gray-800">Entrepôt DREN ABIDJAN 1</p>
                     </div>
                     <div class="form-group">
-                        <label class="font-weight-bold">Dernière Modification:</label>
-                        <p class="text-gray-800">{{ date('d/m/Y H:i') }}</p>
+                        <label class="font-weight-bold">Responsable Réception:</label>
+                        <p class="text-gray-800">M. Kouassi Jean</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="font-weight-bold">Contact:</label>
+                        <p class="text-gray-800">+225 07 XX XX XX XX</p>
+                    </div>
+                </div>
+            </div>
+
+                    <!-- Informations Supplémentaires -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="feather icon-user"></i> Informations Supplémentaires</h5>
+                        </div>
+                        <div class="card-block">
+                            <div class="form-group">
+                                <label class="font-weight-bold">Créé par:</label>
+                                <p class="text-gray-800">Administrateur</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">Date de Création:</label>
+                                <p class="text-gray-800">{{ date('d/m/Y H:i') }}</p>
+                            </div>
+                            <div class="form-group">
+                                <label class="font-weight-bold">Dernière Modification:</label>
+                                <p class="text-gray-800">{{ date('d/m/Y H:i') }}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-        </div>
         <!-- Page-body end -->
     </div>
 </div>
-
-<script>
-function confirmDelete() {
-    new PNotify({
-        title: 'Confirmation',
-        text: 'Êtes-vous sûr de vouloir supprimer cette commande ?',
-        type: 'warning',
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    }).get().on('pnotify.confirm', function() {
-        new PNotify({
-            title: 'Succès',
-            text: 'Commande supprimée avec succès',
-            type: 'success'
-        });
-        setTimeout(() => {
-            window.location.href = '{{ route("commande_daf.index") }}';
-        }, 1500);
-    });
-}
-
-function validerCommande() {
-    new PNotify({
-        title: 'Confirmation',
-        text: 'Êtes-vous sûr de vouloir valider cette commande ?',
-        type: 'warning',
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    }).get().on('pnotify.confirm', function() {
-        new PNotify({
-            title: 'Succès',
-            text: 'Commande validée avec succès',
-            type: 'success'
-        });
-        setTimeout(() => location.reload(), 1500);
-    });
-}
-
-function annulerCommande() {
-    new PNotify({
-        title: 'Raison d\'annulation',
-        text: 'Veuillez indiquer la raison de l\'annulation dans les observations avant de confirmer.',
-        type: 'info',
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    }).get().on('pnotify.confirm', function() {
-        new PNotify({
-            title: 'Succès',
-            text: 'Commande annulée avec succès',
-            type: 'success'
-        });
-        setTimeout(() => location.reload(), 1500);
-    });
-}
-</script>
 
 <style>
 .badge-lg {
@@ -330,4 +411,87 @@ function annulerCommande() {
 }
 </style>
 
+@endsection
+
+@section('script')
+<script>
+    function relancerFournisseur() {
+        if (confirm('Êtes-vous sûr de vouloir envoyer une relance au fournisseur ?')) {
+            // Simulation d'envoi de relance
+            new PNotify({
+                title: 'Relance Envoyée',
+                text: 'Le fournisseur a été relancé avec succès.',
+                type: 'success'
+            });
+        }
+    }
+
+    function marquerComplete() {
+        if (confirm('Marquer cette commande comme terminée ?')) {
+            // Simulation de mise à jour du statut
+            new PNotify({
+                title: 'Commande Mise à Jour',
+                text: 'La commande a été marquée comme terminée.',
+                type: 'success'
+            });
+            // Redirection ou actualisation de la page
+            setTimeout(() => {
+                location.reload();
+            }, 1500);
+        }
+    }
+
+    function exportCommande() {
+        new PNotify({
+            title: 'Export en cours',
+            text: 'Génération du PDF de la commande...',
+            type: 'info'
+        });
+        // Simulation de téléchargement
+        setTimeout(() => {
+            window.open('/commande/export/pdf/{{ $id }}', '_blank');
+        }, 1000);
+    }
+
+    function duplicateCommande() {
+        if (confirm('Dupliquer cette commande avec les mêmes informations ?')) {
+            new PNotify({
+                title: 'Duplication',
+                text: 'Redirection vers la création d\'une nouvelle commande...',
+                type: 'info'
+            });
+            setTimeout(() => {
+                window.location.href = '{{ route("commande_daf.create") }}?duplicate={{ $id }}';
+            }, 1000);
+        }
+    }
+
+    function annulerCommande() {
+        if (confirm('Êtes-vous sûr de vouloir annuler cette commande ? Cette action est irréversible.')) {
+            new PNotify({
+                title: 'Commande Annulée',
+                text: 'La commande a été annulée avec succès.',
+                type: 'error'
+            });
+            setTimeout(() => {
+                window.location.href = '{{ route("commande_daf.index") }}';
+            }, 1500);
+        }
+    }
+
+    // Animation des badges au chargement
+    $(document).ready(function() {
+        $('.badge').each(function(index) {
+            $(this).delay(index * 100).fadeIn();
+        });
+        
+        // Animation des métriques
+        $('.progress-bar').each(function() {
+            var width = $(this).attr('aria-valuenow');
+            $(this).css('width', '0%').animate({
+                width: width + '%'
+            }, 1000);
+        });
+    });
+</script>
 @endsection

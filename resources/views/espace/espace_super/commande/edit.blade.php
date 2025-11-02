@@ -50,58 +50,95 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="numero_commande">Numéro de Commande <span class="text-danger">*</span></label>
+                            <label for="numero_commande">N° Commande SIDMAS <span class="text-danger">*</span></label>
                             <input type="text" class="form-control" id="numero_commande" name="numero_commande"
                                    value="CMD-2024-{{ str_pad($id, 3, '0', STR_PAD_LEFT) }}" readonly>
+                            <small class="form-text text-muted">Numéro auto-généré selon format SIDMAS</small>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="date_commande">Date de Commande <span class="text-danger">*</span></label>
+                            <label for="annee_scolaire">Année scolaire <span class="text-danger">*</span></label>
+                            <select class="form-control" id="annee_scolaire" name="annee_scolaire" required>
+                                <option value="">Sélectionner l'année</option>
+                                <option value="2024-2025" selected>2024-2025</option>
+                                <option value="2023-2024">2023-2024</option>
+                                <option value="2022-2023">2022-2023</option>
+                            </select>
+                            <small class="form-text text-muted">Année scolaire de référence</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="dren_destinataire">DREN destinataire <span class="text-danger">*</span></label>
+                            <select class="form-control" id="dren_destinataire" name="dren_destinataire" required>
+                                <option value="">Sélectionner une DREN</option>
+                                <option value="DREN-ABJ1" selected>DREN ABIDJAN 1 (Zone Abidjan)</option>
+                                <option value="DREN-ABJ2">DREN ABIDJAN 2 (Zone Abidjan)</option>
+                                <option value="DREN-ABJ3">DREN ABIDJAN 3 (Zone Abidjan)</option>
+                                <option value="DREN-BOU1">DREN BOUAKÉ 1 (Zone Centre)</option>
+                                <option value="DREN-YAM">DREN YAMOUSSOUKRO (Zone Centre)</option>
+                                <option value="DREN-KOR">DREN KORHOGO (Zone Nord)</option>
+                                <option value="DREN-MAN">DREN MAN (Zone Ouest)</option>
+                                <option value="DREN-SAN">DREN SAN-PÉDRO (Zone Sud)</option>
+                            </select>
+                            <small class="form-text text-muted">Direction Régionale destinataire selon SIDMAS</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="date_commande">Date de commande <span class="text-danger">*</span></label>
                             <input type="date" class="form-control" id="date_commande" name="date_commande"
                                    value="{{ date('Y-m-d') }}" required>
+                            <small class="form-text text-muted">Date de création de la commande</small>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="description">Description <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="description" name="description" rows="3" required>Commande de manuels scolaires pour l'année académique 2024-2025. Cette commande comprend des livres de mathématiques, français, sciences et histoire pour les niveaux primaire et secondaire.</textarea>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="fournisseur">Fournisseur</label>
-                            <select class="form-control" id="fournisseur" name="fournisseur">
-                                <option value="">Sélectionner un fournisseur</option>
-                                <option value="fournisseur_1" selected>Éditions CEDA</option>
-                                <option value="fournisseur_2">Éditions Nouvelles du Sud</option>
-                                <option value="fournisseur_3">Librairie de France</option>
-                                <option value="fournisseur_4">Autre</option>
+                            <label for="type_ouvrage">Type d'ouvrage <span class="text-danger">*</span></label>
+                            <select class="form-control" id="type_ouvrage" name="type_ouvrage" required>
+                                <option value="">Sélectionner le type</option>
+                                <option value="manuel_scolaire" selected>Manuel Scolaire</option>
+                                <option value="guide_pedagogique">Guide Pédagogique</option>
+                                <option value="livre_lecture">Livre de Lecture</option>
+                                <option value="cahier_activites">Cahier d'Activités</option>
+                                <option value="atlas_cartes">Atlas et Cartes</option>
+                                <option value="materiel_didactique">Matériel Didactique</option>
                             </select>
-                            @error('fournisseur')
-                                <div class="form-control-feedback text-danger">{{ $message }}</div>
-                            @enderror
+                            <small class="form-text text-muted">Classification SIDMAS typeouvrage</small>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="type_commande">Type de Commande</label>
-                            <select class="form-control" id="type_commande" name="type_commande">
-                                <option value="">Sélectionner un type</option>
-                                <option value="manuels_scolaires" selected>Manuels scolaires</option>
-                                <option value="fournitures_bureau">Fournitures de bureau</option>
-                                <option value="equipements_informatique">Équipements informatique</option>
-                                <option value="mobilier_scolaire">Mobilier scolaire</option>
+                            <label for="niveau_scolaire">Niveau scolaire <span class="text-danger">*</span></label>
+                            <select class="form-control" id="niveau_scolaire" name="niveau_scolaire" required>
+                                <option value="">Sélectionner le niveau</option>
+                                <option value="prescolaire">Préscolaire</option>
+                                <option value="cp1">CP1 (Cours Préparatoire 1)</option>
+                                <option value="cp2" selected>CP2 (Cours Préparatoire 2)</option>
+                                <option value="ce1">CE1 (Cours Élémentaire 1)</option>
+                                <option value="ce2">CE2 (Cours Élémentaire 2)</option>
+                                <option value="cm1">CM1 (Cours Moyen 1)</option>
+                                <option value="cm2">CM2 (Cours Moyen 2)</option>
                             </select>
-                            @error('type_commande')
-                                <div class="form-control-feedback text-danger">{{ $message }}</div>
-                            @enderror
+                            <small class="form-text text-muted">Table niveau SIDMAS</small>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="titre_ouvrage">Titre de l'ouvrage <span class="text-danger">*</span></label>
+                            <select class="form-control" id="titre_ouvrage" name="titre_ouvrage" required>
+                                <option value="">Sélectionner le titre</option>
+                                <option value="mon_premier_livre_lecture_cp2" selected>Mon premier livre de lecture CP2</option>
+                                <!-- Options dynamiques selon type et niveau -->
+                            </select>
+                            <small class="form-text text-muted">Table titreouvrage SIDMAS</small>
                         </div>
                     </div>
                 </div>
@@ -109,19 +146,54 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="priorite">Priorité</label>
+                            <label for="quantite_demandee">Quantité demandée <span class="text-danger">*</span></label>
+                            <input type="number" class="form-control" id="quantite_demandee" name="quantite_demandee"
+                                   min="1" max="100000" value="1500" required>
+                            <small class="form-text text-muted">Nombre d'exemplaires demandés</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="quantite_recue">Quantité reçue</label>
+                            <input type="number" class="form-control" id="quantite_recue" name="quantite_recue"
+                                   min="0" value="1200">
+                            <small class="form-text text-muted">Quantité réellement reçue</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="priorite">Priorité de la commande</label>
                             <select class="form-control" id="priorite" name="priorite">
                                 <option value="normale">Normale</option>
                                 <option value="urgente" selected>Urgente</option>
                                 <option value="tres_urgente">Très Urgente</option>
+                                <option value="critique">Critique</option>
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="form-group">
-                            <label for="date_livraison_prevue">Date de Livraison Prévue</label>
+                            <label for="statut_commande">Statut de la commande</label>
+                            <select class="form-control" id="statut_commande" name="statut_commande">
+                                <option value="en_preparation">En préparation</option>
+                                <option value="en_attente_validation">En attente validation</option>
+                                <option value="validee" selected>Validée</option>
+                                <option value="en_cours_livraison">En cours de livraison</option>
+                                <option value="livree">Livrée</option>
+                                <option value="livree_partielle">Livrée partielle</option>
+                                <option value="annulee">Annulée</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="date_livraison_prevue">Date livraison prévue</label>
                             <input type="date" class="form-control" id="date_livraison_prevue" name="date_livraison_prevue"
-                                   value="{{ date('Y-m-d', strtotime('+30 days')) }}">
+                                   value="2024-12-15">
+                            <small class="form-text text-muted">Date prévue de livraison</small>
                         </div>
                     </div>
                 </div>
@@ -129,101 +201,63 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="statut">Statut <span class="text-danger">*</span></label>
-                            <select class="form-control" id="statut" name="statut" required>
-                                <option value="en_attente" selected>En attente</option>
-                                <option value="validee">Validée</option>
-                                <option value="en_cours">En cours</option>
-                                <option value="livree">Livrée</option>
-                                <option value="annulee">Annulée</option>
+                            <label for="fournisseur_prevu">Fournisseur</label>
+                            <select class="form-control" id="fournisseur_prevu" name="fournisseur_prevu">
+                                <option value="">Sélectionner un fournisseur</option>
+                                <option value="editions_ceda" selected>Éditions CEDA</option>
+                                <option value="editions_nouvelles_sud">Éditions Nouvelles du Sud</option>
+                                <option value="librairie_france">Librairie de France</option>
+                                <option value="imprimerie_nationale">Imprimerie Nationale</option>
+                                <option value="groupe_edilis">Groupe EDILIS</option>
+                                <option value="autre">Autre fournisseur</option>
                             </select>
+                            <small class="form-text text-muted">Fournisseur sélectionné</small>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
-                            <label for="responsable">Responsable</label>
-                            <select class="form-control" id="responsable" name="responsable">
-                                <option value="">Sélectionner un responsable</option>
-                                <option value="admin" selected>Administrateur</option>
-                                <option value="gestionnaire">Gestionnaire</option>
-                                <option value="responsable_achats">Responsable Achats</option>
-                            </select>
+                            <label for="responsable_commande">Responsable de la commande</label>
+                            <input type="text" class="form-control" id="responsable_commande" name="responsable_commande"
+                                   placeholder="Nom du responsable DAF">
+                            <small class="form-text text-muted">Agent DAF responsable du suivi</small>
                         </div>
                     </div>
+                    <!-- <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="date_livraison_effective">Date livraison effective</label>
+                            <input type="date" class="form-control" id="date_livraison_effective" name="date_livraison_effective"
+                                   value="2024-12-10">
+                            <small class="form-text text-muted">Date réelle de livraison</small>
+                        </div>
+                    </div> -->
                 </div>
 
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label for="observations">Observations</label>
-                            <textarea class="form-control" id="observations" name="observations" rows="3">Livraison à effectuer dans les entrepôts de la Direction Centrale. Vérification de qualité requise avant acceptation de la livraison.</textarea>
+                            <label for="observations">Observations et commentaires</label>
+                            <textarea class="form-control" id="observations" name="observations" rows="3"
+                                      placeholder="Observations, notes particulières...">Commande partiellement livrée - En attente du solde de 300 exemplaires. Fournisseur contacté pour délai de livraison.</textarea>
+                            <small class="form-text text-muted">Notes et commentaires sur la commande</small>
                         </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="urgent" name="urgent" checked>
-                                <label class="form-check-label" for="urgent">
-                                    Marquer comme urgente
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="notification" name="notification">
-                                <label class="form-check-label" for="notification">
-                                    Envoyer une notification de modification
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Historique des Modifications -->
-                <div class="card bg-light mt-4">
-                    <div class="card-header">
-                        <h6 class="m-0 font-weight-bold text-secondary">Historique des Modifications</h6>
-                    </div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label for="raison_modification">Raison de la Modification <span class="text-danger">*</span></label>
-                            <textarea class="form-control" id="raison_modification" name="raison_modification" rows="2"
-                                      placeholder="Veuillez indiquer la raison de cette modification..." required></textarea>
-                        </div>
-                        <small class="text-muted">
-                            <i class="fas fa-info-circle"></i>
-                            Dernière modification le {{ date('d/m/Y H:i') }} par Administrateur
-                        </small>
-                    </div>
-                </div>
-
-                <div class="row mt-4">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <hr>
-                                        <div class="form-group row">
-                                            <div class="col-sm-12">
-                                                <a href="{{ route('commande_daf.show', $id) }}" class="btn btn-inverse">
-                                                    <i class="feather icon-arrow-left"></i> Retour aux Détails
-                                                </a>
-                                                <a href="{{ route('commande_daf.index') }}" class="btn btn-outline-secondary">
-                                                    <i class="feather icon-list"></i> Retour à la Liste
-                                                </a>
-                                                <button type="button" class="btn btn-outline-warning" onclick="resetForm()">
-                                                    <i class="feather icon-refresh-cw"></i> Annuler les Modifications
-                                                </button>
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light">
-                                                    <i class="feather icon-save"></i> Enregistrer les Modifications
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <!-- Boutons d'action -->
+                                <div class="form-group text-center mt-4">
+                                    <button type="submit" class="btn btn-primary waves-effect waves-light mr-2">
+                                        <i class="feather icon-save"></i> Mettre à jour la Commande
+                                    </button>
+                                    <button type="button" class="btn btn-warning waves-effect waves-light mr-2" onclick="resetForm()">
+                                        <i class="feather icon-refresh-cw"></i> Réinitialiser
+                                    </button>
+                                    <a href="{{ route('commande_daf.show', $id) }}" class="btn btn-info waves-effect waves-light mr-2">
+                                        <i class="feather icon-eye"></i> Voir Détails
+                                    </a>
+                                    <a href="{{ route('commande_daf.index') }}" class="btn btn-secondary waves-effect waves-light">
+                                        <i class="feather icon-arrow-left"></i> Retour à la Liste
+                                    </a>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -234,7 +268,9 @@
     </div>
 </div>
 
-<script>
+@endsection
+
+@section('script')
 // Sauvegarde des valeurs originales pour la réinitialisation
 let originalValues = {};
 
