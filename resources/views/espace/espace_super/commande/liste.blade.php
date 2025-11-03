@@ -37,7 +37,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
         <!-- Filtres essentiels -->
         <div class="row mb-4">
             <div class="col-12">
@@ -95,7 +94,8 @@
                 </div>
             </div>
         </div>
-                        <!-- Tableau principal -->
+
+        <!-- Tableau principal -->
         <div class="card">
             <div class="card-header">
                 <h6 class="mb-0">
@@ -380,38 +380,21 @@
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 mb-3">
-                <div class="card bg-info text-white">
+                <div class="card bg-danger text-white">
                     <div class="card-body text-center">
-                        <h4 class="mb-1">2.8M</h4>
-                        <p class="mb-0">Budget Total (FCFA)</p>
+                        <h4 class="mb-1">14</h4>
+                        <p class="mb-0">Retardées</p>
                     </div>
-=======
-
-
-        <!-- [ Main Content ] start -->
-        <div class="row">
-
-            <!-- <p > BIENVENUE SUR DISMAS </p> -->
-
-            <p class="btn btn-primary">BIENVENUE SUR DISMAS ----- liste des commandes</p>
-          
-           
-           <p>Boqnjours famille DEv travail en groupe laravel ce jour PROF : Jesus</p>
-
-            <!-- table card-1 start -->
-            <div class="col-md-12 col-xl-4">
-          <!--       <div class="card flat-card">-->
-                </div> 
->>>>>>> afbfbed4971f1bc618e6778dea9af453515f7692
                 </div>
             </div>
+            
         </div>
     </div>
 </div>
 
 @endsection
 
-@section('scripts')
+@section('script')
 <script>
 function resetFilters() {
     document.getElementById('searchInput').value = '';
