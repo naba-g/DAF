@@ -1,209 +1,132 @@
+@extends('layouts.layouts_super.master')
+@section('title', 'Liste des iepp')
+@section('content')
 
-        @extends('layouts.layouts_super.master')
-        @section('title', 'Liste des IEPP')
-        @section('content')
-
-<!-- [ Main Content ] start -->
 <div class="pcoded-main-container">
     <div class="pcoded-content">
-        <!-- [ breadcrumb ] start -->
+
+        <!-- En-tête -->
         <div class="page-header">
             <div class="page-block">
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10"><i class="feather icon-home text-primary"></i> Gestion des IEPP</h5>
+                            <h5 class="m-b-10">Gestion des iepp</h5>
                         </div>
                         <ul class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="{{ route('dashboard') }}"><i class="feather icon-home"></i></a></li>
-                            <li class="breadcrumb-item active">IEPP</li>
+                            <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
+                            <li class="breadcrumb-item"><a href="#!">Administration</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Liste des iepp</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- [ breadcrumb ] end -->
 
-        <!-- Actions et Filtres -->
+        <!-- Tableau -->
         <div class="row">
-            <div class="col-xl-12">
+            <div class="col-sm-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h5>Actions et Filtres</h5>
+
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h5 class="mb-0">Liste des iepp</h5>
+
+                        <!-- Lien remplaçant le bouton -->
+                        <!-- <a href="/ajoutiepp" 
+                           class="text-primary fw-semibold"
+                           style="text-decoration: none; transition: all 0.2s ease; font-size: 14px;"
+                           onmouseover="this.style.textDecoration='underline'"
+                           onmouseout="this.style.textDecoration='none'">
+                          Nouvelle iepp
+                        </a> -->
+
+                        <div class="d-block">
+                        <a href="/ajoutiepp" class="btn btn-primary">
+                        <i class="feather icon-plus"></i> Nouvelle iepp
+                         </a>
+                      </div>
                     </div>
+
                     <div class="card-body">
-                        <div class="row align-items-center">
-                            <div class="col-md-2">
-                                <a href="{{ route('iepp.create') }}" class="btn btn-primary btn-sm waves-effect waves-light">
-                                    <i class="feather icon-plus"></i> Nouvelle IEPP
-                                </a>
-                            </div>
-                            <div class="col-md-2">
-                                <select id="drenFilter" class="form-control form-control-sm">
-                                    <option value="">Toutes les DREN</option>
-                                    <option value="1">DREN ABIDJAN 1</option>
-                                    <option value="2">DREN ABIDJAN 2</option>
-                                    <option value="3">DREN ABIDJAN 3</option>
-                                    <option value="4">DREN BOUAKE 1</option>
-                                    <option value="5">DREN BOUAKE 2</option>
-                                    <option value="6">DREN YAMOUSSOUKRO</option>
-                                    <option value="7">DREN KORHOGO</option>
-                                    <option value="8">DREN SAN PEDRO</option>
-                                    <!-- Basé sur les 56 DREN de SIDMAS -->
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <input type="text" id="searchInput" class="form-control form-control-sm" placeholder="Rechercher IEPP...">
-                            </div>
-                            <div class="col-md-2">
-                                <select id="statusFilter" class="form-control form-control-sm">
-                                    <option value="">Tous les statuts</option>
-                                    <option value="active">Active</option>
-                                    <option value="inactive">Inactive</option>
-                                    <option value="en_cours">En cours</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <select id="typeFilter" class="form-control form-control-sm">
-                                    <option value="">Tous les types</option>
-                                    <option value="urbaine">Urbaine</option>
-                                    <option value="rurale">Rurale</option>
-                                    <option value="mixte">Mixte</option>
-                                </select>
-                            </div>
-                            <div class="col-md-2">
-                                <button type="button" class="btn btn-secondary btn-sm waves-effect" onclick="resetFilters()">
-                                    <i class="feather icon-refresh-cw"></i> Reset
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Liste IEPP -->
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>Liste des IEPP</h5>
-                    </div>
-                    <div class="card-body table-border-style">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover" id="ieppTable">
-                                <thead class="thead-dark">
+                            <table class="table table-hover">
+                                <thead class="thead-light">
                                     <tr>
-                                        <th style="width: 5%;">#</th>
-                                        <th style="width: 18%;">Nom IEPP</th>
-                                        <th style="width: 15%;">DREN Rattachement</th>
-                                        <th style="width: 12%;">Code IEPP</th>
-                                        <th style="width: 8%;">Type Zone</th>
-                                        <th style="width: 8%;">Nb EPP</th>
-                                        <th style="width: 10%;">Statut</th>
-                                        <th style="width: 12%;">Responsable</th>
-                                        <th style="width: 12%;">Actions</th>
+                                        <th>#</th>
+                                        <th>Nom drena</th>
+                                        <th>Code iepp</th> 
+                                        <th>Nom iepp</th>
+                                        <th>Actions</th>
                                     </tr>
                                 </thead>
+
                                 <tbody>
-                                    <!-- Données basées sur la table IEPP de SIDMAS (295 inspections) -->
                                     <tr>
                                         <td>1</td>
+                                        <td><strong>Abengourou</strong></td>
+                                        <td>978-2-09-15</td>
+                                        <td>soleil 4</td>
                                         <td>
-                                            <div class="font-weight-bold">IEPP PLATEAU</div>
-                                            <small class="text-muted">Zone Urbaine Centre</small>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-primary">DREN ABIDJAN 1</span>
-                                        </td>
-                                        <td><code>IEPP-ABJ1-PLT-001</code></td>
-                                        <td><span class="badge badge-info">Urbaine</span></td>
-                                        <td>
-                                            <span class="font-weight-bold text-success">12</span>
-                                            <small class="text-muted d-block">EPP</small>
-                                        </td>
-                                        <td><span class="badge badge-success">Active</span></td>
-                                        <td>
-                                            <div>Mme KONE Marie</div>
-                                            <small class="text-muted">Inspectrice</small>
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <a href="{{ route('iepp.show', 1) }}" class="btn btn-sm btn-outline-primary waves-effect" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>
-                                                <a href="{{ route('iepp.edit', 1) }}" class="btn btn-sm btn-outline-warning waves-effect" title="Modifier">
+                                            <div class="btn-group btn-group-xs" role="group">
+                                             
+                                               <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
-                                                <button type="button" class="btn btn-sm btn-outline-danger waves-effect" title="Supprimer" onclick="confirmDelete(1)">
+                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
                                                     <i class="feather icon-trash-2"></i>
                                                 </button>
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <td>2</td>
+                                        <td><strong>Daloa</strong></td>
+                                        <td>978-2-09-16</td>
+                                        <td>Rabat mayer 2</td>
                                         <td>
-                                            <div class="font-weight-bold">IEPP COCODY</div>
-                                            <small class="text-muted">Zone Résidentielle</small>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-primary">DREN ABIDJAN 1</span>
-                                        </td>
-                                        <td><code>IEPP-ABJ1-COC-002</code></td>
-                                        <td><span class="badge badge-info">Urbaine</span></td>
-                                        <td>
-                                            <span class="font-weight-bold text-success">18</span>
-                                            <small class="text-muted d-block">EPP</small>
-                                        </td>
-                                        <td><span class="badge badge-success">Active</span></td>
-                                        <td>
-                                            <div>M. KOUASSI Paul</div>
-                                            <small class="text-muted">Inspecteur</small>
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <a href="{{ route('iepp.show', 2) }}" class="btn btn-sm btn-outline-primary waves-effect" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>
-                                                <a href="{{ route('iepp.edit', 2) }}" class="btn btn-sm btn-outline-warning waves-effect" title="Modifier">
+                                            <div class="btn-group btn-group-xs" role="group">
+                                             
+                                               <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
-                                                <button type="button" class="btn btn-sm btn-outline-danger waves-effect" title="Supprimer" onclick="confirmDelete(2)">
+                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
                                                     <i class="feather icon-trash-2"></i>
                                                 </button>
                                             </div>
                                         </td>
                                     </tr>
+
                                     <tr>
                                         <td>3</td>
+                                        <td><strong>Abj 1</strong></td>
+                                        <td>978-2-09-17</td>
+                                        <td>Plateau village</td>
                                         <td>
-                                            <div class="font-weight-bold">IEPP ABOBO EST</div>
-                                            <small class="text-muted">Zone Périphérique</small>
-                                        </td>
-                                        <td>
-                                            <span class="badge badge-primary">DREN ABIDJAN 2</span>
-                                        </td>
-                                        <td><code>IEPP-ABJ2-ABE-003</code></td>
-                                        <td><span class="badge badge-warning">Mixte</span></td>
-                                        <td>
-                                            <span class="font-weight-bold text-success">25</span>
-                                            <small class="text-muted d-block">EPP</small>
-                                        </td>
-                                        <td><span class="badge badge-success">Active</span></td>
-                                        <td>
-                                            <div>Mme TRAORE Awa</div>
-                                            <small class="text-muted">Inspectrice</small>
-                                        </td>
-                                        <td>
-                                            <div class="btn-group" role="group">
-                                                <a href="{{ route('iepp.show', 3) }}" class="btn btn-sm btn-outline-primary waves-effect" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>
-                                                <a href="{{ route('iepp.edit', 3) }}" class="btn btn-sm btn-outline-warning waves-effect" title="Modifier">
+                                            <div class="btn-group btn-group-xs" role="group">
+                                               
+                                                <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
-                                                <button type="button" class="btn btn-sm btn-outline-danger waves-effect" title="Supprimer" onclick="confirmDelete(3)">
+                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>4</td>
+                                        <td><strong>Aboisso</strong></td>
+                                        <td>978-2-09-18</td>
+                                        <td>Koko-ville</td>
+                                        <td>
+                                            <div class="btn-group btn-group-xs" role="group">
+                                              
+                                                 <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>
                                                 </button>
                                             </div>
@@ -212,233 +135,87 @@
                                 </tbody>
                             </table>
                         </div>
+
+                        <!-- Pagination -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <nav aria-label="Pagination">
+                                    <ul class="pagination justify-content-center">
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                        <li class="page-item disabled">
+                                            <a class="page-link" href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <p class="text-center text-muted">Affichage de 1 à 4 sur 4 entrées</p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Statistiques Rapides -->
-        <div class="row">
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card bg-primary text-white">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="h3 mb-0">295</div>
-                            <div class="small">Total IEPP (SIDMAS)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card bg-success text-white">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="h3 mb-0">289</div>
-                            <div class="small">IEPP Actives</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card bg-warning text-white">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="h3 mb-0">56</div>
-                            <div class="small">DREN Rattachées</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 mb-4">
-                <div class="card bg-info text-white">
-                    <div class="card-body">
-                        <div class="text-center">
-                            <div class="h3 mb-0">3,247</div>
-                            <div class="small">EPP Supervisées</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
+<!-- Scripts -->
 <script>
-function resetFilters() {
-    document.getElementById('searchInput').value = '';
-    document.getElementById('statusFilter').value = '';
-    document.getElementById('drenFilter').value = '';
-    document.getElementById('typeFilter').value = '';
-    filterTable();
-
+function confirmDelete(id) {
     new PNotify({
-        title: 'Filtres réinitialisés',
-        text: 'Tous les filtres ont été supprimés',
-        type: 'info',
-        delay: 2000
-    });
-}
-
-// Fonction de suppression avec PNotify
-function confirmDelete(id) {
-    (new PNotify({
-        title: 'Confirmation de suppression',
-        text: 'Êtes-vous sûr de vouloir supprimer cette IEPP ? Cette action est irréversible.',
-        icon: 'feather icon-alert-triangle',
-        hide: false,
-        confirm: {
-            confirm: true,
-            buttons: [{
-                text: 'Supprimer',
-                addClass: 'btn-danger'
-            }, {
-                text: 'Annuler',
-                addClass: 'btn-secondary'
-            }]
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    })).get().on('pnotify.confirm', function() {
+        title: 'Confirmation',
+        text: 'Voulez-vous vraiment supprimer ce manuel ?',
+        type: 'warning',
+        confirm: { confirm: true },
+        buttons: { closer: false, sticker: false },
+    }).get().on('pnotify.confirm', function() {
         new PNotify({
-            title: 'IEPP supprimée',
-            text: 'L\'IEPP a été supprimée avec succès',
-            type: 'success',
-            delay: 3000
-        });
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const statusFilter = document.getElementById('statusFilter');
-    const drenFilter = document.getElementById('drenFilter');
-    const typeFilter = document.getElementById('typeFilter');
-    const table = document.getElementById('ieppTable');
-    const tbody = table.getElementsByTagName('tbody')[0];
-
-    // Ajout des écouteurs d'événements pour les filtres
-    searchInput.addEventListener('input', filterTable);
-    statusFilter.addEventListener('change', filterTable);
-    drenFilter.addEventListener('change', filterTable);
-    typeFilter.addEventListener('change', filterTable);
-
-    function filterTable() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const statusValue = statusFilter.value.toLowerCase();
-        const drenValue = drenFilter.value;
-        const typeValue = typeFilter.value.toLowerCase();
-        const rows = tbody.getElementsByTagName('tr');
-
-        let visibleCount = 0;
-
-        for (let i = 0; i < rows.length; i++) {
-            const row = rows[i];
-            const cells = row.getElementsByTagName('td');
-
-            if (cells.length > 0) {
-                const nom = cells[1].textContent.toLowerCase();
-                const dren = cells[2].textContent.toLowerCase();
-                const code = cells[3].textContent.toLowerCase();
-                const type = cells[4].textContent.toLowerCase();
-                const statut = cells[6].textContent.toLowerCase();
-
-                const matchesSearch = nom.includes(searchTerm) ||
-                                    dren.includes(searchTerm) ||
-                                    code.includes(searchTerm);
-                const matchesStatus = !statusValue || statut.includes(statusValue);
-                const matchesDren = !drenValue || dren.includes(drenValue.toLowerCase());
-                const matchesType = !typeValue || type.includes(typeValue);
-
-                if (matchesSearch && matchesStatus && matchesDren && matchesType) {
-                    row.style.display = '';
-                    visibleCount++;
-                } else {
-                    row.style.display = 'none';
-                }
-            }
-        }
-
-        // Notification du nombre de résultats
-        if (searchTerm || statusValue || drenValue || typeValue) {
-            new PNotify({
-                title: 'Filtrage appliqué',
-                text: `${visibleCount} IEPP trouvée(s) sur 295 total`,
-                type: 'info',
-                delay: 2000
-            });
-        }
-    }
-
-    // Fonction globale pour réutilisation
-    window.filterTable = filterTable;
-
-    function filterTable() {
-        const searchTerm = searchInput.value.toLowerCase();
-        const statusValue = statusFilter.value.toLowerCase();
-        const rows = tbody.getElementsByTagName('tr');
-
-        for (let i = 0; i < rows.length; i++) {
-            const row = rows[i];
-            let showRow = true;
-
-            if (searchTerm) {
-                const textContent = row.textContent.toLowerCase();
-                if (!textContent.includes(searchTerm)) {
-                    showRow = false;
-                }
-            }
-
-            if (statusValue && showRow) {
-                const statusCell = row.getElementsByTagName('td')[5];
-                const statusText = statusCell.textContent.toLowerCase();
-                if (!statusText.includes(statusValue)) {
-                    showRow = false;
-                }
-            }
-
-            row.style.display = showRow ? '' : 'none';
-        }
-    }
-
-    window.filterTable = filterTable;
-    searchInput.addEventListener('keyup', filterTable);
-    statusFilter.addEventListener('change', filterTable);
-});
-
-function confirmDelete(id) {
-    (new PNotify({
-        title: 'Confirmation de suppression',
-        text: 'Êtes-vous sûr de vouloir supprimer cette IEPP ?',
-        icon: 'feather icon-trash-2',
-        hide: false,
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        },
-        addClass: 'notice-remove'
-    })).get().on('pnotify.confirm', function() {
-        new PNotify({
-            title: 'IEPP supprimée',
-            text: 'IEPP supprimée avec succès (simulation)',
-            type: 'success',
-            delay: 3000
+            title: 'Succès',
+            text: 'Manuel supprimé avec succès',
+            type: 'success'
         });
     });
 }
 </script>
+
+<!-- Style boutons réduits -->
+<style>
+.btn-action {
+    padding: 2px 6px !important;
+    font-size: 12px !important;
+    line-height: 1.2 !important;
+}
+.btn-group-xs > .btn {
+    border-radius: 4px;
+}
+.table th, .table td {
+    vertical-align: middle;
+}
+
+/* Couleur claire pour l’en-tête du tableau */
+.table-header-custom {
+    background-color: #f8f9fa !important;
+    color: #212529 !important;
+    font-weight: 600;
+}
+
+/* Effet au survol des lignes */
+.table-hover tbody tr:hover {
+    background-color: #f1f3f5 !important;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* Lien Ajouter un manuel */
+a.text-primary:hover {
+    text-decoration: underline !important;
+}
+</style>
 
 @endsection
