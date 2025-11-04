@@ -1,5 +1,5 @@
 @extends('layouts.layouts_super.master')
-@section('title', 'Détails du Service - Direction Centrale')
+@section('title', 'Détails de la Direction Centrale')
 @section('content')
 
 <div class="pcoded-main-container">
@@ -10,8 +10,8 @@
                 <div class="row align-items-center">
                     <div class="col-md-8">
                         <div class="page-header-title">
-                            <h5 class="m-b-10"><i class="feather icon-eye"></i> Détails du Service - Direction Centrale</h5>
-                            <p class="m-b-0">Affichage des détails du service #{{ $id }}</p>
+                            <h5 class="m-b-10"><i class="feather icon-eye"></i> Détails de la Direction Centrale</h5>
+                            <p class="m-b-0">Affichage des détails de la direction #{{ $id }}</p>
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -22,7 +22,7 @@
                             <li class="breadcrumb-item">
                                 <a href="{{ route('direction_centrale.index') }}">Direction Centrale</a>
                             </li>
-                            <li class="breadcrumb-item active">Service #{{ $id }}</li>
+                            <li class="breadcrumb-item active">Direction #{{ $id }}</li>
                         </ul>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
 
         <!-- Page-body start -->
         <div class="page-body">
-            <!-- Informations du Service -->
+            <!-- Informations de la Direction -->
             <div class="row">
                 <div class="col-lg-8">
                     <div class="card">
@@ -46,293 +46,192 @@
                             </div>
                         </div>
                         <div class="card-block">
-                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
-                            aria-labelledby="dropdownMenuLink">
-                            <a class="dropdown-item" href="{{ route('direction_centrale.edit', $id) }}">
-                                <i class="feather icon-edit mr-2"></i>
-                                Modifier
-                            </a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item text-danger" href="#" onclick="confirmDelete()">
-                                <i class="feather icon-trash-2 mr-2"></i>
-                                Supprimer
-                            </a>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Nom de la Direction:</label>
+                                        <p class="text-gray-800 h5">Direction des Affaires Administratives</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Code:</label>
+                                        <p class="text-gray-800"><span class="badge badge-dark">DC-ADM</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Type de Direction:</label>
+                                        <p><span class="badge badge-primary">Administrative</span></p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Statut:</label>
+                                        <p><span class="badge badge-success">Actif</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="font-weight-bold">Description:</label>
+                                <p class="text-gray-800">Cette direction s'occupe de toutes les affaires administratives du ministère, incluant la gestion du personnel, les procédures administratives, et la coordination avec les autres directions.</p>
+                            </div>
+
+                            <!-- Responsable de la Direction -->
+                            <div class="card mt-4">
+                                <div class="card-header bg-light">
+                                    <h6 class="mb-0"><i class="feather icon-user text-primary"></i> Responsable de la Direction</h6>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Responsable:</label>
+                                                <p class="text-gray-800">M. KOUASSI Albert</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Poste:</label>
+                                                <p class="text-gray-800">Directeur</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Téléphone:</label>
+                                                <p class="text-gray-800">+225 27 20 21 22 23</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="font-weight-bold">Email:</label>
+                                                <p class="text-gray-800">direction.admin@men.gouv.ci</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Date de Création:</label>
+                                        <p class="text-gray-800">15/03/2021</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">Localisation:</label>
+                                        <p class="text-gray-800">Plateau, Tour C - 5ème étage, Abidjan, Côte d'Ivoire</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Nom du Service:</label>
-                                <p class="text-gray-800 h5">Service des Affaires Administratives</p>
-                            </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Statut de la Direction -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="feather icon-activity"></i> Statut de la Direction</h5>
                         </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Code:</label>
-                                <p class="text-gray-800"><span class="badge badge-secondary">SAA</span></p>
+                        <div class="card-block text-center">
+                            <div class="mb-3">
+                                <span class="badge badge-success badge-lg">Direction Active</span>
                             </div>
+                            <p class="text-muted">Direction opérationnelle</p>
+                            <p class="text-muted">Dernière mise à jour: {{ date('d/m/Y H:i') }}</p>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Type de Service:</label>
-                                <p><span class="badge badge-info">Administrative</span></p>
-                            </div>
+                    <!-- Actions Rapides -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="feather icon-settings"></i> Actions Disponibles</h5>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Statut:</label>
-                                <p><span class="badge badge-success">Actif</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="font-weight-bold">Description:</label>
-                        <p class="text-gray-800">Ce service s'occupe de toutes les affaires administratives de la direction centrale, incluant la gestion du personnel, les procédures administratives, et la coordination avec les autres services.</p>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Responsable:</label>
-                                <p class="text-gray-800">Mme KOUAME Adjoua</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Poste:</label>
-                                <p class="text-gray-800">Chef de Service</p>
-                            </div>
+                        <div class="card-block">
+                            <a href="{{ route('direction_centrale.edit', $id) }}" class="btn btn-warning btn-block waves-effect waves-light mb-2">
+                                <i class="feather icon-edit"></i> Modifier la Direction
+                            </a>
+                            <button type="button" class="btn btn-info btn-block waves-effect waves-light mb-2" onclick="voirRapports()">
+                                <i class="feather icon-bar-chart-2"></i> Voir Rapports
+                            </button>
+                            <button type="button" class="btn btn-success btn-block waves-effect waves-light mb-2" onclick="changerStatut()">
+                                <i class="feather icon-check"></i> Changer Statut
+                            </button>
+                            <hr>
+                            <a href="{{ route('direction_centrale.index') }}" class="btn btn-inverse btn-block waves-effect waves-light">
+                                <i class="feather icon-arrow-left"></i> Retour à la Liste
+                            </a>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Téléphone:</label>
-                                <p class="text-gray-800">+225 27 20 21 22 23</p>
-                            </div>
+                    <!-- Informations Supplémentaires -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h5><i class="feather icon-user"></i> Informations Supplémentaires</h5>
                         </div>
-                        <div class="col-md-6">
+                        <div class="card-block">
                             <div class="form-group">
-                                <label class="font-weight-bold">Email:</label>
-                                <p class="text-gray-800">saa@men.gouv.ci</p>
+                                <label class="font-weight-bold">Créé par:</label>
+                                <p class="text-gray-800">Administrateur</p>
                             </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
                             <div class="form-group">
                                 <label class="font-weight-bold">Date de Création:</label>
-                                <p class="text-gray-800">01/01/2024</p>
+                                <p class="text-gray-800">15/03/2021</p>
                             </div>
-                        </div>
-                        <div class="col-md-6">
                             <div class="form-group">
-                                <label class="font-weight-bold">Numéro d'Ordre:</label>
-                                <p class="text-gray-800">
-                                    <span class="badge badge-primary">1</span>
-                                </p>
+                                <label class="font-weight-bold">Dernière Modification:</label>
+                                <p class="text-gray-800">{{ date('d/m/Y H:i') }}</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="font-weight-bold">Adresse/Localisation:</label>
-                        <p class="text-gray-800">Plateau, Tour C - 5ème étage, Abidjan, Côte d'Ivoire</p>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Nombre d'Employés:</label>
-                                <p class="text-gray-800">15 employés</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="font-weight-bold">Niveau de Priorité:</label>
-                                <p><span class="badge badge-warning">Importante</span></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label class="font-weight-bold">Objectifs et Missions:</label>
-                        <p class="text-gray-800">
-                            - Gestion des ressources humaines<br>
-                            - Coordination des activités administratives<br>
-                            - Support aux autres services<br>
-                            - Gestion documentaire et archivage
-                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Sidebar -->
-        <div class="col-lg-4">
-            <!-- Statut du Service -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Statut du Service</h6>
-                </div>
-                <div class="card-body text-center">
-                    <div class="mb-3">
-                        <span class="badge badge-success badge-lg">Actif</span>
-                    </div>
-                    <p class="text-muted">Service stratégique</p>
-                    <p class="text-muted">Dernière mise à jour: {{ date('d/m/Y H:i') }}</p>
-                </div>
-            </div>
-
-            <!-- Actions Rapides -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Actions Rapides</h6>
-                </div>
-                <div class="card-body">
-                    <a href="{{ route('direction_centrale.edit', $id) }}" class="btn btn-warning btn-block mb-2 waves-effect">
-                        <i class="feather icon-edit"></i> Modifier
-                    </a>
-                    <button type="button" class="btn btn-info btn-block mb-2 waves-effect" onclick="voirRapports()">
-                        <i class="feather icon-bar-chart-2"></i> Voir Rapports
-                    </button>
-                    <button type="button" class="btn btn-success btn-block mb-2 waves-effect" onclick="activerService()">
-                        <i class="feather icon-check"></i> Activer/Désactiver
-                    </button>
-                    <a href="{{ route('direction_centrale.index') }}" class="btn btn-secondary btn-block waves-effect">
-                        <i class="feather icon-arrow-left"></i> Retour à la Liste
-                    </a>
-                </div>
-            </div>
-
-            <!-- Statistiques -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Statistiques</h6>
-                </div>
-                <div class="card-body">
-                    <div class="row text-center">
-                        <div class="col-6">
-                            <div class="border-right">
-                                <h4 class="text-primary">15</h4>
-                                <small class="text-muted">Employés</small>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <h4 class="text-success">95%</h4>
-                            <small class="text-muted">Performance</small>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="row text-center">
-                        <div class="col-6">
-                            <div class="border-right">
-                                <h4 class="text-info">24</h4>
-                                <small class="text-muted">Projets</small>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <h4 class="text-warning">8</h4>
-                            <small class="text-muted">En cours</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Informations Supplémentaires -->
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Informations Supplémentaires</h6>
-                </div>
-                <div class="card-body">
-                    <div class="form-group">
-                        <label class="font-weight-bold">Créé par:</label>
-                        <p class="text-gray-800">Administrateur</p>
-                    </div>
-                    <div class="form-group">
-                        <label class="font-weight-bold">Date de Création:</label>
-                        <p class="text-gray-800">01/01/2024</p>
-                    </div>
-                    <div class="form-group">
-                        <label class="font-weight-bold">Dernière Modification:</label>
-                        <p class="text-gray-800">{{ date('d/m/Y H:i') }}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!-- Page-body end -->
     </div>
 </div>
 
+@endsection
+
+@section('script')
 <script>
 function confirmDelete() {
-    (new PNotify({
-        title: 'Confirmation de suppression',
-        text: 'Êtes-vous sûr de vouloir supprimer ce service ?',
-        icon: 'feather icon-trash-2',
-        hide: false,
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        },
-        addClass: 'notice-remove'
-    })).get().on('pnotify.confirm', function() {
+    if (confirm('Êtes-vous sûr de vouloir supprimer cette direction ?')) {
         new PNotify({
-            title: 'Service supprimé',
-            text: 'Service supprimé (simulation)',
+            title: 'Direction supprimée',
+            text: 'Direction supprimée avec succès',
             type: 'success',
             delay: 3000
         });
         setTimeout(function() {
             window.location.href = '{{ route("direction_centrale.index") }}';
         }, 2000);
-    });
+    }
 }
 
-function activerService() {
-    (new PNotify({
-        title: 'Changement de statut',
-        text: 'Êtes-vous sûr de vouloir changer le statut de ce service ?',
-        icon: 'feather icon-check',
-        hide: false,
-        confirm: {
-            confirm: true
-        },
-        buttons: {
-            closer: false,
-            sticker: false
-        },
-        history: {
-            history: false
-        }
-    })).get().on('pnotify.confirm', function() {
+function changerStatut() {
+    if (confirm('Êtes-vous sûr de vouloir changer le statut de cette direction ?')) {
         new PNotify({
             title: 'Statut modifié',
-            text: 'Statut du service modifié (simulation)',
+            text: 'Statut de la direction modifié avec succès',
             type: 'success',
             delay: 3000
         });
         setTimeout(function() {
             location.reload();
         }, 2000);
-    });
+    }
 }
 
 function voirRapports() {
@@ -340,6 +239,25 @@ function voirRapports() {
         title: 'Rapports',
         text: 'Fonctionnalité de rapports en cours de développement',
         type: 'info',
+        delay: 4000
+    });
+}
+
+// Fonctionnalités supplémentaires
+function exporterFiche() {
+    new PNotify({
+        title: 'Export en cours',
+        text: 'Génération de la fiche direction en PDF...',
+        type: 'info',
+        delay: 3000
+    });
+}
+
+function envoyerEmail() {
+    new PNotify({
+        title: 'Email envoyé',
+        text: 'Notification envoyée au responsable de la direction',
+        type: 'success',
         delay: 4000
     });
 }
@@ -351,36 +269,28 @@ function voirRapports() {
     padding: 0.5rem 1rem;
 }
 
-.badge-info {
-    background-color: #17a2b8;
+.badge-primary {
+    background-color: #007bff;
 }
 .badge-success {
     background-color: #28a745;
 }
-.badge-warning {
-    background-color: #ffc107;
-    color: #212529;
-}
-.badge-secondary {
-    background-color: #6c757d;
+.badge-dark {
+    background-color: #343a40;
 }
 
-.border-right {
-    border-right: 1px solid #e3e6f0;
+.text-gray-800 {
+    color: #5a5c69;
+    font-size: 0.95rem;
 }
 
-.text-primary {
-    color: #4e73df !important;
+.font-weight-bold {
+    font-weight: 600;
 }
-.text-success {
-    color: #1cc88a !important;
-}
-.text-info {
-    color: #36b9cc !important;
-}
-.text-warning {
-    color: #f6c23e !important;
+
+.card-header.bg-light {
+    background-color: #f8f9fc !important;
+    border-bottom: 1px solid #e3e6f0;
 }
 </style>
-
 @endsection

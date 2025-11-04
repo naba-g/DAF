@@ -97,7 +97,7 @@
                     </div>
                     <div class="card-body table-border-style">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-striped table-hover" id="servicesTable">
+                            <table class="table table-bordered table-striped table-hover" id="directionsTable">
                                 <thead class="thead-dark">
                         <tr>
                             <th width="5%">#</th>
@@ -391,7 +391,7 @@ function exportData() {
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const statusFilter = document.getElementById('statusFilter');
-    const table = document.getElementById('servicesTable');
+    const table = document.getElementById('directionsTable');
     const tbody = table.getElementsByTagName('tbody')[0];
 
     function filterTable() {
@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
 
-            // Filtrage par statut (recherche dans toute la ligne car plus de colonne statut)
+            // Filtrage par statut
             if (statusValue && showRow) {
                 const textContent = row.textContent.toLowerCase();
                 if (!textContent.includes(statusValue)) {

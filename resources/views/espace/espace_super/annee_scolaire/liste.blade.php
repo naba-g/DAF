@@ -123,6 +123,7 @@
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-header">
+                        
                         <h5>Liste des Années Scolaires</h5>
                         <div class="card-header-right">
                             <div class="btn-group card-option">
@@ -440,7 +441,7 @@ setInterval(function() {
 }, 30000);
 </script>
 
-<style>
+<!-- <style>
 .order-card {
     color: #fff;
 }
@@ -488,6 +489,6 @@ setInterval(function() {
 .table-hover tbody tr:hover {
     background-color: #f5f5f5;
 }
-</style>
+</style> -->
 
 @endsection

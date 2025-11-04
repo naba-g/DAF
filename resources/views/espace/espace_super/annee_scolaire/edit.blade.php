@@ -27,7 +27,7 @@
         <!-- Main content -->
         <div class="row">
             <div class="col-md-12">
-                <div class="card">
+                <div class="card custom-card-accent">
                     <div class="card-header">
                         <h5>Formulaire de Modification d'Année Scolaire</h5>
                         <div class="card-header-right">
@@ -65,7 +65,7 @@
                             <div class="row">
                                 <!-- Informations de base -->
                                 <div class="col-md-6">
-                                    <div class="card">
+                                    <div class="card custom-card-accent">
                                         <div class="card-header">
                                             <h6 class="mb-0"><i class="feather icon-info mr-2"></i>Informations Générales</h6>
                                         </div>
@@ -120,7 +120,7 @@
 
                                 <!-- Période et statut -->
                                 <div class="col-md-6">
-                                    <div class="card">
+                                    <div class="card custom-card-accent">
                                         <div class="card-header">
                                             <h6 class="mb-0"><i class="feather icon-calendar mr-2"></i>Période et Statut</h6>
                                         </div>
@@ -186,7 +186,7 @@
                             <!-- Boutons d'action -->
                             <div class="row">
                                 <div class="col-md-12">
-                                    <div class="card">
+                                    <div class="card custom-card-accent">
                                         <div class="card-body">
                                             <div class="text-center">
                                                 <button type="submit" class="btn btn-primary btn-lg mr-2 waves-effect waves-light">
@@ -450,6 +450,15 @@ window.addEventListener('beforeunload', function(e) {
 </script>
 
 <style>
+.custom-card-accent {
+    border-top: 4px solid #4680ff !important; /* Trait bleu en haut */
+}
+
+.custom-card-accent .card-header {
+    background-color: rgba(70, 128, 255, 0.05);
+    border-bottom: 1px solid rgba(70, 128, 255, 0.1);
+}
+
 .card {
     box-shadow: 0 1px 20px 0 rgba(69,90,100,.08);
     border: none;
