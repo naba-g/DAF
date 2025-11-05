@@ -9,7 +9,7 @@ use App\Http\Controllers\gestion\RetourController;
 
 
 //le tableau de bord 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
    // return view('welcome');
     return view('espace.espace_super.dashboard.dashboard');
 })->name('dashboard');
@@ -101,10 +101,29 @@ Route::prefix('commande_daf')->name('commande_daf.')->group(function () {
     })->name('destroy');
 });
 
-//direction centrale 
-Route::get('/direction_centrale', function () {
-   // return view('welcome');
-    return view('espace.espace_super.direction_centrale.liste');
+// 3. DIRECTION CENTRALE - Routes CRUD complètes
+Route::prefix('direction_centrale')->name('direction_centrale.')->group(function () {
+    Route::get('/', function () {
+        return view('espace.espace_super.direction_centrale.liste');
+    })->name('index');
+    Route::get('/create', function () {
+        return view('espace.espace_super.direction_centrale.create');
+    })->name('create');
+    Route::any('/store', function () {
+        return view('espace.espace_super.direction_centrale.liste');
+    })->name('store');
+    Route::get('/show/{id}', function ($id) {
+        return view('espace.espace_super.direction_centrale.show', compact('id'));
+    })->name('show');
+    Route::get('/edit/{id}', function ($id) {
+        return view('espace.espace_super.direction_centrale.edit', compact('id'));
+    })->name('edit');
+    Route::any('/update/{id}', function ($id) {
+        return view('espace.espace_super.direction_centrale.show', compact('id'));
+    })->name('update');
+    Route::any('/destroy/{id}', function ($id) {
+        return view('espace.espace_super.direction_centrale.liste');
+    })->name('destroy');
 });
 
 // 4. DISTRIBUTION EPP - Routes CRUD complètes
