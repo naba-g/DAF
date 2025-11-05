@@ -19,13 +19,6 @@ use App\Http\Controllers\gestion\EppController;
 use App\Http\Controllers\gestion\RetourController;
 
 
-//le tableau de bord
-Route::get('/', function () {
-   // return view('welcome');
-    return view('espace.espace_super.dashboard.dashboard');
-})->name('dashboard');
-
-
 // 0. TABLEAU DE BORD - Routes principales
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -115,31 +108,6 @@ Route::prefix('epp')->name('epp.')->group(function () {
 // ===== ROUTES EXISTANTES (INCHANGÉES) =====
 
 
-// Routes statiques pour les modules liés aux années scolaires
-Route::prefix('inscriptions')->name('inscriptions.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('index');
-});
-
-Route::prefix('classes')->name('classes.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('index');
-});
-
-Route::prefix('calendrier')->name('calendrier.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('index');
-});
-
-Route::prefix('rapports')->name('rapports.')->group(function () {
-    Route::get('/financiers', function () {
-        return view('espace.espace_super.annee_scolaire.show');
-    })->name('financiers');
-});
-
 
 //exprssion besion iepp
 Route::get('/besoin_iepp', function () {
@@ -191,19 +159,95 @@ Route::get('/livraison_iepp', function () {
 });
 
 
+// =========================================================   ===============================================================
+
+//---------------------- bloc jesus debut -------------------------------------
+
+//creation de compte utilisateur
+Route::get('/compte_utilisateur', function () {
+   // return view('welcome');
+       return view('espace.espace_super.utilisateur.liste');
+
+});
+
+Route::get('/ajoututilisateur','App\Http\Controllers\parametre\UtilisateurController@add');
+Route::get('detailutilisateur/{id}','App\Http\Controllers\parametre\UtilisateurController@detail');
+Route::get('modificationutilisateur/{id}','App\Http\Controllers\parametre\UtilisateurController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\UtilisateurController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\UtilisateurController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\UtilisateurController@sup');
 
 
-//niveau
+//-----------------------
+//creation de type de manuels
+Route::get('/type_manuel', function () {
+   // return view('welcome');
+       return view('espace.espace_super.type_manuel.liste');
+
+});
+
+Route::get('/ajouttype','App\Http\Controllers\parametre\TypeManuelController@add');
+Route::get('modificationtype/{id}','App\Http\Controllers\parametre\TypeManuelController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\TypeManuelController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\TypeManuelController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\TypeManuelController@sup');
+
+//creation de role
+Route::get('/role', function () {
+   // return view('welcome');
+       return view('espace.espace_super.role.liste');
+
+});
+
+
+Route::get('/ajoutrole','App\Http\Controllers\parametre\RoleController@add');
+Route::get('detailrole/{id}','App\Http\Controllers\parametre\RoleController@detail');
+Route::get('modificationrole/{id}','App\Http\Controllers\parametre\RoleController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\RoleController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\RoleController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\RoleController@sup');
+
+
+//creation des niveaux
+
 Route::get('/niveau', function () {
-    return view('espace.espace_super.niveau.liste');
+   // return view('welcome');
+       return view('espace.espace_super.niveau.liste');
+
 });
 
-//regulation drena
-Route::get('/regulation_drena', function () {
-    return view('espace.espace_super.regulationdrena.liste');
+
+Route::get('/ajoutniveau','App\Http\Controllers\parametre\NiveauController@add');
+Route::get('detailniveau/{id}','App\Http\Controllers\parametre\NiveauController@detail');
+Route::get('modificationniveau/{id}','App\Http\Controllers\parametre\NiveauController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\param\NiveauController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\param\NiveauController@delete');
+// Route::post('/deleteus','App\Http\Controllers\param\NiveauController@sup');
+
+
+
+//creation de retour
+Route::get('/retour_manuels', function () {
+   // return view('welcome');
+       return view('espace.espace_super.retourmanuels.liste');
+
 });
 
-//regulation epp
+Route::get('/ajoutretour','App\Http\Controllers\gestion\RetourController@add');
+Route::get('detailretour/{id}','App\Http\Controllers\gestion\RetourController@detail');
+Route::get('modificationretour/{id}','App\Http\Controllers\gestion\RetourController@edit');
+
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RetourController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RetourController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RetourController@sup');
+
+//creation de regulation epp
+
+//creation de retour
 Route::get('/regulation_epp', function () {
    // return view('welcome');
        return view('espace.espace_super.regulationepp.liste');
@@ -223,33 +267,42 @@ Route::get('modificationregulationepp/{id}','App\Http\Controllers\gestion\Regula
 
 //creation de regulation iepp
 Route::get('/regulation_iepp', function () {
-    return view('espace.espace_super.regulationiepp.liste');
+   // return view('welcome');
+       return view('espace.espace_super.regulationiepp.liste');
+
 });
 
-//retour manuels
-Route::get('/retour_manuels', function () {
-    return view('espace.espace_super.retourmanuels.liste');
+Route::get('/ajoutregulationiepp','App\Http\Controllers\gestion\RegulationIeppController@add');
+
+Route::get('detailregulationiepp/{id}','App\Http\Controllers\gestion\RegulationIeppController@detail');
+
+Route::get('modificationregulationiepp/{id}','App\Http\Controllers\gestion\RegulationIeppController@edit');
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationIeppController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationIeppController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationIeppController@sup');
+
+
+//creation de regulation drena
+Route::get('/regulation_drena', function () {
+   // return view('welcome');
+       return view('espace.espace_super.regulationdrena.liste');
+
 });
 
-//role
-Route::get('/role', function () {
-    return view('espace.espace_super.role.liste');
-});
+Route::get('/ajoutregulationdrena','App\Http\Controllers\gestion\RegulationDrenaController@add');
 
-// type manuel
-Route::get('/type_manuel', function () {
-    return view('espace.espace_super.type_manuel.liste');
-});
+Route::get('detailregulationdrena/{id}','App\Http\Controllers\gestion\RegulationDrenaController@detail');
 
-// utilisateur
-Route::get('/compte_utilisateur', function () {
-    return view('espace.espace_super.utilisateur.liste');
-});
+Route::get('modificationregulationdrena/{id}','App\Http\Controllers\gestion\RegulationDrenaController@edit');
 
-Route::get('/accueil', function () {
-    return view('welcome');
-});
+// Route::post('/updateus/{id}','App\Http\Controllers\gestion\RegulationDrenaController@update');
+// Route::get('click_supus/{id}','App\Http\Controllers\gestion\RegulationDrenaController@delete');
+// Route::post('/deleteus','App\Http\Controllers\gestion\RegulationDrenaController@sup');
 
+
+//---------------------------bloc jesus fin --------------------------------------------
+
+// ===========================================================================================================================
 
 
 
