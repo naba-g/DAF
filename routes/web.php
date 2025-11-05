@@ -5,51 +5,115 @@ use App\Http\Controllers\parametre\UtilisateurController;
 use App\Http\Controllers\parametre\TypeManuelController;
 use App\Http\Controllers\parametre\RoleController;
 use App\Http\Controllers\parametre\NiveauController;
+
+use App\Http\Controllers\parametre\AnneeScolaireController;
+
+use App\Http\Controllers\gestion\DashboardController;
+use App\Http\Controllers\gestion\CommandeController;
+use App\Http\Controllers\gestion\DirectionCentraleController;
+use App\Http\Controllers\gestion\DistributionEppController;
+use App\Http\Controllers\gestion\DistributionIeppController;
+use App\Http\Controllers\gestion\DrenaController;
+use App\Http\Controllers\gestion\EppController;
+
 use App\Http\Controllers\gestion\RetourController;
 
 
-//le tableau de bord 
+//le tableau de bord
 Route::get('/', function () {
    // return view('welcome');
     return view('espace.espace_super.dashboard.dashboard');
 })->name('dashboard');
 
-// ===== ROUTES CRUD POUR LES 8 PREMIERS MENUS =====
+
+// 0. TABLEAU DE BORD - Routes principales
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
 // 1. ANNÉE SCOLAIRE - Routes CRUD statiques
 Route::prefix('annee_scolaire')->name('annee_scolaire.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.annee_scolaire.liste');
-    })->name('index');
-    Route::get('/create', function () {
-        return view('espace.espace_super.annee_scolaire.create');
-    })->name('create');
-    Route::get('/show/{id}', function ($id) {
-        return view('espace.espace_super.annee_scolaire.show', compact('id'));
-    })->name('show');
-    Route::get('/edit/{id}', function ($id) {
-        return view('espace.espace_super.annee_scolaire.edit', compact('id'));
-    })->name('edit');
-    // Routes statiques - pas de vraies actions
-    Route::any('/store', function () {
-        return view('espace.espace_super.annee_scolaire.liste');
-    })->name('store');
-    Route::any('/update/{id}', function ($id) {
-        return view('espace.espace_super.annee_scolaire.show', compact('id'));
-    })->name('update');
-    Route::any('/activate/{id}', function ($id) {
-        return view('espace.espace_super.annee_scolaire.show', compact('id'));
-    })->name('activate');
-    Route::any('/destroy/{id}', function ($id) {
-        return view('espace.espace_super.annee_scolaire.liste');
-    })->name('destroy');
-    Route::any('/duplicate/{id}', function ($id) {
-        return view('espace.espace_super.annee_scolaire.show', compact('id'));
-    })->name('duplicate');
-    Route::any('/export/{id}', function ($id) {
-        return view('espace.espace_super.annee_scolaire.show', compact('id'));
-    })->name('export');
+    Route::get('/', [AnneeScolaireController::class, 'index'])->name('index');
+    Route::get('/create', [AnneeScolaireController::class, 'create'])->name('create');
+    Route::get('/show/{id}', [AnneeScolaireController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [AnneeScolaireController::class, 'edit'])->name('edit');
+
+    // Actions
+    Route::post('/store', [AnneeScolaireController::class, 'store'])->name('store');
+    Route::put('/update/{id}', [AnneeScolaireController::class, 'update'])->name('update');
+    Route::post('/activate/{id}', [AnneeScolaireController::class, 'activate'])->name('activate');
+    Route::delete('/destroy/{id}', [AnneeScolaireController::class, 'destroy'])->name('destroy');
+    Route::post('/duplicate/{id}', [AnneeScolaireController::class, 'duplicate'])->name('duplicate');
+    Route::get('/export/{id}', [AnneeScolaireController::class, 'export'])->name('export');
 });
+
+
+// 2. COMMANDE DAF - Routes CRUD complètes
+Route::prefix('commande_daf')->name('commande_daf.')->group(function () {
+    Route::get('/', [CommandeController::class, 'index'])->name('index');
+    Route::get('/create', [CommandeController::class, 'create'])->name('create');
+    Route::post('/store', [CommandeController::class, 'store'])->name('store');
+    Route::get('/show/{id}', [CommandeController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [CommandeController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [CommandeController::class, 'update'])->name('update');
+    Route::delete('/destroy/{id}', [CommandeController::class, 'destroy'])->name('destroy');
+});
+
+// 3. DIRECTION CENTRALE - Routes CRUD complètes
+Route::prefix('direction_centrale')->name('direction_centrale.')->group(function () {
+    Route::get('/', [DirectionCentraleController::class, 'index'])->name('index');
+    Route::get('/create', [DirectionCentraleController::class, 'create'])->name('create');
+    Route::post('/store', [DirectionCentraleController::class, 'store'])->name('store');
+    Route::get('/show/{id}', [DirectionCentraleController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [DirectionCentraleController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [DirectionCentraleController::class, 'update'])->name('update');
+    Route::delete('/destroy/{id}', [DirectionCentraleController::class, 'destroy'])->name('destroy');
+});
+
+// 4. DISTRIBUTION EPP - Routes CRUD complètes
+Route::prefix('distribution_epp')->name('distribution_epp.')->group(function () {
+    Route::get('/', [DistributionEppController::class, 'index'])->name('index');
+    Route::get('/create', [DistributionEppController::class, 'create'])->name('create');
+    Route::post('/store', [DistributionEppController::class, 'store'])->name('store');
+    Route::get('/show/{id}', [DistributionEppController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [DistributionEppController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [DistributionEppController::class, 'update'])->name('update');
+    Route::delete('/destroy/{id}', [DistributionEppController::class, 'destroy'])->name('destroy');
+});
+
+// 5. DISTRIBUTION IEPP - Routes CRUD complètes
+Route::prefix('distribution_iepp')->name('distribution_iepp.')->group(function () {
+    Route::get('/', [DistributionIeppController::class, 'index'])->name('index');
+    Route::get('/create', [DistributionIeppController::class, 'create'])->name('create');
+    Route::post('/store', [DistributionIeppController::class, 'store'])->name('store');
+    Route::get('/show/{id}', [DistributionIeppController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [DistributionIeppController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [DistributionIeppController::class, 'update'])->name('update');
+    Route::delete('/destroy/{id}', [DistributionIeppController::class, 'destroy'])->name('destroy');
+});
+
+// 6. DRENA - Routes CRUD complètes
+Route::prefix('drena')->name('drena.')->group(function () {
+    Route::get('/', [DrenaController::class, 'index'])->name('index');
+    Route::get('/create', action: [DrenaController::class, 'create'])->name('create');
+    Route::post('/store', [DrenaController::class, 'store'])->name('store');
+    Route::get('/show/{id}', [DrenaController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [DrenaController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [DrenaController::class, 'update'])->name('update');
+    Route::delete('/destroy/{id}', [DrenaController::class, 'destroy'])->name('destroy');
+});
+
+// 7. EPP - Routes CRUD complètes
+Route::prefix('epp')->name('epp.')->group(function () {
+    Route::get('/', action: [EppController::class, 'index'])->name('index');
+    Route::get('/create', [EppController::class, 'create'])->name('create');
+    Route::post('/store', [EppController::class, 'store'])->name('store');
+    Route::get('/show/{id}', [EppController::class, 'show'])->name('show');
+    Route::get('/edit/{id}', [EppController::class, 'edit'])->name('edit');
+    Route::put('/update/{id}', [EppController::class, 'update'])->name('update');
+    Route::delete('/destroy/{id}', [EppController::class, 'destroy'])->name('destroy');
+});
+
+// ===== ROUTES EXISTANTES (INCHANGÉES) =====
+
 
 // Routes statiques pour les modules liés aux années scolaires
 Route::prefix('inscriptions')->name('inscriptions.')->group(function () {
@@ -76,157 +140,6 @@ Route::prefix('rapports')->name('rapports.')->group(function () {
     })->name('financiers');
 });
 
-// 2. COMMANDE DAF - Routes CRUD complètes
-Route::prefix('commande_daf')->name('commande_daf.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.commande.liste');
-    })->name('index');
-    Route::get('/create', function () {
-        return view('espace.espace_super.commande.create');
-    })->name('create');
-    Route::any('/store', function () {
-        return view('espace.espace_super.commande.liste');
-    })->name('store');
-    Route::get('/show/{id}', function ($id) {
-        return view('espace.espace_super.commande.show', compact('id'));
-    })->name('show');
-    Route::get('/edit/{id}', function ($id) {
-        return view('espace.espace_super.commande.edit', compact('id'));
-    })->name('edit');
-    Route::any('/update/{id}', function ($id) {
-        return view('espace.espace_super.commande.show', compact('id'));
-    })->name('update');
-    Route::any('/destroy/{id}', function ($id) {
-        return view('espace.espace_super.commande.liste');
-    })->name('destroy');
-});
-
-// 3. DIRECTION CENTRALE - Routes CRUD complètes
-Route::prefix('direction_centrale')->name('direction_centrale.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.direction_centrale.liste');
-    })->name('index');
-    Route::get('/create', function () {
-        return view('espace.espace_super.direction_centrale.create');
-    })->name('create');
-    Route::any('/store', function () {
-        return view('espace.espace_super.direction_centrale.liste');
-    })->name('store');
-    Route::get('/show/{id}', function ($id) {
-        return view('espace.espace_super.direction_centrale.show', compact('id'));
-    })->name('show');
-    Route::get('/edit/{id}', function ($id) {
-        return view('espace.espace_super.direction_centrale.edit', compact('id'));
-    })->name('edit');
-    Route::any('/update/{id}', function ($id) {
-        return view('espace.espace_super.direction_centrale.show', compact('id'));
-    })->name('update');
-    Route::any('/destroy/{id}', function ($id) {
-        return view('espace.espace_super.direction_centrale.liste');
-    })->name('destroy');
-});
-
-// 4. DISTRIBUTION EPP - Routes CRUD complètes
-Route::prefix('distribution_epp')->name('distribution_epp.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.distributionepp.liste');
-    })->name('index');
-    Route::get('/create', function () {
-        return view('espace.espace_super.distributionepp.create');
-    })->name('create');
-    Route::any('/store', function () {
-        return view('espace.espace_super.distributionepp.liste');
-    })->name('store');
-    Route::get('/show/{id}', function ($id) {
-        return view('espace.espace_super.distributionepp.show', compact('id'));
-    })->name('show');
-    Route::get('/edit/{id}', function ($id) {
-        return view('espace.espace_super.distributionepp.edit', compact('id'));
-    })->name('edit');
-    Route::any('/update/{id}', function ($id) {
-        return view('espace.espace_super.distributionepp.show', compact('id'));
-    })->name('update');
-    Route::any('/destroy/{id}', function ($id) {
-        return view('espace.espace_super.distributionepp.liste');
-    })->name('destroy');
-});
-
-// 5. DISTRIBUTION IEPP - Routes CRUD complètes
-Route::prefix('distribution_iepp')->name('distribution_iepp.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.distributioniepp.liste');
-    })->name('index');
-    Route::get('/create', function () {
-        return view('espace.espace_super.distributioniepp.create');
-    })->name('create');
-    Route::any('/store', function () {
-        return view('espace.espace_super.distributioniepp.liste');
-    })->name('store');
-    Route::get('/show/{id}', function ($id) {
-        return view('espace.espace_super.distributioniepp.show', compact('id'));
-    })->name('show');
-    Route::get('/edit/{id}', function ($id) {
-        return view('espace.espace_super.distributioniepp.edit', compact('id'));
-    })->name('edit');
-    Route::any('/update/{id}', function ($id) {
-        return view('espace.espace_super.distributioniepp.show', compact('id'));
-    })->name('update');
-    Route::any('/destroy/{id}', function ($id) {
-        return view('espace.espace_super.distributioniepp.liste');
-    })->name('destroy');
-});
-
-// 6. DRENA - Routes CRUD complètes
-Route::prefix('drena')->name('drena.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.drena.liste');
-    })->name('index');
-    Route::get('/create', function () {
-        return view('espace.espace_super.drena.create');
-    })->name('create');
-    Route::any('/store', function () {
-        return view('espace.espace_super.drena.liste');
-    })->name('store');
-    Route::get('/show/{id}', function ($id) {
-        return view('espace.espace_super.drena.show', compact('id'));
-    })->name('show');
-    Route::get('/edit/{id}', function ($id) {
-        return view('espace.espace_super.drena.edit', compact('id'));
-    })->name('edit');
-    Route::any('/update/{id}', function ($id) {
-        return view('espace.espace_super.drena.show', compact('id'));
-    })->name('update');
-    Route::any('/destroy/{id}', function ($id) {
-        return view('espace.espace_super.drena.liste');
-    })->name('destroy');
-});
-
-// 7. EPP - Routes CRUD complètes
-Route::prefix('epp')->name('epp.')->group(function () {
-    Route::get('/', function () {
-        return view('espace.espace_super.epp.liste');
-    })->name('index');
-    Route::get('/create', function () {
-        return view('espace.espace_super.epp.create');
-    })->name('create');
-    Route::any('/store', function () {
-        return view('espace.espace_super.epp.liste');
-    })->name('store');
-    Route::get('/show/{id}', function ($id) {
-        return view('espace.espace_super.epp.show', compact('id'));
-    })->name('show');
-    Route::get('/edit/{id}', function ($id) {
-        return view('espace.espace_super.epp.edit', compact('id'));
-    })->name('edit');
-    Route::any('/update/{id}', function ($id) {
-        return view('espace.espace_super.epp.show', compact('id'));
-    })->name('update');
-    Route::any('/destroy/{id}', function ($id) {
-        return view('espace.espace_super.epp.liste');
-    })->name('destroy');
-});
-
-// ===== ROUTES EXISTANTES (INCHANGÉES) =====
 
 //exprssion besion iepp
 Route::get('/besoin_iepp', function () {
@@ -237,21 +150,21 @@ Route::get('/besoin_iepp', function () {
 
 
 
-//expression besoin daf 
+//expression besoin daf
 Route::get('/besoin_daf', function () {
    // return view('welcome');
        return view('espace.espace_super.expression_besoin_daf.liste');
 
 });
 
-//expression besoin drena 
+//expression besoin drena
 Route::get('/besoin_drena', function () {
    // return view('welcome');
        return view('espace.espace_super.expression_besoin_drena.liste');
 
 });
 
-//expression besoin epp 
+//expression besoin epp
 Route::get('/besoin_epp', function () {
    // return view('welcome');
        return view('espace.espace_super.expression_besoin_epp.liste');
@@ -263,7 +176,7 @@ Route::get('/iepp', function () {
     return view('espace.espace_super.iepp.liste');
 });
 
-//livraison epp 
+//livraison epp
 Route::get('/livraison_epp', function () {
    // return view('welcome');
        return view('espace.espace_super.livraisonepp.liste');
@@ -364,7 +277,7 @@ Route::get('modificationiepp/{id}','App\Http\Controllers\parametre\IeppControlle
 
 //creation des Manuels
 
-//manuels 
+//manuels
 Route::get('/manuel_scolaire', function () {
    // return view('welcome');
        return view('espace.espace_super.manuels.liste');
@@ -413,7 +326,7 @@ Route::get('modificationlivraisoniepp/{id}','App\Http\Controllers\gestion\Livrai
 //creation des livraison epp
 
 
-//livraison epp 
+//livraison epp
 Route::get('/livraison_epp', function () {
    // return view('welcome');
        return view('espace.espace_super.livraisonepp.liste');
@@ -429,7 +342,7 @@ Route::get('/livraison_epp', function () {
 //creation des expressions des besions
 
 
-//livraison epp 
+//livraison epp
 Route::get('/expression_besion_epp', function () {
    // return view('welcome');
        return view('espace.espace_super.livraisonepp.liste');
