@@ -23,13 +23,83 @@
             </div>
         </div>
 
+
+         <!-- Filters and Actions -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Filtres et Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterStatut">Nom drena</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les Drena</option>
+                                        <option value="active">DRENA ABIDJAN 1</option>
+                                        <option value="archivee">DRENA ABIDJAN 2</option>
+                                        <option value="future">DRENA ABIDJAN 3</option>
+                                         <option value="future">DRENA ABIDJAN 4</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Nom iepp</label>
+                                    <input type="text" class="form-control" id="filternomiepp" placeholder="Ex: Plateau village 2">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Code iepp</label>
+                                    <input type="text" class="form-control" id="filteriepp" placeholder="Ex: 978-2-09-15">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-outline-primary" onclick="applyFilters()">
+                                            <i class="feather icon-search"></i> Rechercher
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary ml-2" onclick="resetFilters()">
+                                            <i class="feather icon-refresh-cw"></i> Actualiser
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <a href="/annee_scolaire/create" class="btn btn-primary">
+                                            <i class="feather icon-plus"></i> Nouvelle Année
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
         <!-- Tableau -->
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
 
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Liste des iepp</h5>
+                        <h5 class="mb-0">Liste des iepp - 8,247 </h5>
 
                         <!-- Lien remplaçant le bouton -->
                         <!-- <a href="/ajoutiepp" 
@@ -187,35 +257,72 @@ function confirmDelete(id) {
 
 <!-- Style boutons réduits -->
 <style>
-.btn-action {
-    padding: 2px 6px !important;
-    font-size: 12px !important;
-    line-height: 1.2 !important;
-}
-.btn-group-xs > .btn {
-    border-radius: 4px;
-}
-.table th, .table td {
-    vertical-align: middle;
+
+.order-card {
+    color: #fff;
 }
 
-/* Couleur claire pour l’en-tête du tableau */
-.table-header-custom {
-    background-color: #f8f9fa !important;
-    color: #212529 !important;
-    font-weight: 600;
+.bg-c-blue {
+    background: linear-gradient(45deg, #4099ff, #73b4ff);
 }
 
-/* Effet au survol des lignes */
+.bg-c-green {
+    background: linear-gradient(45deg, #2ed8b6, #59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg, #FFB64D, #ffcb80);
+}
+
+.bg-c-red {
+    background: linear-gradient(45deg, #FF5370, #ff869a);
+}
+
+.badge-light-success {
+    color: #2ed8b6;
+    background-color: rgba(46, 216, 182, 0.1);
+}
+
+.badge-light-info {
+    color: #4099ff;
+    background-color: rgba(64, 153, 255, 0.1);
+}
+
+.badge-light-secondary {
+    color: #6c757d;
+    background-color: rgba(108, 117, 125, 0.1);
+}
+
+.badge-light-primary {
+    color: #4680ff;
+    background-color: rgba(70, 128, 255, 0.1);
+}
+
+.btn-group .btn {
+    margin-right: 4px;
+    padding: 6px 10px;
+}
+
+.btn-sm {
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+}
+
 .table-hover tbody tr:hover {
-    background-color: #f1f3f5 !important;
-    transition: background-color 0.2s ease-in-out;
+    background-color: #f5f5f5;
 }
 
-/* Lien Ajouter un manuel */
-a.text-primary:hover {
-    text-decoration: underline !important;
+.btn-action {
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
+
+.btn-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
 </style>
 
 @endsection
