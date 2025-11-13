@@ -920,6 +920,8 @@ function confirmDelete(id) {
 <!-- Style boutons réduits -->
 
 <style>
+
+
 .order-card {
     color: #fff;
 }
@@ -961,12 +963,30 @@ function confirmDelete(id) {
 }
 
 .btn-group .btn {
-    margin-right: 2px;
+    margin-right: 4px;
+    padding: 6px 10px;
+}
+
+.btn-sm {
+    padding: 6px 10px !important;
+    font-size: 13px !important;
 }
 
 .table-hover tbody tr:hover {
     background-color: #f5f5f5;
 }
+
+.btn-action {
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-action:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
 </style>
 
 

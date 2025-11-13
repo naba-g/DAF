@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AnneeScolaireController extends Controller
 {
-   
+
     public function index()
     {
         return view('espace.espace_super.annee_scolaire.liste');

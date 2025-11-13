@@ -28,11 +28,6 @@
                             <li class="breadcrumb-item active">DREN</li>
                         </ul>
                     </div>
-                    <div class="col-md-4 text-right">
-                        <a href="{{ route('drena.create') }}" class="btn btn-primary">
-                            <i class="feather icon-plus"></i> Nouvelle DREN
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -140,12 +135,6 @@
                                         <a href="{{ route('drena.show', 1) }}" class="btn btn-sm btn-outline-primary" title="Voir">
                                             <i class="feather icon-eye"></i>
                                         </a>
-                                        <a href="{{ route('drena.edit', 1) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(1)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -173,114 +162,10 @@
                                         <a href="{{ route('drena.show', 2) }}" class="btn btn-sm btn-outline-primary" title="Voir">
                                             <i class="feather icon-eye"></i>
                                         </a>
-                                        <a href="{{ route('drena.edit', 2) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(2)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
                                     </div>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>
-                                    <div class="font-weight-bold">DREN ABIDJAN 3</div>
-                                    <small class="text-muted">Yopougon - Koumassi - Port-Bouët</small>
-                                </td>
-                                <td><code>DREN-ABJ3</code></td>
-                                <td>
-                                    <span class="badge badge-primary">Zone Abidjan</span>
-                                </td>
-                                <td>
-                                    <span class="font-weight-bold text-success">22</span>
-                                    <small class="text-muted d-block">IEPP</small>
-                                </td>
-                                <td>
-                                    <span class="font-weight-bold text-info">387</span>
-                                    <small class="text-muted d-block">EPP</small>
-                                </td>
-                                <td>M. YAO Kouassi</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('drena.show', 3) }}" class="btn btn-sm btn-outline-primary" title="Voir">
-                                            <i class="feather icon-eye"></i>
-                                        </a>
-                                        <a href="{{ route('drena.edit', 3) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(3)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>
-                                    <div class="font-weight-bold">DREN BOUAKÉ 1</div>
-                                    <small class="text-muted">Bouaké Centre - Nord</small>
-                                </td>
-                                <td><code>DREN-BKE1</code></td>
-                                <td>
-                                    <span class="badge badge-info">Zone Centre</span>
-                                </td>
-                                <td>
-                                    <span class="font-weight-bold text-success">12</span>
-                                    <small class="text-muted d-block">IEPP</small>
-                                </td>
-                                <td>
-                                    <span class="font-weight-bold text-info">189</span>
-                                    <small class="text-muted d-block">EPP</small>
-                                </td>
-                                <td>Mme TOURE Fatoumata</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('drena.show', 4) }}" class="btn btn-sm btn-outline-primary" title="Voir">
-                                            <i class="feather icon-eye"></i>
-                                        </a>
-                                        <a href="{{ route('drena.edit', 4) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(4)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>
-                                    <div class="font-weight-bold">DREN YAMOUSSOUKRO</div>
-                                    <small class="text-muted">Capitale politique - Zone Lacs</small>
-                                </td>
-                                <td><code>DREN-YAM</code></td>
-                                <td>
-                                    <span class="badge badge-warning">Zone Centre</span>
-                                </td>
-                                <td>
-                                    <span class="font-weight-bold text-success">8</span>
-                                    <small class="text-muted d-block">IEPP</small>
-                                </td>
-                                <td>
-                                    <span class="font-weight-bold text-info">95</span>
-                                    <small class="text-muted d-block">EPP</small>
-                                </td>
-                                <td>Dr. BEUGRE Sylvain</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('drena.show', 5) }}" class="btn btn-sm btn-outline-primary" title="Voir">
-                                            <i class="feather icon-eye"></i>
-                                        </a>
-                                        <a href="{{ route('drena.edit', 5) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(5)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
+
                         </tbody>
                     </table>
                 </div>
