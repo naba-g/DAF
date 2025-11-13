@@ -144,8 +144,6 @@ Route::get('/iepp', function () {
     return view('espace.espace_super.iepp.liste');
 });
 
-
-
 //livraison epp
 Route::get('/livraison_epp', function () {
    // return view('welcome');
@@ -323,11 +321,7 @@ Route::get('/iepp', function () {
 // afficher le formulaire d'ajout
 Route::get('/ajoutiepp','App\Http\Controllers\parametre\IeppController@add');
 
-<<<<<<< HEAD
-//afficher voir les details
-=======
 //afficher la page de modification
->>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
 Route::get('detailiepp/{id}','App\Http\Controllers\parametre\IeppController@detail');
 
 //Fin creationiepp
