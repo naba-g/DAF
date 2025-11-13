@@ -1,3 +1,4 @@
+
 @extends('layouts.layouts_super.master')
 @section('title', 'Liste des Manuels')
 @section('content')
@@ -22,6 +23,74 @@
                 </div>
             </div>
         </div>
+
+       
+
+        <!-- Filters and Actions -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Filtres et Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                             <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterStatut">Statut</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les statuts</option>
+                                        <option value="active">Active</option>
+                                        <option value="archivee">Archivée</option>
+                                        <option value="future">Future</option>
+                                    </select>
+                                </div>
+                            </div>-->
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Code du manuel</label>
+                                    <input type="text" class="form-control" id="filtercode" placeholder="Ex: 978-2-09-171780-3">
+                                </div>
+                            </div>
+
+                            <div class="col-md-5">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Nom du manuel</label>
+                                    <input type="text" class="form-control" id="filternom" placeholder="Ex: Livre de mathématiques">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-outline-primary" onclick="applyFilters()">
+                                            <i class="feather icon-search"></i> Rechercher
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary ml-2" onclick="resetFilters()">
+                                            <i class="feather icon-refresh-cw"></i> Actualiser
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <a href="/annee_scolaire/create" class="btn btn-primary">
+                                            <i class="feather icon-plus"></i> Nouvelle Année
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
 
         <!-- Tableau -->
         <div class="row">
@@ -55,7 +124,7 @@
                                     <tr>
                                         <td>1</td>
                                         <td><strong>978-2-09-171780-3</strong></td>
-                                        <td>Livre de Français</td>
+                                        <td>Français</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -72,7 +141,7 @@
                                     <tr>
                                         <td>2</td>
                                         <td><strong>978-2-09-171780-4</strong></td>
-                                        <td>Guide du Maître</td>
+                                        <td>Mathématique</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -89,7 +158,7 @@
                                     <tr>
                                         <td>3</td>
                                         <td><strong>978-2-09-171780-5</strong></td>
-                                        <td>Cahier d'exercice</td>
+                                        <td>Physiques</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -105,8 +174,8 @@
 
                                     <tr>
                                         <td>4</td>
-                                        <td><strong>978-2-01-125880-7</strong></td>
-                                        <td>Livre de Mathématiques</td>
+                                        <td><strong>978-2-01-125880-6</strong></td>
+                                        <td>EDHC</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -119,6 +188,47 @@
                                             </div>
                                         </td>
                                     </tr>
+
+                                    
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong>978-2-01-125880-7</strong></td>
+                                        <td>Histoire-géographie</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                               
+                                                <a href="modificationmanuels/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-outline-danger btn-action btn-sm" title="Supprimer" onclick="confirmDelete(4)">
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>6</td>
+                                        <td><strong>978-2-01-125880-8</strong></td>
+                                        <td>Sciences technologies</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                               
+                                                <a href="modificationmanuels/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-outline-danger btn-action btn-sm" title="Supprimer" onclick="confirmDelete(4)">
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+
+
+
                                 </tbody>
                             </table>
                         </div>

@@ -23,6 +23,121 @@
             </div>
         </div>
 
+
+        <!-- Filters and Actions -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Filtres et Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="filterStatut">Nom IEPP</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les iepp</option>
+                                        <option value="active">IEPP 1</option>
+                                        <option value="archivee">IEPP 2</option>
+                                        <option value="future">IEPP 3</option>
+                                         <option value="future">IEPP 4</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                           <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="filterStatut">Niveau</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les niveaux</option>
+                                        <option value="active">CP1</option>
+                                        <option value="archivee">CP2</option>
+                                        <option value="future">CE1</option>
+                                         <option value="future">CE2</option>
+                                         <option value="future">CM1</option>
+                                         <option value="future">CM2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterStatut">Type manuel</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les type manuel</option>
+                                        <option value="active">Livre de mathématiques</option>
+                                        <option value="archivee">Guide maitre</option>
+                                        <option value="future">Livre de français</option>
+                                         <option value="future">Cahier d'exercice</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                             <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="filterStatut">Année scolaire</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les années</option>
+                                        <option value="active">2025</option>
+                                        <option value="archivee">2026</option>
+                                        <option value="future">2027</option>
+                                         <option value="future">2028</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+
+                            <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Nom iepp</label>
+                                    <input type="text" class="form-control" id="filternomiepp" placeholder="Ex: Plateau village 2">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Code iepp</label>
+                                    <input type="text" class="form-control" id="filteriepp" placeholder="Ex: 978-2-09-15">
+                                </div>
+                            </div>-->
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-outline-primary" onclick="applyFilters()">
+                                            <i class="feather icon-search"></i> Rechercher
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary ml-2" onclick="resetFilters()">
+                                            <i class="feather icon-refresh-cw"></i> Actualiser
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <a href="/annee_scolaire/create" class="btn btn-primary">
+                                            <i class="feather icon-plus"></i> Nouvelle Année
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Tableau -->
         <div class="row">
             <div class="col-sm-12">
@@ -416,10 +531,6 @@ function confirmDelete(id) {
 <!-- Style boutons réduits -->
 
 <style>
-
-
-
-
 
 .order-card {
     color: #fff;
