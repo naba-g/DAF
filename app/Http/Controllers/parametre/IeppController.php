@@ -13,10 +13,10 @@ class IeppController extends Controller
     return view('espace.espace_super.iepp.add');
     }
 
-    public function edit($id=1){
+    public function detail($id=1){
         $data = $id;
       //  dd($data);
-      return view('espace.espace_super.iepp.update',compact('data'));
+      return view('espace.espace_super.iepp.detail',compact('data'));
 
     }
 
