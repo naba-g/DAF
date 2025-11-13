@@ -28,11 +28,7 @@
                             <li class="breadcrumb-item active">EPP</li>
                         </ul>
                     </div>
-                    <div class="col-md-4 text-right">
-                        <a href="{{ route('epp.create') }}" class="btn btn-primary">
-                            <i class="feather icon-plus"></i> Nouvelle EPP
-                        </a>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -139,12 +135,6 @@
                                         <a href="{{ route('epp.show', 1) }}" class="btn btn-sm btn-outline-primary" title="Voir">
                                             <i class="feather icon-eye"></i>
                                         </a>
-                                        <a href="{{ route('epp.edit', 1) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(1)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
                                     </div>
                                 </td>
                             </tr>
@@ -170,105 +160,6 @@
                                         <a href="{{ route('epp.show', 2) }}" class="btn btn-sm btn-outline-primary" title="Voir">
                                             <i class="feather icon-eye"></i>
                                         </a>
-                                        <a href="{{ route('epp.edit', 2) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(2)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>
-                                    <div class="font-weight-bold">EPP Bouaké Centre</div>
-                                    <small class="text-muted">Code: EPP-BKE-CNT-003</small>
-                                </td>
-                                <td>
-                                    <div class="text-primary font-weight-bold">DREN BOUAKÉ 1</div>
-                                    <small class="text-muted">IEPP BOUAKÉ CENTRE</small>
-                                </td>
-                                <td>Bouaké</td>
-                                <td><span class="badge badge-warning">Incomplète</span></td>
-                                <td>
-                                    <span class="font-weight-bold text-primary">280</span>
-                                    <small class="text-muted d-block">élèves</small>
-                                </td>
-                                <td>M. DIABATE Sekou</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('epp.show', 3) }}" class="btn btn-sm btn-outline-primary" title="Voir">
-                                            <i class="feather icon-eye"></i>
-                                        </a>
-                                        <a href="{{ route('epp.edit', 3) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(3)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>4</td>
-                                <td>
-                                    <div class="font-weight-bold">EPP Yamoussoukro Habitat</div>
-                                    <small class="text-muted">Code: EPP-YAM-HAB-004</small>
-                                </td>
-                                <td>
-                                    <div class="text-primary font-weight-bold">DREN YAMOUSSOUKRO</div>
-                                    <small class="text-muted">IEPP YAMOUSSOUKRO</small>
-                                </td>
-                                <td>Yamoussoukro</td>
-                                <td><span class="badge badge-success">Complète</span></td>
-                                <td>
-                                    <span class="font-weight-bold text-primary">380</span>
-                                    <small class="text-muted d-block">élèves</small>
-                                </td>
-                                <td>Mme KONE Mariam</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('epp.show', 4) }}" class="btn btn-sm btn-outline-primary" title="Voir">
-                                            <i class="feather icon-eye"></i>
-                                        </a>
-                                        <a href="{{ route('epp.edit', 4) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(4)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>5</td>
-                                <td>
-                                    <div class="font-weight-bold">EPP San Pedro Port</div>
-                                    <small class="text-muted">Code: EPP-SPD-PRT-005</small>
-                                </td>
-                                <td>
-                                    <div class="text-primary font-weight-bold">DREN SAN PEDRO</div>
-                                    <small class="text-muted">IEPP SAN PEDRO</small>
-                                </td>
-                                <td>San Pedro</td>
-                                <td><span class="badge badge-info">Maternelle</span></td>
-                                <td>
-                                    <span class="font-weight-bold text-primary">195</span>
-                                    <small class="text-muted d-block">élèves</small>
-                                </td>
-                                <td>Mme BAMBA Fatou</td>
-                                <td>
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('epp.show', 5) }}" class="btn btn-sm btn-outline-primary" title="Voir">
-                                            <i class="feather icon-eye"></i>
-                                        </a>
-                                        <a href="{{ route('epp.edit', 5) }}" class="btn btn-sm btn-outline-warning" title="Modifier">
-                                            <i class="feather icon-edit"></i>
-                                        </a>
-                                        <button type="button" class="btn btn-sm btn-outline-danger" title="Supprimer" onclick="confirmDelete(5)">
-                                            <i class="feather icon-trash-2"></i>
-                                        </button>
                                     </div>
                                 </td>
                             </tr>
