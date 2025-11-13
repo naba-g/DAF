@@ -1,5 +1,9 @@
 @extends('layouts.layouts_super.master')
+<<<<<<< HEAD
 @section('title', 'Détails IEPP')
+=======
+@section('title', 'Détails iepp')
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
 @section('content')
 
 <div class="pcoded-main-container">
@@ -10,13 +14,21 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
+<<<<<<< HEAD
                             <h5 class="m-b-10">Détails IEPP</h5>
+=======
+                            <h5 class="m-b-10">Détails iepp</h5>
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#"><i class="feather icon-home"></i></a></li>
                             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Accueil</a></li>
                             <li class="breadcrumb-item"><a href="{{ route('distribution_epp.index') }}">Details iepp</a></li>
+<<<<<<< HEAD
                             
+=======
+                           
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                         </ul>
                     </div>
                 </div>
@@ -26,16 +38,23 @@
 
         <!-- Page-body start -->
         <div class="row">
+<<<<<<< HEAD
 
 
             
 
+=======
+ 
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
             <div class="row">
                 <!-- Informations principales -->
 
                 <div class="col-lg-8">
                     <!-- Informations de base -->
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                     <div class="card">
                         <div class="card-header">
                             <h5><i class="feather icon-info mr-2"></i>Informations de Base</h5>
@@ -102,6 +121,7 @@
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
                         </div>
                     </div>
 
@@ -112,6 +132,20 @@
                         <div class="card-header">
                             <h5><i class="feather icon-truck mr-2"></i>Personnel et Logistique</h5>
                         </div>
+=======
+
+                        </div>
+                    </div>
+                    
+
+                    <!-- Personnel et logistique -->
+                    <div class="card">
+
+                        <div class="card-header">
+                            <h5><i class="feather icon-truck mr-2"></i>Personnel et Logistique</h5>
+                        </div>
+
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
@@ -120,6 +154,10 @@
                                         <p class="form-control-static">M. KONE Seydou</p>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Téléphone</label>
@@ -128,6 +166,10 @@
                                 </div>
                             </div>
 
+<<<<<<< HEAD
+=======
+                            
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -135,6 +177,10 @@
                                         <p class="form-control-static">Camion CI-001-AB</p>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+=======
+                                
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label">Date de livraison</label>
@@ -154,15 +200,23 @@
                                     </div>
                                 </div>
                             </div>
+<<<<<<< HEAD
                         </div>
                     </div>
 
 
 
+=======
+
+                        </div>
+
+                    </div>
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                 </div>
 
                 <!-- Panneau latéral -->
                 <div class="col-lg-4">
+<<<<<<< HEAD
 
                     <!-- Statistiques rapides -->
                     <div class="card">
@@ -170,16 +224,34 @@
                             <h5><i class="feather icon-bar-chart mr-2"></i>Résumé</h5>
                         </div>
                         <div class="card-body text-center">
+=======
+                    <!-- Statistiques rapides -->
+
+                    <div class="card">
+                        
+                        <div class="card-header">
+                            <h5><i class="feather icon-bar-chart mr-2"></i>Résumé</h5>
+                        </div>
+
+                        <div class="card-body text-center">
+
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                             <div class="mb-3">
                                 <h2 class="text-primary">1,000</h2>
                                 <p class="text-muted">Total manuels</p>
                             </div>
+<<<<<<< HEAD
 
+=======
+                            
+                            
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                             <div class="mb-3">
                                 <h2 class="text-success">3</h2>
                                 <p class="text-muted">Types de manuels</p>
                             </div>
 
+<<<<<<< HEAD
                             <hr>
 
                             <div class="row">
@@ -192,12 +264,15 @@
                                     <small class="text-muted">Niveau cible</small>
                                 </div>
                             </div>
+=======
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
                         </div>
                     </div>
 
                 </div>
 
 
+<<<<<<< HEAD
                 
             </div>
         </div>
@@ -205,6 +280,13 @@
 
 
         <!-- Page-body end -->
+=======
+
+            </div>
+        </div>
+        <!-- Page-body end -->
+
+>>>>>>> 2eaac5f9525b8613fd3a4e1cf3dd0483c49298bc
     </div>
 </div>
 
