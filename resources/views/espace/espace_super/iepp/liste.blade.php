@@ -110,11 +110,7 @@
                           Nouvelle iepp
                         </a> -->
 
-                        <div class="d-block">
-                        <a href="/ajoutiepp" class="btn btn-primary">
-                        <i class="feather icon-plus"></i> Nouvelle iepp
-                         </a>
-                      </div>
+                    
                     </div>
 
                     <div class="card-body">
@@ -139,8 +135,8 @@
                                         <td>
                                             <div class="btn-group btn-group-xs" role="group">
                                              
-                                               <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                               <a href="detailiepp/1" class="btn btn-outline-primary btn-action" title="detail">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
                                                     <i class="feather icon-trash-2"></i>
@@ -157,8 +153,8 @@
                                         <td>
                                             <div class="btn-group btn-group-xs" role="group">
                                              
-                                               <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                               <a href="detailiepp/1" class="btn btn-outline-primary btn-action" title="Modifier">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
                                                     <i class="feather icon-trash-2"></i>
@@ -175,8 +171,8 @@
                                         <td>
                                             <div class="btn-group btn-group-xs" role="group">
                                                
-                                                <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailiepp/1" class="btn btn-outline-primary btn-action" title="Modifier">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
                                                     <i class="feather icon-trash-2"></i>
@@ -193,8 +189,8 @@
                                         <td>
                                             <div class="btn-group btn-group-xs" role="group">
                                               
-                                                 <a href="modificationiepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                 <a href="detailiepp/1" class="btn btn-outline-primary btn-action" title="Modifier">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>

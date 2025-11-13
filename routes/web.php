@@ -322,7 +322,7 @@ Route::get('/iepp', function () {
 Route::get('/ajoutiepp','App\Http\Controllers\parametre\IeppController@add');
 
 //afficher la page de modification
-Route::get('modificationiepp/{id}','App\Http\Controllers\parametre\IeppController@edit');
+Route::get('detailiepp/{id}','App\Http\Controllers\parametre\IeppController@detail');
 
 //Fin creationiepp
 
