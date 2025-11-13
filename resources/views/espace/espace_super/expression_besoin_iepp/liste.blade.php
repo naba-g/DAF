@@ -23,6 +23,122 @@
             </div>
         </div>
 
+
+        <!-- Filters and Actions -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Filtres et Actions</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row align-items-center">
+
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <label for="filterStatut">Nom EPP</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les EPP</option>
+                                        <option value="active">EPP 1</option>
+                                        <option value="archivee">EPP 2</option>
+                                        <option value="future">EPP 3</option>
+                                         <option value="future">EPP 4</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                           <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="filterStatut">Niveau</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les niveaux</option>
+                                        <option value="active">CP1</option>
+                                        <option value="archivee">CP2</option>
+                                        <option value="future">CE1</option>
+                                         <option value="future">CE2</option>
+                                         <option value="future">CM1</option>
+                                         <option value="future">CM2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterStatut">Type manuel</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les type manuel</option>
+                                        <option value="active">Livre de mathématiques</option>
+                                        <option value="archivee">Guide maitre</option>
+                                        <option value="future">Livre de français</option>
+                                         <option value="future">Cahier d'exercice</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                             <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="filterStatut">Année scolaire</label>
+                                    <select class="form-control" id="filterStatut">
+                                        <option value="">Tous les années</option>
+                                        <option value="active">2025</option>
+                                        <option value="archivee">2026</option>
+                                        <option value="future">2027</option>
+                                         <option value="future">2028</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+
+                            <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Nom iepp</label>
+                                    <input type="text" class="form-control" id="filternomiepp" placeholder="Ex: Plateau village 2">
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Code iepp</label>
+                                    <input type="text" class="form-control" id="filteriepp" placeholder="Ex: 978-2-09-15">
+                                </div>
+                            </div>-->
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <button type="button" class="btn btn-outline-primary" onclick="applyFilters()">
+                                            <i class="feather icon-search"></i> Rechercher
+                                        </button>
+                                        <button type="button" class="btn btn-outline-secondary ml-2" onclick="resetFilters()">
+                                            <i class="feather icon-refresh-cw"></i> Actualiser
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div class="col-md-3">
+                                <div class="form-group">
+                                    <label>&nbsp;</label>
+                                    <div class="d-block">
+                                        <a href="/annee_scolaire/create" class="btn btn-primary">
+                                            <i class="feather icon-plus"></i> Nouvelle Année
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>-->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <!-- Tableau -->
         <div class="row">
             <div class="col-sm-12">
@@ -32,11 +148,12 @@
                         <h5 class="mb-0">Besion en guides maitre</h5>
 
                         <!-- Lien remplaçant le bouton -->
-                          <div class="d-block">
-                        <a href="/ajoutexpressionbesionepp" class="btn btn-primary">
-                        <i class="feather icon-plus"></i> Nouvel effectif estimé
-                         </a>
-                      </div>
+                        <!--<div class="d-block">
+                            <a href="/ajoutexpressionbesionepp" class="btn btn-primary">
+                              <i class="feather icon-plus"></i> Nouvel effectif estimé
+                            </a>
+                        </div>-->
+
                     </div>
 
                     <div class="card-body">
@@ -66,9 +183,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                                 <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -89,9 +206,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -112,9 +229,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                                <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -135,9 +252,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -158,9 +275,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -181,9 +298,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -204,9 +321,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                                 <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -227,9 +344,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -250,9 +367,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                                <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -273,9 +390,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -296,9 +413,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>
@@ -319,9 +436,9 @@
                                         <td><strong>14000</strong></td>
                                         <td>
                                             <div class="btn-group" role="group">
-                                               <a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
+                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action btn-sm" title="Voir">
                                                     <i class="feather icon-eye"></i>
-                                                </a>
+                                                </a>-->
                                                 <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
                                                     <i class="feather icon-edit"></i>
                                                 </a>

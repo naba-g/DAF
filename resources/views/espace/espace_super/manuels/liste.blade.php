@@ -124,7 +124,7 @@
                                     <tr>
                                         <td>1</td>
                                         <td><strong>978-2-09-171780-3</strong></td>
-                                        <td>Livre de Français</td>
+                                        <td>Français</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -141,7 +141,7 @@
                                     <tr>
                                         <td>2</td>
                                         <td><strong>978-2-09-171780-4</strong></td>
-                                        <td>Guide du Maître</td>
+                                        <td>Mathématique</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -158,7 +158,7 @@
                                     <tr>
                                         <td>3</td>
                                         <td><strong>978-2-09-171780-5</strong></td>
-                                        <td>Cahier d'exercice</td>
+                                        <td>Physiques</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -174,8 +174,8 @@
 
                                     <tr>
                                         <td>4</td>
-                                        <td><strong>978-2-01-125880-7</strong></td>
-                                        <td>Livre de Mathématiques</td>
+                                        <td><strong>978-2-01-125880-6</strong></td>
+                                        <td>EDHC</td>
                                         <td>
                                             <div class="btn-group" role="group">
                                                
@@ -188,6 +188,47 @@
                                             </div>
                                         </td>
                                     </tr>
+
+                                    
+                                    <tr>
+                                        <td>5</td>
+                                        <td><strong>978-2-01-125880-7</strong></td>
+                                        <td>Histoire-géographie</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                               
+                                                <a href="modificationmanuels/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-outline-danger btn-action btn-sm" title="Supprimer" onclick="confirmDelete(4)">
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+                                    <tr>
+                                        <td>6</td>
+                                        <td><strong>978-2-01-125880-8</strong></td>
+                                        <td>Sciences technologies</td>
+                                        <td>
+                                            <div class="btn-group" role="group">
+                                               
+                                                <a href="modificationmanuels/1" class="btn btn-outline-warning btn-action btn-sm" title="Modifier">
+                                                    <i class="feather icon-edit"></i>
+                                                </a>
+                                                <button type="button" class="btn btn-outline-danger btn-action btn-sm" title="Supprimer" onclick="confirmDelete(4)">
+                                                    <i class="feather icon-trash-2"></i>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+
+
+
+
                                 </tbody>
                             </table>
                         </div>
