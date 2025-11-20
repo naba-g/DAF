@@ -145,7 +145,7 @@
                 <div class="card">
 
                     <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Besion en guides maitre</h5>
+                        <h5 class="mb-0">Besion iepp</h5>
 
                         <!-- Lien remplaçant le bouton -->
                         <!--<div class="d-block">

@@ -48,7 +48,7 @@
                             </div>
 
 
-                           <div class="col-md-2">
+                            <!--<div class="col-md-2">
                                 <div class="form-group">
                                     <label for="filterStatut">Niveau</label>
                                     <select class="form-control" id="filterStatut">
@@ -61,10 +61,10 @@
                                          <option value="future">CM2</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div>-->
 
 
-                            <div class="col-md-3">
+                            <!--<div class="col-md-3">
                                 <div class="form-group">
                                     <label for="filterStatut">Type manuel</label>
                                     <select class="form-control" id="filterStatut">
@@ -75,7 +75,7 @@
                                          <option value="future">Cahier d'exercice</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div>-->
 
                              <div class="col-md-2">
                                 <div class="form-group">
@@ -160,13 +160,13 @@
                                 <thead class="thead-light">
                                     <tr>
                                         <th>#</th>
-                                        <th>Etablissements</th>
-                                        <th>niveau</th>
-                                        <th>Titre manuel</th>
-                                        <th>qté livre</th>
-                                        <th>qté guide maitre</th>
+                                        <th>Nom IEPP</th>
+                                        <!--<th>niveau</th>-->
+                                        <!--<th>Titre manuel</th>-->
+                                        <!--<th>qté livre</th>-->
+                                        <!--<th>qté guide maitre</th>-->
 
-                                        <th>qté cahier excercice</th>
+                                        <th>Qté Totale</th>
 
                                         <th>Actions</th>
                                     </tr>
@@ -176,11 +176,11 @@
                                     <tr>
                                         <td>1</td>
                                         <td>iepp1</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                         <td><strong>14000</strong></td>
-                                        <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP1</strong></td>-->
+                                        <!--<td>Livre de Mathématique</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <td><strong>56000</strong></td>
 
 
                                         <td>
@@ -188,8 +188,8 @@
                                                  <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
                                                     <i class="feather icon-trash-2"></i>
@@ -201,10 +201,10 @@
                                     <tr>
                                         <td>2</td>
                                            <td>iepp2</td>
-                                        <td><strong>CP1</strong></td>
-                                        <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP1</strong></td>-->
+                                        <!--<td>Livre de physique</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
 
@@ -214,8 +214,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
                                                     <i class="feather icon-trash-2"></i>
@@ -227,10 +227,10 @@
                                     <tr>
                                         <td>3</td>
                                            <td>iepp3</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP1</strong></td>-->
+                                        <!--<td>Livre de français</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -238,8 +238,8 @@
                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="Modifier">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
                                                     <i class="feather icon-trash-2"></i>
@@ -251,10 +251,10 @@
                                     <tr>
                                         <td>4</td>
                                            <td>iepp4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP1</strong></td>-->
+                                         <!--<td>Livre de EDHC</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                           <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -262,8 +262,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>
@@ -276,10 +276,10 @@
                                      <tr>
                                         <td>5</td>
                                            <td>iepp5</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP1</strong></td>-->
+                                         <!--<td>Livre d'histoire-géographie</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -287,8 +287,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>
@@ -302,10 +302,10 @@
                                      <tr>
                                         <td>6</td>
                                            <td>iepp6</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP1</strong></td>-->
+                                         <!--<td>Livre de sciences et technologies</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                           <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -313,8 +313,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>
@@ -328,10 +328,10 @@
                                    <tr>
                                         <td>7</td>
                                            <td>iepp7</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP2</strong></td>-->
+                                         <!--<td>Livre de Mathématique</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -339,8 +339,8 @@
                                                  <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
                                                     <i class="feather icon-trash-2"></i>
@@ -352,10 +352,10 @@
                                     <tr>
                                         <td>8</td>
                                            <td>iepp8</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP2</strong></td>-->
+                                         <!--<td>Livre de physique</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -363,8 +363,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="Modifier">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
                                                     <i class="feather icon-trash-2"></i>
@@ -376,10 +376,10 @@
                                     <tr>
                                         <td>9</td>
                                            <td>iepp9</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP2</strong></td>-->
+                                        <!--<td>Livre de français</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -387,8 +387,8 @@
                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
                                                     <i class="feather icon-trash-2"></i>
@@ -399,11 +399,11 @@
 
                                     <tr>
                                         <td>10</td>
-                                           <td>iepp10</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <td>iepp10</td>
+                                        <!--<td><strong>CP2</strong></td>-->
+                                        <!--<td>Livre de EDHC</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -411,8 +411,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>
@@ -425,10 +425,10 @@
                                      <tr>
                                         <td>11</td>
                                            <td>iepp11</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <!--<td><strong>CP2</strong></td>-->
+                                         <!--<td>Livre d'histoire-géographie</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -436,8 +436,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>
@@ -450,11 +450,11 @@
 
                                      <tr>
                                         <td>12</td>
-                                           <td>iepp12</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                           <td><strong>14000</strong></td>
+                                        <td>iepp12</td>
+                                        <!--<td><strong>CP2</strong></td>-->
+                                        <!--<td>Livre de sciences et technologies</td>-->
+                                        <!--<td><strong>14000</strong></td>-->
+                                        <!--<td><strong>14000</strong></td>-->
                                         <td><strong>14000</strong></td>
 
                                         <td>
@@ -462,8 +462,8 @@
                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
                                                     <i class="feather icon-eye"></i>
                                                 </a>-->
-                                                <a href="modificationexpressionbesionepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
+                                                <a href="detailsdrena/1" class="btn btn-outline-primary btn-action" title="voir details">
+                                                    <i class="feather icon-eye"></i>
                                                 </a>
                                                 <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
                                                     <i class="feather icon-trash-2"></i>

@@ -23,873 +23,462 @@
             </div>
         </div>
 
-        <!-- Tableau -->
+        <!-- Filters and Actions -->
         <div class="row">
+
             <div class="col-sm-12">
+
                 <div class="card">
 
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Liste des guides maitre livrés</h5>
-
-                        <!-- Lien remplaçant le bouton -->
-                          <div class="d-block">
-                        <a href="/ajoutlivraisoniepp" class="btn btn-primary">
-                        <i class="feather icon-plus"></i> Nouvelle livraison
-                         </a>
-                      </div>
+                    <div class="card-header">
+                        <h5>Filtres et Actions</h5>
                     </div>
 
                     <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>niveau</th>
-                                        <th>Titre de manuel</th>
-                                        <th>quantité</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
- <tr>
-                                        <td>1</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                           <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Liste des livres livrés</h5>
-
-                        <!-- Lien remplaçant le bouton -->
-                          <!-- <div class="d-block">
-                        <a href="/ajoutlivraisoniepp" class="btn btn-primary">
-                        <i class="feather icon-plus"></i> Nouvelle livraison
-                         </a>
-                      </div> -->
-                    </div>
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>niveau</th>
-                                        <th>Titre de manuel</th>
-                                        <th>quantité</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
- <tr>
-                                        <td>1</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                           <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h5 class="mb-0">Liste des cahiers d'excercice livrés</h5>
-
-                        <!-- Lien remplaçant le bouton -->
-                          <!-- <div class="d-block">
-                        <a href="/ajoutlivraisoniepp" class="btn btn-primary">
-                        <i class="feather icon-plus"></i> Nouvelle livraison
-                         </a>
-                      </div> -->
-                    </div>
-
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table class="table table-hover">
-                                <thead class="thead-light">
-                                    <tr>
-                                        <th>#</th>
-                                        <th>niveau</th>
-                                        <th>Titre de manuel</th>
-                                        <th>quantité</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/2" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/3" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/4" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/4" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP1</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/4" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
- <tr>
-                                        <td>1</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de Mathématique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                 <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/1" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>2</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de physique</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/2" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>3</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de français</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                                <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/3" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de EDHC</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/4" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre d'histoire-géographie</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/4" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                     <tr>
-                                        <td>4</td>
-                                        <td><strong>CP2</strong></td>
-                                         <td>Livre de sciences et technologies</td>
-                                        <td><strong>14000</strong></td>
-                                        <td>
-                                            <div class="btn-group btn-group-xs" role="group">
-                                               <!--<a href="/manuel/show/1" class="btn btn-outline-info btn-action" title="Voir">
-                                                    <i class="feather icon-eye"></i>
-                                                </a>-->
-                                                <a href="/manuel/edit/4" class="btn btn-outline-warning btn-action" title="Modifier">
-                                                    <i class="feather icon-edit"></i>
-                                                </a>
-                                                <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
-                                                    <i class="feather icon-trash-2"></i>
-                                                </button>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-
-
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <!-- Pagination -->
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <nav aria-label="Pagination">
-                                    <ul class="pagination justify-content-center">
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                        <li class="page-item disabled">
-                                            <a class="page-link" href="#" aria-label="Next">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <p class="text-center text-muted">Affichage de 1 à 4 sur 4 entrées</p>
+                        <!-- Ligne des champs de filtre -->
+                        <div class="row align-items-center">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterEpp">Nom EPP</label>
+                                    <select class="form-control" id="filterEpp">
+                                        <option value="">Tous les EPP</option>
+                                        <option value="active">EPP 1</option>
+                                        <option value="archivee">EPP 2</option>
+                                        <option value="future">EPP 3</option>
+                                        <option value="future">EPP 4</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="filterNiveau">Niveau</label>
+                                    <select class="form-control" id="filterNiveau">
+                                        <option value="">Tous les niveaux</option>
+                                        <option value="active">CP1</option>
+                                        <option value="archivee">CP2</option>
+                                        <option value="future">CE1</option>
+                                        <option value="future">CE2</option>
+                                        <option value="future">CM1</option>
+                                        <option value="future">CM2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    <label for="filterType">Type manuel</label>
+                                    <select class="form-control" id="filterType">
+                                        <option value="">Tous les type manuel</option>
+                                        <option value="active">Livre de mathématiques</option>
+                                        <option value="archivee">Guide maitre</option>
+                                        <option value="future">Livre de français</option>
+                                        <option value="future">Cahier d'exercice</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    <label for="filterAnnee">Année scolaire</label>
+                                    <select class="form-control" id="filterAnnee">
+                                        <option value="">Tous les années</option>
+                                        <option value="active">2025</option>
+                                        <option value="archivee">2026</option>
+                                        <option value="future">2027</option>
+                                        <option value="future">2028</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
+                        <!-- Ligne séparée pour les boutons -->
+                        <div class="row mt-3">
+                            <div class="col-md-12">
+                                <div class="d-flex align-items-center">
 
+                                    <button type="button" class="btn btn-outline-primary mr-2" onclick="applyFilters()">
+                                        <i class="feather icon-search"></i> Rechercher
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-secondary mr-2" onclick="resetFilters()">
+                                        <i class="feather icon-refresh-cw"></i> Actualiser
+                                    </button>
+
+                                    <a href="/ajoutlivraisoniepp" class="btn btn-primary">
+                                        <i class="feather icon-plus"></i> Nouvelle livraison
+                                    </a>
+                                    
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Section des onglets -->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h5>Liste des livraisons par type</h5>
+                    </div>
+                    <div class="card-body">
+                        <!-- Navigation par onglets -->
+                        <ul class="nav nav-tabs" id="livraisonTabs" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="guides-tab" data-toggle="tab" href="#guides" role="tab" aria-controls="guides" aria-selected="true">
+                                    <i class="feather icon-book-open"></i> Guides Maitre
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="livres-tab" data-toggle="tab" href="#livres" role="tab" aria-controls="livres" aria-selected="false">
+                                    <i class="feather icon-book"></i> Livres
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="cahiers-tab" data-toggle="tab" href="#cahiers" role="tab" aria-controls="cahiers" aria-selected="false">
+                                    <i class="feather icon-file-text"></i> Cahiers d'Exercice
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- Contenu des onglets -->
+                        <div class="tab-content" id="livraisonTabsContent">
+                            <!-- Onglet Guides Maitre -->
+                            <div class="tab-pane fade show active" id="guides" role="tabpanel" aria-labelledby="guides-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-hover">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>niveau</th>
+                                                <th>Titre de manuel</th>
+                                                <th>quantité</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de Mathématique</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de physique</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de français</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de EDHC</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisoniepp/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Pagination pour les guides maitre -->
+                                <div class="row mt-3">
+                                    <div class="col-sm-12">
+                                        <nav aria-label="Pagination guides maitre">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        <p class="text-center text-muted">Affichage de 1 à 4 sur 12 entrées</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Onglet Livres -->
+                            <div class="tab-pane fade" id="livres" role="tabpanel" aria-labelledby="livres-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-hover">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>niveau</th>
+                                                <th>Titre de manuel</th>
+                                                <th>quantité</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de Mathématique</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de physique</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de français</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de EDHC</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="modificationlivraisonieppt/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Pagination pour les livres livrés -->
+                                <div class="row mt-3">
+                                    <div class="col-sm-12">
+                                        <nav aria-label="Pagination livres livrés">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        <p class="text-center text-muted">Affichage de 1 à 4 sur 12 entrées</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Onglet Cahiers d'Exercice -->
+                            <div class="tab-pane fade" id="cahiers" role="tabpanel" aria-labelledby="cahiers-tab">
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-hover">
+                                        <thead class="thead-light">
+                                            <tr>
+                                                <th>#</th>
+                                                <th>niveau</th>
+                                                <th>Titre de manuel</th>
+                                                <th>quantité</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>1</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de Mathématique</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="/manuel/edit/1" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(1)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>2</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de physique</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="/manuel/edit/2" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(2)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>3</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de français</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="/manuel/edit/3" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(3)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+
+                                            <tr>
+                                                <td>4</td>
+                                                <td><strong>CP1</strong></td>
+                                                <td>Livre de EDHC</td>
+                                                <td><strong>14000</strong></td>
+                                                <td>
+                                                    <div class="btn-group btn-group-xs" role="group">
+                                                        <a href="/manuel/edit/4" class="btn btn-outline-warning btn-action" title="Modifier">
+                                                            <i class="feather icon-edit"></i>
+                                                        </a>
+                                                        <button type="button" class="btn btn-outline-danger btn-action" title="Supprimer" onclick="confirmDelete(4)">
+                                                            <i class="feather icon-trash-2"></i>
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <!-- Pagination pour les cahiers d'exercice -->
+                                <div class="row mt-3">
+                                    <div class="col-sm-12">
+                                        <nav aria-label="Pagination cahiers d'exercice">
+                                            <ul class="pagination justify-content-center">
+                                                <li class="page-item disabled">
+                                                    <a class="page-link" href="#" aria-label="Previous">
+                                                        <span aria-hidden="true">&laquo;</span>
+                                                    </a>
+                                                </li>
+                                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item">
+                                                    <a class="page-link" href="#" aria-label="Next">
+                                                        <span aria-hidden="true">&raquo;</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                        <p class="text-center text-muted">Affichage de 1 à 4 sur 12 entrées</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -915,13 +504,31 @@ function confirmDelete(id) {
         });
     });
 }
+
+function applyFilters() {
+    // Logique pour appliquer les filtres
+    console.log('Application des filtres...');
+}
+
+function resetFilters() {
+    // Logique pour réinitialiser les filtres
+    document.getElementById('filterEpp').value = '';
+    document.getElementById('filterNiveau').value = '';
+    document.getElementById('filterType').value = '';
+    document.getElementById('filterAnnee').value = '';
+    console.log('Filtres réinitialisés');
+}
+
+// Initialisation des onglets
+document.addEventListener('DOMContentLoaded', function() {
+    // Activation du premier onglet par défaut
+    var firstTab = new bootstrap.Tab(document.getElementById('guides-tab'));
+    firstTab.show();
+});
 </script>
 
 <!-- Style boutons réduits -->
-
 <style>
-
-
 .order-card {
     color: #fff;
 }
@@ -986,8 +593,43 @@ function confirmDelete(id) {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.mr-2 {
+    margin-right: 0.5rem !important;
+}
 
+.mt-3 {
+    margin-top: 1rem !important;
+}
+
+/* Styles pour les onglets */
+.nav-tabs {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid transparent;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+    margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #fff;
+    border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.nav-tabs .nav-link i {
+    margin-right: 5px;
+}
+
+.tab-content {
+    padding: 15px 0;
+}
 </style>
-
 
 @endsection

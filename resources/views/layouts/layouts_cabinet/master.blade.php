@@ -56,11 +56,7 @@
 				</div>
 				
 
-
-
-
-
-
+				
 				<ul class="nav pcoded-inner-navbar ">
 					<li class="nav-item pcoded-menu-caption">
 						<label>Navigation</label>

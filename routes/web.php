@@ -328,6 +328,38 @@ Route::get('detailiepp/{id}','App\Http\Controllers\parametre\IeppController@deta
 
 
 
+
+//creation des expression besion drena
+
+
+//expression besoin drena
+Route::get('/besoin_drena', function () {
+   // return view('welcome');
+       return view('espace.espace_super.expression_besoin_drena.liste');
+
+});
+
+//afficher la page de details
+Route::get('detailsdrena/{id}','App\Http\Controllers\gestion\ExpressionBesionDrenaController@details');
+
+
+//fin des expression besion drena
+
+
+
+
+
+//creation des expression besion daf
+
+//afficher la page de details
+Route::get('detailsdaf/{id}','App\Http\Controllers\gestion\ExpressionBesionDafController@details');
+
+//fin des expression besion daf
+
+
+
+
+
 //creation des Manuels
 
 //manuels
@@ -392,7 +424,7 @@ Route::get('/livraison_epp', function () {
 
 
 
-//creation des expressions des besions
+//creation des expressions des besions livraison epp
 
 
 //livraison epp
@@ -405,7 +437,6 @@ Route::get('/expression_besion_epp', function () {
 
 // afficher le formulaire d'ajout
 Route::get('/ajoutexpressionbesionepp','App\Http\Controllers\gestion\ExpressionBesionEppController@add');
-
 
 
 //afficher la page de modification
@@ -427,7 +458,7 @@ Route::get('/expression_besoin_iepp', function () {
 });
 
 
-// exprssion besion iepp
+// fin exprssion besion iepp
 
 
 
