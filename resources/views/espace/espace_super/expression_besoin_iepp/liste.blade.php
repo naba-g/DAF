@@ -91,8 +91,6 @@
                             </div>
 
 
-
-
                             <!--<div class="col-md-3">
                                 <div class="form-group">
                                     <label for="filterAnnee">Nom iepp</label>
@@ -473,6 +471,7 @@
                                 <p class="text-center text-muted">Affichage de 1 à 12 sur 12 entrées</p>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
