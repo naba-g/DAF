@@ -22,4 +22,11 @@ class IeppController extends Controller
 
        //------------------
 
+       public function edit($id=1){
+        $data = $id;
+      //  dd($data);
+      return view('espace.espace_super.iepp.update',compact('data'));
+
+    }
+
 }
